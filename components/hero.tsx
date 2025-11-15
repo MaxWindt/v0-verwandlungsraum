@@ -16,14 +16,14 @@ export default function Hero() {
     >
       {/* Background Image Container */}
       <div
-        className="absolute inset-0 z-0 hidden"
+        className="absolute inset-0 z-0"
         style={{
           width: "100%",
           height: "100%",
         }}
       >
         <Image
-          src="/images/design-mode/neu%20header%20pastell%20kreide.jpg"
+          src="/images/design-mode/aa0e0673b774ef265c5fc05722ed8267.jpg"
           alt={t("hero.backgroundAlt")}
           fill
           className="object-cover"

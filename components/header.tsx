@@ -42,8 +42,8 @@ export default function Header() {
       }`}
       style={{
         backgroundImage: scrolled
-          ? "linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/images/header.jpg')"
-          : "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/images/header.jpg')",
+          ? "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aa0e0673b774ef265c5fc05722ed8267-hPikeXEPNO9KGotmkPpVlssNit7rNX.jpg')"
+          : "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aa0e0673b774ef265c5fc05722ed8267-hPikeXEPNO9KGotmkPpVlssNit7rNX.jpg')",
       }}
     >
       <div className="container mx-auto px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
