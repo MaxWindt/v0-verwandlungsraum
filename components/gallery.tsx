@@ -81,20 +81,20 @@ export default function Gallery() {
   }, [infoTimeout])
 
   return (
-    <section id="gallery" className="py-24">
+    <section id="gallery" className="py-12 sm:py-16 md:py-24">
       <div className="container mx-auto">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4 text-orange-400">Impressionen</h2>
             <div className="heading-underline"></div>
-            <p className="text-lg">Einblicke in die kreative Arbeit</p>
+            <p className="text-base sm:text-lg">Einblicke in die kreative Arbeit</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {images.map((image, index) => (
               <div
                 key={image.id}
-                className="relative h-64 rounded-3xl overflow-hidden hover-lift cursor-pointer group"
+                className="relative h-48 sm:h-56 md:h-64 rounded-2xl sm:rounded-3xl overflow-hidden hover-lift cursor-pointer group"
                 onClick={() => openLightbox(index)}
               >
                 <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
@@ -120,43 +120,43 @@ export default function Gallery() {
       {/* Lightbox */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4"
           onKeyDown={handleKeyDown}
           onMouseMove={handleMouseMove}
           onClick={handleBackdropClick}
           tabIndex={0}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-amber-300 transition-colors z-10"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
               e.stopPropagation()
               closeLightbox()
             }}
             aria-label="Schließen"
           >
-            <X size={32} />
+            <X size={24} className="sm:w-8 sm:h-8" />
           </button>
 
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
               e.stopPropagation()
               goToPrevious()
             }}
             aria-label="Vorheriges Bild"
           >
-            <ChevronLeft size={48} />
+            <ChevronLeft size={32} className="sm:w-12 sm:h-12" />
           </button>
 
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
               e.stopPropagation()
               goToNext()
             }}
             aria-label="Nächstes Bild"
           >
-            <ChevronRight size={48} />
+            <ChevronRight size={32} className="sm:w-12 sm:h-12" />
           </button>
 
           <div className="relative max-w-[90vw] max-h-[90vh] w-full h-full flex items-center justify-center">
@@ -172,7 +172,7 @@ export default function Gallery() {
           </div>
 
           <div
-            className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-amber-800/70 px-4 py-2 rounded-full transition-opacity duration-300 pointer-events-none ${
+            className={`absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-full transition-opacity duration-300 pointer-events-none text-sm sm:text-base ${
               showInfo ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -180,11 +180,11 @@ export default function Gallery() {
           </div>
 
           <div
-            className={`absolute bottom-16 left-1/2 transform -translate-x-1/2 text-white text-center transition-opacity duration-300 pointer-events-none ${
+            className={`absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 text-white text-center transition-opacity duration-300 pointer-events-none max-w-[90vw] ${
               showInfo ? "opacity-100" : "opacity-0"
             }`}
           >
-            <p className="text-lg font-medium bg-amber-800/70 px-4 py-2 rounded-lg">{images[selectedImage].alt}</p>
+            <p className="text-sm sm:text-base md:text-lg font-medium bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-lg">{images[selectedImage].alt}</p>
           </div>
         </div>
       )}

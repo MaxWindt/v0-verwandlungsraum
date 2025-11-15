@@ -32,18 +32,18 @@ export default function Hero() {
       </div>
       {/* Overlay for text readability */}
 
-      <div className="container mx-auto px-6 py-16 flex justify-center relative z-20">
-        <div className="text-center relative text-black">
+      <div className="container mx-auto px-4 sm:px-6 py-16 flex justify-center relative z-20">
+        <div className="text-center relative text-black max-w-5xl w-full">
           {/* Subtle decorative elements */}
-          <div className="absolute -top-8 -left-8 w-16 h-16 bg-emerald-200/10 rounded-full opacity-60 animate-pulse"></div>
-          <div className="absolute -top-4 -right-12 w-8 h-8 bg-emerald-200/10 rounded-full opacity-80 animate-pulse"></div>
+          <div className="absolute -top-8 -left-8 w-16 h-16 bg-emerald-200/10 rounded-full opacity-60 animate-pulse hidden md:block"></div>
+          <div className="absolute -top-4 -right-12 w-8 h-8 bg-emerald-200/10 rounded-full opacity-80 animate-pulse hidden md:block"></div>
           <div
-            className="absolute -bottom-6 left-4 w-12 h-12 bg-emerald-300/10 rounded-full opacity-40 animate-pulse"
+            className="absolute -bottom-6 left-4 w-12 h-12 bg-emerald-300/10 rounded-full opacity-40 animate-pulse hidden md:block"
             style={{ animationDelay: "1s" }}
           ></div>
 
           {showBanner && (
-            <div className="mb-8 relative bg-card/80 rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
+            <div className="mb-8 relative bg-card/80 rounded-2xl p-4 sm:p-6 shadow-lg max-w-2xl mx-auto">
               <button
                 onClick={() => setShowBanner(false)}
                 className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors"
@@ -51,18 +51,18 @@ export default function Hero() {
               >
                 <X className="w-5 h-5" />
               </button>
-              <h3 className="text-2xl font-semibold mb-2 text-orange-400">{t("hero.promoTitle")}</h3>
-              <p className="text-lg text-foreground">{t("hero.promoText")}</p>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-orange-400 pr-8">{t("hero.promoTitle")}</h3>
+              <p className="text-base sm:text-lg text-foreground">{t("hero.promoText")}</p>
             </div>
           )}
 
-          <h1 className="font-serif font-bold mb-12 relative">
-            <span className="bg-gradient-to-r from-emerald-200 via-emerald-50 to-emerald-200 bg-clip-text animate-fade-in-up bg-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-chart-4">
+          <h1 className="font-serif font-bold mb-8 sm:mb-12 relative">
+            <span className="bg-gradient-to-r from-emerald-200 via-emerald-50 to-emerald-200 bg-clip-text animate-fade-in-up bg-white hero-title font-medium text-chart-4">
               {t("hero.title")}
             </span>
           </h1>
 
-          <p className="mb-8 max-w-2xl mx-auto italic font-normal tracking-tighter leading-10 font-sans text-2xl text-chart-5">
+          <p className="mb-8 max-w-2xl mx-auto italic font-normal tracking-tight sm:tracking-tighter leading-relaxed sm:leading-10 font-sans text-lg sm:text-xl md:text-2xl text-chart-5">
             {t("hero.subtitle")}
           </p>
 

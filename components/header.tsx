@@ -46,16 +46,16 @@ export default function Header() {
           : "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aa0e0673b774ef265c5fc05722ed8267-hPikeXEPNO9KGotmkPpVlssNit7rNX.jpg')",
       }}
     >
-      <div className="container mx-auto px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
-        <div>
-          <div className="text-2xl tracking-tight drop-shadow-lg font-extralight text-foreground">Rebecca Schwindt</div>
-          <div className="font-medium tracking-wide uppercase text-sm drop-shadow-md text-secondary-foreground">
+      <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
+        <div className="flex-1 min-w-0">
+          <div className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight text-foreground truncate">Rebecca Schwindt</div>
+          <div className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md text-secondary-foreground">
             Kunsttherapie Eberswalde
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-8 items-center">
+        <nav className="hidden lg:flex space-x-8 items-center flex-shrink-0">
           {menuItems.map((item) => (
             <ScrollLink
               key={item.to}
@@ -64,7 +64,7 @@ export default function Header() {
               smooth={true}
               offset={-80}
               duration={500}
-              className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 text-foreground font-serif text-right drop-shadow-md text-sm"
+              className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 text-foreground font-serif text-right drop-shadow-md text-sm whitespace-nowrap"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
@@ -74,7 +74,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button and Language Switcher */}
-        <div className="lg:hidden flex items-center gap-3">
+        <div className="lg:hidden flex items-center gap-3 flex-shrink-0 ml-4">
           <LanguageSwitcher />
           <button
             className="text-foreground hover:text-primary transition-colors drop-shadow-md"
@@ -89,7 +89,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-card/95 backdrop-blur-md border-t border-border">
-          <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
+          <div className="container mx-auto px-4 sm:px-6 py-6 flex flex-col space-y-4">
             {menuItems.map((item) => (
               <ScrollLink
                 key={item.to}

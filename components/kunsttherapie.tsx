@@ -11,10 +11,10 @@ export default function Kunsttherapie() {
         <div className="max-w-6xl mx-auto content-box my-px py-0">
           
 
-          <div className="mb-20">
-            <div className="space-y-8 text-lg leading-relaxed">
-              <div className="mb-12">
-                <h4 className="text-2xl mb-4 text-orange-400 text-center">{t("kunsttherapie.howItWorks")}</h4>
+          <div className="mb-12 sm:mb-20">
+            <div className="space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed">
+              <div className="mb-8 sm:mb-12">
+                <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400 text-center">{t("kunsttherapie.howItWorks")}</h4>
                 <p className="mb-4 text-center">{t("kunsttherapie.howItWorksIntro")}</p>
                 <ul className="space-y-3 max-w-3xl mx-auto">
                   
@@ -23,8 +23,8 @@ export default function Kunsttherapie() {
                 </ul>
               </div>
 
-              <div className="relative overflow-hidden p-8 rounded-2xl bg-muted/30 my-0 py-px">
-                <p className="text-center italic">{t("kunsttherapie.scientificNote")}</p>
+              <div className="relative overflow-hidden p-4 sm:p-6 md:p-8 rounded-2xl bg-muted/30 my-0 py-px">
+                <p className="text-center italic text-sm sm:text-base">{t("kunsttherapie.scientificNote")}</p>
               </div>
 
               
@@ -32,20 +32,20 @@ export default function Kunsttherapie() {
           </div>
 
           <div>
-            <div className="mb-8 flex justify-center">
+            <div className="mb-6 sm:mb-8 flex justify-center">
               <img
                 src="/images/pom-painting-example.jpg"
                 alt="Beispiel eines personenorientierten Maltherapie-Bildes"
-                className="rounded-2xl shadow-lg max-w-2xl w-5/12"
+                className="rounded-2xl shadow-lg max-w-2xl w-full sm:w-10/12 md:w-8/12 lg:w-5/12"
               />
             </div>
-            <div className="text-center mb-6">
-              <h3 className="text-3xl mb-6 text-orange-400">{t("kunsttherapie.pomTitle")}</h3>
+            <div className="text-center mb-4 sm:mb-6">
+              <h3 className="text-2xl sm:text-3xl mb-4 sm:mb-6 text-orange-400">{t("kunsttherapie.pomTitle")}</h3>
             </div>
             <div className="relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-card/80 rounded-2xl"></div>
-              <div className="relative z-10 my-0 p-10 py-[30px] px-[30px]">
-                <div className="mb-4 text-lg text-center">
+              <div className="relative z-10 my-0 p-4 sm:p-6 md:p-8 lg:p-10">
+                <div className="mb-4 text-base sm:text-lg text-center">
                   {t("kunsttherapie.whyMethodIntro")
                     .split("\n")
                     .map((line, index) => (
@@ -54,25 +54,25 @@ export default function Kunsttherapie() {
                       </p>
                     ))}
                 </div>
-                <div className="text-lg">
+                <div className="text-base sm:text-lg">
                   <p className="leading-relaxed">{t("kunsttherapie.methodDescription")}</p>
                 </div>
               </div>
             </div>
-            <div className="space-y-8 text-lg leading-relaxed">
-              <div className="relative overflow-hidden p-8 rounded-2xl">
+            <div className="space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed">
+              <div className="relative overflow-hidden p-4 sm:p-6 md:p-8 rounded-2xl">
                 <div className="relative z-10">
-                  <h4 className="text-2xl mb-4 text-center text-orange-400">{t("kunsttherapie.principlesTitle")}</h4>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-center text-orange-400">{t("kunsttherapie.principlesTitle")}</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <ul className="space-y-2">
                       <li>
-                        <h5 className="font-semibold mb-1 text-xl text-orange-400">
+                        <h5 className="font-semibold mb-1 text-lg sm:text-xl text-orange-400">
                           {t("kunsttherapie.principle1Title")}
                         </h5>
                         <p className="space-y-2">{t("kunsttherapie.principle1Text")}</p>
                       </li>
                       <li>
-                        <h5 className="font-semibold mb-1 text-xl text-orange-400">
+                        <h5 className="font-semibold mb-1 text-lg sm:text-xl text-orange-400">
                           {t("kunsttherapie.principle2Title")}
                         </h5>
                         <p className="space-y-2">{t("kunsttherapie.principle2Text")}</p>
@@ -80,13 +80,13 @@ export default function Kunsttherapie() {
                     </ul>
                     <ul className="space-y-2">
                       <li>
-                        <h5 className="font-semibold mb-1 text-xl text-orange-400">
+                        <h5 className="font-semibold mb-1 text-lg sm:text-xl text-orange-400">
                           {t("kunsttherapie.principle3Title")}
                         </h5>
                         <p className="space-y-2">{t("kunsttherapie.principle3Text")}</p>
                       </li>
                       <li>
-                        <h5 className="font-semibold mb-1 text-xl text-orange-400">
+                        <h5 className="font-semibold mb-1 text-lg sm:text-xl text-orange-400">
                           {t("kunsttherapie.principle4Title")}
                         </h5>
                         <p className="space-y-2">{t("kunsttherapie.principle4Text")}</p>

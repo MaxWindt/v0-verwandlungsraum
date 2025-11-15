@@ -20,20 +20,20 @@ export default function Testimonials() {
   ]
 
   return (
-    <section id="testimonials" className="py-20 bg-background">
+    <section id="testimonials" className="py-12 sm:py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-orange-400">Was andere sagen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-orange-400">Was andere sagen</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-accent/10 rounded-lg p-6 shadow-md border border-accent/20 relative"
+                className="bg-accent/10 rounded-lg p-4 sm:p-5 md:p-6 shadow-md border border-accent/20 relative"
               >
-                <Quote className="absolute top-4 right-4 text-accent/30" size={40} />
-                <p className="text-accent-foreground mb-6 relative z-10">"{testimonial.text}"</p>
-                <p className="font-medium text-primary">— {testimonial.author}</p>
+                <Quote className="absolute top-3 right-3 sm:top-4 sm:right-4 text-accent/30" size={32} />
+                <p className="text-accent-foreground mb-4 sm:mb-6 relative z-10 text-sm sm:text-base">"{testimonial.text}"</p>
+                <p className="font-medium text-primary text-sm sm:text-base">— {testimonial.author}</p>
               </div>
             ))}
           </div>

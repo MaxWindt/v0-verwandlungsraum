@@ -91,22 +91,22 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-12 sm:py-24">
       <div className="container mx-auto">
-        <div className="max-w-6xl px-6 mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-amber-400">{t("contact.title")}</h2>
-            <p className="text-lg text-muted-foreground"></p>
+        <div className="max-w-6xl px-4 sm:px-6 mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-amber-400">{t("contact.title")}</h2>
+            <p className="text-base sm:text-lg text-muted-foreground"></p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
-            <div className="p-8 rounded-2xl shadow-lg border border-border tracking-wider my-px bg-card/80 backdrop-blur-sm py-8 mx-0">
-              <h3 className="text-foreground mb-8 text-lg font-bold font-serif text-center text-orange-400">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
+            <div className="p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-border tracking-wider my-px bg-card/80 backdrop-blur-sm mx-0">
+              <h3 className="text-foreground mb-6 sm:mb-8 text-base sm:text-lg font-bold font-serif text-center text-orange-400">
                 {t("contact.formTitle")}
               </h3>
 
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 font-serif">
                       {t("contact.nameLabel")}
@@ -117,7 +117,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-serif"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-serif text-sm sm:text-base"
                       placeholder={t("contact.namePlaceholder")}
                     />
                   </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-serif"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-serif text-sm sm:text-base"
                       placeholder={t("contact.emailPlaceholder")}
                     />
                   </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none font-serif"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none font-serif text-sm sm:text-base"
                     placeholder={t("contact.messagePlaceholder")}
                   ></textarea>
                 </div>
@@ -164,7 +164,7 @@ export default function Contact() {
 
                 <button
                   onClick={handleSubmit}
-                  className="w-full text-primary-foreground font-semibold py-4 px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 bg-chart-5"
+                  className="w-full text-primary-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 bg-chart-5 text-sm sm:text-base"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? t("contact.sendingButton") : t("contact.sendButton")}
@@ -173,7 +173,7 @@ export default function Contact() {
                 {/* Status Message */}
                 {submitMessage && (
                   <div
-                    className={`p-4 rounded-lg text-center transition-all duration-300 ${
+                    className={`p-3 sm:p-4 rounded-lg text-center transition-all duration-300 text-sm sm:text-base ${
                       messageType === "success"
                         ? // replaced green colors with semantic success tokens
                           "bg-accent/20 text-accent-foreground border border-accent"
@@ -187,41 +187,41 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl shadow-lg border border-border tracking-wider backdrop-blur-sm py-8 px-8 mx-0 my-px">
-              <h3 className="text-2xl font-bold text-foreground mb-8 text-center font-serif text-orange-400">
+            <div className="p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-border tracking-wider backdrop-blur-sm mx-0 my-px">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center font-serif text-orange-400">
                 {t("contact.infoTitle")}
               </h3>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full shadow-lg bg-chart-5">
-                    <Mail className="text-primary-foreground" size={20} />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-full shadow-lg bg-chart-5 flex-shrink-0">
+                    <Mail className="text-primary-foreground" size={18} />
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1 font-serif">{t("contact.emailTitle")}</p>
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">{t("contact.emailTitle")}</p>
                     <a
                       href="mailto:info@verwandlungsraum.de"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base break-all"
                     >
                       info@verwandlungsraum.de
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full shadow-lg bg-chart-5">
-                    <Phone className="text-primary-foreground" size={20} />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 rounded-full shadow-lg bg-chart-5 flex-shrink-0">
+                    <Phone className="text-primary-foreground" size={18} />
                   </div>
                   <div className="font-serif">
-                    <p className="font-medium text-foreground mb-1 font-serif">{t("contact.phoneTitle")}</p>
-                    <a href="tel:+4915679101374" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">{t("contact.phoneTitle")}</p>
+                    <a href="tel:+4915679101374" className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
                       +49 (0) 15679 101374
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="mt-8 pt-6 border-t border-primary/20">
-                <p className="text-muted-foreground font-medium font-serif whitespace-pre-line">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-primary/20">
+                <p className="text-muted-foreground font-medium font-serif whitespace-pre-line text-sm sm:text-base">
                   {t("contact.languageNote")}
                 </p>
               </div>

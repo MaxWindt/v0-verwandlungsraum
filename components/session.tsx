@@ -9,9 +9,9 @@ export default function Session() {
     <section id="session" className="py-[0]">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto content-box">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4 text-orange-400">{t("session.title")}</h2>
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-6 sm:mb-8">
               <img
                 src="/images/session-hero.jpg"
                 alt={t("session.imageAlt")}
@@ -20,7 +20,7 @@ export default function Session() {
             </div>
           </div>
 
-          <div className="relative mb-16">
+          <div className="relative mb-12 sm:mb-16">
             <div
               className="absolute inset-0 rounded-3xl "
               style={{
@@ -30,13 +30,13 @@ export default function Session() {
                 backgroundRepeat: "no-repeat",
               }}
             />
-            <div className="relative bg-card/80 rounded-3xl p-12 shadow-lg">
-              <div className="max-w-5xl mx-auto text-lg leading-relaxed">
-                <div className="grid md:grid-cols-2 gap-8">
+            <div className="relative bg-card/80 rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 shadow-lg">
+              <div className="max-w-5xl mx-auto text-base sm:text-lg leading-relaxed">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   {/* Left Column */}
-                  <div className="space-y-8">
+                  <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h3 className="text-2xl mb-4 text-orange-400">{t("session.pricesTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("session.pricesTitle")}</h3>
                       <p>{t("session.price1")}</p>
                       <p>{t("session.price2")}</p>
                       <p>{t("session.starterPackage")}</p>
@@ -44,21 +44,21 @@ export default function Session() {
                     </div>
 
                     <div>
-                      <h3 className="text-2xl mb-4 text-orange-400">{t("session.billingTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("session.billingTitle")}</h3>
                       <p>{t("session.billing1")}</p>
                       <p className="text-left">{t("session.billing2")}</p>
                       <p className="text-left">{t("session.billing3")}</p>
                     </div>
                     <div>
-                      <h3 className="text-2xl mb-4 text-orange-400">{t("session.disclaimerTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("session.disclaimerTitle")}</h3>
                       <p>{t("session.disclaimerText")}</p>
                     </div>
                   </div>
 
                   {/* Right Column */}
-                  <div className="space-y-8">
+                  <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h3 className="text-2xl mb-4 text-orange-400">{t("session.advantagesTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("session.advantagesTitle")}</h3>
                       <ul className="list-disc list-inside space-y-2">
                         <li>{t("session.advantage1")}</li>
                         <li>{t("session.advantage2")}</li>
@@ -69,7 +69,7 @@ export default function Session() {
                     </div>
 
                     <div>
-                      <h3 className="text-2xl mb-4 text-orange-400">{t("session.cancellationTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("session.cancellationTitle")}</h3>
                       <p>{t("session.cancellation1")}</p>
                       <p className="text-left">{t("session.cancellation2")}</p>
                     </div>
