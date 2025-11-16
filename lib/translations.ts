@@ -21,7 +21,7 @@ export const translations = {
     services: {
       title: "Was biete ich an?",
       description:
-        "Ich biete einen Raum an, in dem sich Dinge zeigen und offenbaren können, für die sonst kein Platz da ist. Ich begleite dich durch deinen inneren Prozess und unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben. Die Kunsttherapie (Maltherapie) bietet dafür eine wunderbare Möglichkeit, um unbewusstes Sichtbar zu machen, um Dingen die nicht mit Worten auszudrücken sind, eine Stimme zu geben,um im geschützten Rahmen Veränderung zu ermöglichen.",
+        "Ich biete einen Raum an, in dem sich Dinge zeigen und offenbaren können, für die sonst kein Platz da ist. Ich begleite dich durch deinen inneren Prozess und unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben. Die Kunsttherapie (Maltherapie) bietet dafür eine wunderbare Möglichkeit, um unbewusstes Sichtbar zu machen, um Dingen die nicht mit Worten auszudrücken sind, eine Stimme zu geben, um im geschützten Rahmen Veränderung zu ermöglichen.",
       description2:
         'Eine Methode, die ich in meiner Arbeit gerne einsetze, ist das „Personenorientierte Malen" (POM). Dieser Malprozess lädt- ähnlich wie eine meditative Praxis- dazu ein, innere Empfindungen und Impulse achtsam wahrzunehmen, ohne sie sofort zu bewerten oder zu interpretieren. Das Erlebte wird stattdessen auf der Bildebene zum Ausdruck gebracht. Die Malbegleiterin bzw. Kunsttherapeutin übernimmt dabei die Rolle einer „Hebamme des Bildes" und fördert die Entfaltung neuer Perspektiven sowie das Entstehen von innerer Ruhe und Selbstverbundenheit.',
       groupTitle: "GRUPPENANGEBOTE & WORKSHOPS",
@@ -51,7 +51,7 @@ export const translations = {
     about: {
       title: "Über mich",
       intro:
-        "Mein Name ist Rebecca Schwindt. Ich bin Psychologin,zugelassen als Heilpraktikerin für Psychotherapie und Kunsttherapeutin.",
+        "Mein Name ist Rebecca Schwindt. Ich bin Psychologin, zugelassen als Heilpraktikerin für Psychotherapie und Kunsttherapeutin.",
       paragraph1:
         "Schon seit meiner Kindheit fühle ich mich zu allem künstlerischen Ausdruck hingezogen und spüre beim Malen eine ganz besondere Kraft. Ich habe meine ersten Lebensjahre in Argentinien verbracht, doch durch die schwere Krankheit meiner Mutter zogen wir in meinem 7. Lebensjahr zurück nach Deutschland, wo ich bis zu meinem 16. Lebensjahr aufwuchs. Dann begann ein neuer spannender Abschnitt. Wir zogen nach Ecuador und es wurde mein Zuhause für die nächsten 10 Jahre. Dort studierte ich Psychologie mit klinischem Schwerpunkt und arbeitete dann in Deutschland als Psychologin in verschiedenen Bereichen, unter anderem in einem Krankenhaus für Kinder und Jugendliche und im Betreuten Einzelwohnen für Menschen mit Psychischen Erkrankungen.",
       paragraph2:
@@ -64,7 +64,6 @@ export const translations = {
       title: "Kunsttherapie",
       subtitle:
         "Stell dir einen Ort vor, an dem du innere Ruhe und Freude erleben kannst. Schon die Imagination kann unterstützend auf Entspannung und Wohlbefinden wirken. Wenn zudem der Körper und die Hände in den kreativen Prozess einbezogen werden, werden unterschiedliche Ebenen – Geist und Körper – gleichzeitig angesprochen, was die persönliche Entwicklung fördern kann.",
-      intro3: ".",
       howItWorks: "Was ist Kunsttherapie?",
       howItWorksIntro:
         " Kunsttherapie ist ein kreativer Ansatz, der es ermöglicht, Emotionen nonverbal auszudrücken und zu reflektieren. Sie kann dazu beitragen: Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind Entspannung und Achtsamkeit zu fördern Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken. Studien geben Hinweise darauf, dass kreative Prozesse Auseinandersetzung mit Themen fördern kann.Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen. Zu beachten ist, dass die Wirkungen individuell  sind und nicht garantiert werden können.",
@@ -228,7 +227,7 @@ export const translations = {
     },
     hero: {
       title: "Espacio de Transformación",
-      subtitle: "Transformación interior a través del flujo creativo",
+      subtitle: "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
       backgroundAlt: "Imagen de fondo de acuarela colorida para arteterapia",
       promoTitle: "Oferta de inauguración",
       promoText: "30% de descuento en todas las sesiones individuales hasta el 31.12.2025",
@@ -237,9 +236,9 @@ export const translations = {
     services: {
       title: "¿Qué ofrezco?",
       description:
-        "Ofrezco arteterapia y acompañamiento psicológico en forma de sesiones individuales y ofertas grupales o talleres creativos.",
+        "Ofrezco un espacio donde las cosas pueden mostrarse y revelarse, para las que de otro modo no hay lugar. Te acompaño a través de tu proceso interior y te apoyo para permitir más amor y aprecio por tu ser. La arteterapia (terapia de pintura) ofrece una maravillosa oportunidad para hacer visible lo inconsciente, para dar voz a cosas que no se pueden expresar con palabras, para permitir el cambio en un marco protegido.",
       description2:
-        "Mi enfoque principal es el método de 'Pintura Orientada a la Persona' (POM), un enfoque maravilloso y consciente en el que tiene lugar un proceso de pintura que, similar a la meditación, invita a no reaccionar inmediatamente de manera interpretativa a los sentimientos e impulsos, sino a percibir y aclarar conscientemente los pensamientos y sentimientos. De esta manera, se pueden encontrar nuevas posibilidades de acción.",
+        'Un método que me gusta usar en mi trabajo es la "Pintura Orientada a la Persona" (POM). Este proceso de pintura invita, similar a una práctica meditativa, a percibir conscientemente los sentimientos e impulsos internos sin evaluarlos o interpretarlos inmediatamente. Lo experimentado se expresa en el nivel de la imagen. La acompañante de pintura o arteterapeuta asume el papel de "comadrona de la imagen" y promueve el desarrollo de nuevas perspectivas, así como la creación de calma interior y autoconexión.',
       groupTitle: "OFERTAS GRUPALES Y TALLERES",
       groupDescription:
         "En mis ofertas grupales y talleres, ofrezco espacio para la experiencia creativa, la expresión personal y el encuentro consciente. Pintar juntos en un grupo pequeño significa: ser visto, sentirse a uno mismo y estar presente.",
@@ -267,69 +266,67 @@ export const translations = {
     about: {
       title: "Sobre mí",
       intro:
-        "Mi nombre es Rebecca Schwindt. Soy psicóloga, arteterapeuta y practicante de medicina alternativa para psicoterapia.",
+        "Mi nombre es Rebecca Schwindt. Soy psicóloga, autorizada como practicante de medicina alternativa para psicoterapia y arteterapeuta.",
       paragraph1:
-        "Desde mi infancia me he sentido atraída por toda expresión artística y siento una fuerza muy especial al pintar. Pasé mis primeros años de vida en Argentina, pero debido a la grave enfermedad de mi madre, regresamos a Alemania cuando tenía 7 años, donde crecí hasta los 16 años. Luego comenzó una nueva etapa emocionante. Nos mudamos a Ecuador y se convirtió en mi hogar durante los próximos 10 años. Allí estudié psicología y trabajé en diferentes áreas de la psicología.",
+        "Desde mi infancia me he sentido atraída por toda expresión artística y siento una fuerza muy especial al pintar. Pasé mis primeros años de vida en Argentina, pero debido a la grave enfermedad de mi madre, regresamos a Alemania cuando tenía 7 años, donde crecí hasta los 16 años. Luego comenzó una nueva etapa emocionante. Nos mudamos a Ecuador y se convirtió en mi hogar durante los próximos 10 años. Allí estudié psicología con especialización clínica y luego trabajé en Alemania como psicóloga en diferentes áreas, entre otras en un hospital para niños y adolescentes y en viviendas asistidas individuales para personas con enfermedades mentales.",
       paragraph2:
-        "Muchos años después hice un viaje a la India. Llevaba la pregunta en mi corazón: ¿Cómo quiero actuar en la tierra? En ese viaje me encantaron los maravillosos colores fuertes, las artesanías artísticas y la forma de vida de las personas. Allí experimenté de manera mágica un momento clave que me llevó a la arteterapia.",
+        "Algunos años después hice un viaje a la India. Llevaba la pregunta en mi corazón: ¿Cómo quiero actuar en la tierra? En ese viaje me conmovieron los maravillosos colores fuertes, las artesanías artísticas y la forma de vida de las personas. Allí experimenté de manera profunda un momento clave que me llevó a la arteterapia.",
       paragraph3:
-        "En Berlín comencé a seguir mi llamado y completé la formación como terapeuta de arte y creatividad poco antes de que naciera mi hija. En 2025 también completé una formación como acompañante en el proceso de morir. El proceso de morir también es un espacio de transformación. Desde entonces tengo el profundo deseo de crear un espacio donde las personas puedan volver a sentirse vivas, autodeterminadas, poderosas y donde pueda ocurrir la transformación.",
+        "En Berlín comencé a seguir mi llamado y completé la formación como terapeuta de arte y creatividad poco antes de que naciera mi hija. En 2025 también completé una formación como acompañante en el proceso de morir. El proceso de morir también es un espacio de transformación. Desde entonces tengo el profundo deseo de crear un espacio donde las personas sean apoyadas para experimentarse vivas, autodeterminadas y poderosas, y para experimentar cambios personales.",
       alt: "Rebecca Schwindt",
     },
     kunsttherapie: {
       title: "Arteterapia",
       subtitle:
         "Imagina un lugar donde puedas experimentar paz interior y alegría. Ya la imaginación puede tener un efecto de apoyo en la relajación y el bienestar. Cuando además el cuerpo y las manos se involucran en el proceso creativo, se abordan simultáneamente diferentes niveles – mente y cuerpo – lo que puede promover el desarrollo personal.",
-      intro3: "Por ejemplo, se utiliza para el agotamiento, la ansiedad y el duelo.",
       howItWorks: "¿Qué es la arteterapia?",
       howItWorksIntro:
-        "La arteterapia es un enfoque creativo que permite expresar y reflexionar sobre las emociones de forma no verbal. Puede contribuir a:",
+        "La arteterapia es un enfoque creativo que permite expresar y reflexionar sobre las emociones de forma no verbal. Puede contribuir a: Hacer visibles sentimientos que son difíciles de expresar con palabras, Promover la relajación y la atención plena, Apoyar la autorreflexión y descubrir nuevas perspectivas. Los estudios dan indicios de que los procesos creativos pueden promover el trabajo con temas personales. Este enfoque puede, por ejemplo, apoyar a personas en situaciones de vida estresantes, como estrés, ansiedad o duelo. Hay que tener en cuenta que los efectos son individuales y no se pueden garantizar.",
       benefit1: "Hacer visibles sentimientos que son difíciles de expresar con palabras",
       benefit2: "Promover la relajación y la atención plena",
       benefit3: "Apoyar la autorreflexión y descubrir nuevas perspectivas",
-      scientificNote:
-        "Los efectos son individuales y no se pueden garantizar. Los estudios sugieren que los procesos creativos pueden promover el trabajo con temas personales.",
+      scientificNote: "Nota: Los efectos son individuales y no se pueden garantizar.",
       forWhomIntro:
         "Este enfoque puede, por ejemplo, apoyar a personas en situaciones de vida estresantes, como estrés, ansiedad o duelo.",
       pomTitle: "Terapia de Pintura Orientada a la Persona",
       whyMethodIntro:
         "Pintamos de la misma manera que vivimos nuestras vidas.\n Dra. phil. Bettina Egger, fundadora del método.",
       methodDescription:
-        "La Pintura Orientada a la Persona o Pintura Acompañada según Bettina Egger, quien estudió varios años con Arno Stern, pone a la persona y su expresión interior en el centro. No se trata de la imagen terminada, sino del proceso personal y la experiencia consciente durante la pintura. Te acompaño a través de este proceso y la creación de la imagen. En POM también se dice que las arteterapeutas son como las parteras de la imagen. Poco a poco surge la posibilidad de ganar nuevas perspectivas, tomar conciencia de bloqueos emocionales e invitar a la calma.",
+        "La Pintura Orientada a la Persona o Pintura Acompañada según Bettina Egger, quien estudió varios años con Arno Stern, pone a la persona y su expresión interior en el centro. No se trata de la imagen terminada, sino del proceso personal y la experiencia consciente durante la pintura. Te acompaño a través de este proceso y la creación de la imagen.",
       principlesTitle: "Principios centrales",
       principle1Title: "Proceso en lugar de producto",
       principle1Text:
         "Lo importante no es la imagen terminada, sino el proceso de pintura y la experiencia durante el mismo.",
       principle2Title: "Hacer visibles las imágenes internas",
-      principle2Text: "Los sentimientos, recuerdos o conflictos se expresan a través de colores, formas y símbolos.",
+      principle2Text:
+        "Los sentimientos, recuerdos o conflictos se expresan a través de colores, formas y símbolos. Los bloqueos emocionales pueden hacerse conscientes y tematizarse.",
       principle3Title: "Sin interpretación externa",
       principle3Text:
         "El significado de las imágenes no es interpretado por la terapeuta, sino que surge de la propia experiencia de la persona que pinta.",
       principle4Title: "Orientación a los recursos",
       principle4Text:
-        "El objetivo es activar las fuerzas de autocuración y los recursos internos, no principalmente el diagnóstico o el análisis. Así surge la capacidad de desarrollar soluciones propias.",
+        "El enfoque no está en el diagnóstico, sino en la autopercepción y el fortalecimiento de los recursos internos, para desarrollar cada vez más un sentimiento de soluciones propias.",
     },
     session: {
-      title: "Condiciones marco para sesiones individuales",
+      title: "Condiciones marco y precios",
       imageAlt: "Sesión individual de arteterapia con terapeuta y cliente pintando juntos",
       pricesTitle: "Precios",
       price1: "Sesión individual (60 minutos): 80 €",
       price2: "Sesión individual (90 minutos): 95 €",
       starterPackage: "Paquete inicial: 90+60+60 min. por 200€",
-      priceNote:
-        "En caso de dificultades financieras, se puede acordar un descuento individual. No dudes en hablar conmigo al respecto.",
-      billingTitle: "FACTURACIÓN",
+      priceNote: "En caso de dificultades financieras, se puede acordar un descuento individual.",
+      billingTitle: "Facturación y cobertura de costos",
       billing1: "Trabajo como practicante de medicina alternativa para psicoterapia de forma privada.",
       billing2: "Los costos generalmente no son cubiertos por los seguros de salud públicos.",
       billing3:
         "Algunos seguros de salud privados o seguros complementarios pueden cubrir parte de los costos en determinadas circunstancias.",
-      advantagesTitle: "¿Cuáles son las ventajas de una terapia autofinanciada?",
+      advantagesTitle: "¿Cuáles son las ventajas de una terapia autogestionada?",
       advantage1: "Sin largos tiempos de espera",
       advantage2: "Libre elección de un/a terapeuta que se adapte a ti",
       advantage3: "El contenido, duración y ritmo de la terapia no están fijados sino adaptados a tus necesidades",
       advantage4: "No es necesario que exista una enfermedad mental según los criterios de diagnóstico ICD-10 y DSM-V",
       advantage5:
-        "La terapia no se registra en ningún expediente médico ni en ningún seguro de salud y, por lo tanto, no afecta una posible función pública pendiente o la contratación de seguros futuros",
+        "La terapia no se registra en ningún expediente médico ni en ningún seguro de salud y, por lo tanto, no afecta una posible función pública o la contratación de seguros futuros",
       cancellationTitle: "CANCELACIÓN",
       cancellation1: "Las citas se pueden cancelar sin costo hasta 24 horas antes.",
       cancellation2:
@@ -360,7 +357,7 @@ export const translations = {
     },
     footer: {
       title: "Espacio de Transformación",
-      subtitle: "Transformación interior a través del flujo creativo.",
+      subtitle: "Expresión creativa como invitación al cambio.",
       quickLinks: "Enlaces rápidos",
       start: "Inicio",
       about: "Sobre mí",
