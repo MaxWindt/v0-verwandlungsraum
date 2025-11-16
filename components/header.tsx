@@ -40,11 +40,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-cover bg-center bg-no-repeat ${
         scrolled ? "backdrop-blur-md border-b border-border" : ""
       }`}
-      style={{
-        backgroundImage: scrolled
-          ? "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aa0e0673b774ef265c5fc05722ed8267-hPikeXEPNO9KGotmkPpVlssNit7rNX.jpg')"
-          : "linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aa0e0673b774ef265c5fc05722ed8267-hPikeXEPNO9KGotmkPpVlssNit7rNX.jpg')",
-      }}
+
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
         <div className="flex-1 min-w-0">

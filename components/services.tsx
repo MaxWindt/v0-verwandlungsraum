@@ -11,7 +11,7 @@ export default function Services() {
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4 text-orange-400">{t("services.title")}</h2>
+            <h2 className="mb-4">{t("services.title")}</h2>
 
             <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
               {t("services.description")}
@@ -22,10 +22,10 @@ export default function Services() {
           </div>
 
           <div className="text-center mb-8 mt-8 sm:mt-12">
-            <h2 className="mb-4 text-orange-400">{t("services.groupTitle")}</h2>
+            <h2 className="mb-4">{t("services.groupTitle")}</h2>
 
             <p className="text-base sm:text-lg max-w-3xl mx-auto mt-6 text-left">{t("services.groupDescription")}</p>
-            <h3 className="text-2xl sm:text-3xl mt-8 sm:mt-12 mb-6 sm:mb-8 text-orange-400">{t("services.currentOffers")}</h3>
+            <h3 className="text-2xl sm:text-3xl mt-8 sm:mt-12 mb-6 sm:mb-8">{t("services.currentOffers")}</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-left">
               <div className="card">
@@ -36,7 +36,7 @@ export default function Services() {
                     className="w-full h-40 sm:h-48 object-cover"
                   />
                 </div>
-                <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">
+                <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4">
                   {t("services.workshop1.title")}
                   <br />
                   {t("services.workshop1.subtitle")}
@@ -68,7 +68,7 @@ export default function Services() {
                     className="w-full h-40 sm:h-48 object-cover"
                   />
                 </div>
-                <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4 text-orange-400">{t("services.workshop2.title")}</h4>
+                <h4 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("services.workshop2.title")}</h4>
                 <p className="mb-2 text-left">{t("services.workshop2.description")}</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>{t("services.workshop2.nextDate")}</li>

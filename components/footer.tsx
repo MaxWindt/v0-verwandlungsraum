@@ -12,12 +12,12 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-orange-400">{t("footer.title")}</h3>
+              <h3 className="text-xl sm:text-2xl mb-4 sm:mb-6">{t("footer.title")}</h3>
               <p className="leading-relaxed text-sm sm:text-base">{t("footer.subtitle")}</p>
             </div>
 
             <div>
-              <h3 className="text-lg sm:text-xl mb-4 sm:mb-6 text-orange-400">{t("footer.quickLinks")}</h3>
+              <h3 className="text-lg sm:text-xl mb-4 sm:mb-6">{t("footer.quickLinks")}</h3>
               <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
                 <li>
                   <a href="#hero" className="hover:opacity-75 transition-opacity">
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg sm:text-xl mb-4 sm:mb-6 text-orange-400">{t("footer.imprintTitle")}</h3>
+              <h3 className="text-lg sm:text-xl mb-4 sm:mb-6">{t("footer.imprintTitle")}</h3>
               <div className="space-y-1 text-sm sm:text-base">
                 <p>{t("footer.name")}</p>
                 <p>{t("footer.profession")}</p>

@@ -104,7 +104,13 @@ body {
   min-height: 100vh;
 }
 
-h1,
+h1 {
+  font-family: var(--font-crimson-text), serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #92400e; /* Deep amber for better contrast */
+}
+
 h2,
 h3,
 h4,
@@ -113,7 +119,7 @@ h6 {
   font-family: var(--font-crimson-text), serif;
   font-weight: 600;
   letter-spacing: -0.025em;
-  color: #92400e; /* Deep amber for better contrast */
+  color: #831843; /* Pink-900 color */
 }
 
 /* Responsive heading sizing with clamp */

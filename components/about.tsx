@@ -11,7 +11,7 @@ export default function About() {
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto content-box">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4 text-orange-400">{t("about.title")}</h2>
+            <h2 className="mb-4">{t("about.title")}</h2>
           </div>
 
           <div className="space-y-4 sm:space-y-6 text-base sm:text-lg">

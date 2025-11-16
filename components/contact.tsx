@@ -101,7 +101,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
             <div className="p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-border tracking-wider my-px bg-card/80 backdrop-blur-sm mx-0">
-              <h3 className="text-foreground mb-6 sm:mb-8 text-base sm:text-lg font-bold font-serif text-center text-orange-400">
+              <h3 className="text-foreground mb-6 sm:mb-8 text-base sm:text-lg font-bold font-serif text-center">
                 {t("contact.formTitle")}
               </h3>
 
@@ -188,7 +188,7 @@ export default function Contact() {
             </div>
 
             <div className="p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-border tracking-wider backdrop-blur-sm mx-0 my-px">
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center font-serif text-orange-400">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center font-serif">
                 {t("contact.infoTitle")}
               </h3>
 

@@ -85,7 +85,7 @@ export default function Gallery() {
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4 text-orange-400">Impressionen</h2>
+            <h2 className="mb-4">Impressionen</h2>
             <div className="heading-underline"></div>
             <p className="text-base sm:text-lg">Einblicke in die kreative Arbeit</p>
           </div>

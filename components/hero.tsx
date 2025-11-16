@@ -43,7 +43,7 @@ export default function Hero() {
           ></div>
 
           {showBanner && (
-            <div className="mb-8 relative bg-card/80 rounded-2xl p-4 sm:p-6 shadow-lg max-w-2xl mx-auto">
+            <div className="mb-8 relative bg-card/80 rounded-2xl p-4 sm:p-6 shadow-lg max-w-2xl mx-auto text-center">
               <button
                 onClick={() => setShowBanner(false)}
                 className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors"
@@ -51,7 +51,7 @@ export default function Hero() {
               >
                 <X className="w-5 h-5" />
               </button>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-orange-400 pr-8">{t("hero.promoTitle")}</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2">{t("hero.promoTitle")}</h3>
               <p className="text-base sm:text-lg text-foreground">{t("hero.promoText")}</p>
             </div>
           )}
