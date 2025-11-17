@@ -34,90 +34,6 @@ interface Offer {
 
 export default function Services() {
   const { t } = useLanguage()
-  const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null)
-
-  const offers: Offer[] = [
-    {
-      id: 1,
-      title: "Einzelsitzung Kunsttherapie",
-      shortDescription:
-        "Individueller kunsttherapeutischer Raum für deine persönliche Entwicklung. Begleitetes Malen nach der Methode von Bettina Egger.",
-      image: "/images/vibrant-watercolor-bg.jpg",
-      details: {
-        description:
-          "In der Einzelsitzung begleite ich dich durch deinen individuellen kunsttherapeutischen Prozess. Mit der Methode des Personenorientierten/Begleiteten Malens nach Bettina Egger steht nicht das fertige Bild, sondern dein persönlicher Prozess und die bewusste Erfahrung beim Malen im Mittelpunkt. Ich unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben und neue Perspektiven zu entwickeln.",
-        location: "Verwandlungsraum, Eberswalde",
-        duration: "60 oder 90 Minuten",
-        pricing: "Einzelsitzung 60 Min: 80€ | 90 Min: 95€ | Starter-Paket (90+60+60 Min): 200€",
-        schedule:
-          "Vorteile der Einzelsitzung:\n• Keine langen Wartezeiten\n• Freie Wahl der Therapeutin\n• Inhalt, Dauer und Rhythmus an deine Bedürfnisse angepasst\n• Keine Diagnose erforderlich\n• Diskret - keine Vermerke in Krankenakten",
-        examples: [
-          "Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden",
-          "Termine können bis 24h vorher kostenfrei abgesagt werden",
-        ],
-      },
-    },
-    {
-      id: 2,
-      title: "Monatliche Kunsttherapie-Gruppe",
-      shortDescription:
-        "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst.",
-      image: "/images/vibrant-watercolor-bg.jpg",
-      details: {
-        description:
-          "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst. Jede Session hat ein eigenes Thema, das dich durch die Jahreszeit und deinen inneren Prozess begleitet.",
-        location: "Verwandlungsraum, Eberswalde",
-        participants: "max. 7 Personen",
-        duration: "90–120 Minuten",
-        schedule:
-          "Typischer Ablauf:\n• Ankommen & kurze Körperreise\n• Einführung ins Monatsthema\n• Intuitives Malen / Gestalten\n• Freiwilliger Austausch in der Gruppe\n• Kleines Abschlussritual",
-        examples: ["Loslassen", "Der Hoffnung Raum geben", "Vertrauen & Träumen", "Reinigung & Erneuerung"],
-        pricing:
-          "Die Gruppe ist klein und persönlich – es entsteht eine warme, achtsame Atmosphäre, in der sich jede Person zeigen darf, aber nicht muss.",
-      },
-    },
-    {
-      id: 3,
-      title: "Klang & Farbe – Klangreise mit intuitivem Malen",
-      shortDescription: "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild.",
-      image: "/images/vibrant-watercolor-bg.jpg",
-      details: {
-        description:
-          "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild. Ein sanfter Abend für Menschen, die Sinneswahrnehmung, Stille und kreativen Ausdruck verbinden möchten.",
-        nextDate: "19. Dezember",
-        location: "Verwandlungsraum, Eberswalde",
-        participants: "max. 7 Personen",
-        pricing: "Leitung: Verwandlungsraum + Klangtherapeutin",
-      },
-    },
-    {
-      id: 4,
-      title: "Breathwork & Malen",
-      shortDescription: "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei in Farbe um.",
-      image: "/images/vibrant-watercolor-bg.jpg",
-      details: {
-        description:
-          "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei und spontan in Farbe um. Ein Angebot für alle, die Transformation körperlich UND kreativ erfahren möchten.",
-        nextDate: "Januar 2025",
-        location: "Verwandlungsraum, Eberswalde",
-        participants: "max. 7 Personen",
-        pricing: "Leitung: Verwandlungsraum + Breathwork-Coach",
-      },
-    },
-    {
-      id: 5,
-      title: "Info-Workshop: Was ist Kunsttherapie?",
-      shortDescription: "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat.",
-      image: "/images/vibrant-watercolor-bg.jpg",
-      details: {
-        description:
-          "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat. Wir sprechen über den kreativen Prozess, emotionale Resonanz und die Rolle von Farbe und Form im Selbstausdruck. Zum Abschluss gibt es eine kleine praktische Übung.",
-        duration: "60–90 Minuten",
-        location: "Verwandlungsraum, Eberswalde",
-        participants: "max. 7 Personen",
-      },
-    },
-  ]
 
   return (
     <section id="services" className="py-0">
@@ -139,133 +55,340 @@ export default function Services() {
 
             {/* Responsive Grid mit Angeboten */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {offers.map((offer) => (
-                <div key={offer.id} className="card flex flex-col h-full">
-                  {/* Bild */}
-                  <div className="mb-4 rounded-lg overflow-hidden h-48">
-                    <img src={offer.image} alt={offer.title} className="w-full h-full object-cover" />
-                  </div>
-
-                  {/* Titel */}
-                  <h4 className="text-lg sm:text-xl mb-3 font-semibold">{offer.title}</h4>
-
-                  {/* Kurze Beschreibung */}
-                  <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">{offer.shortDescription}</p>
-
-                  {/* Details Button */}
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full mt-auto" onClick={() => setSelectedOffer(offer)}>
-                        Details anzeigen
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
-                      </DialogHeader>
-
-                      {/* Dialog Inhalt */}
-                      <div className="space-y-4">
-                        {/* Bild im Dialog */}
-                        {offer.image && (
-                          <div className="rounded-lg overflow-hidden">
-                            <img src={offer.image} alt={offer.title} className="w-full h-64 object-cover" />
+              
+              {/* Angebot 1: Einzelsitzung Kunsttherapie */}
+              <div className="card flex flex-col h-full">
+                <div className="mb-4 rounded-lg overflow-hidden h-48">
+                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Einzelsitzung Kunsttherapie" className="w-full h-full object-cover" />
+                </div>
+                <h4 className="text-lg sm:text-xl mb-3 font-semibold">Einzelsitzung Kunsttherapie</h4>
+                <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+                  Individueller kunsttherapeutischer Raum für deine persönliche Entwicklung. Begleitetes Malen nach der Methode von Bettina Egger.
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-auto">
+                      Details anzeigen
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">Einzelsitzung Kunsttherapie</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="rounded-lg overflow-hidden">
+                        <img src="/images/vibrant-watercolor-bg.jpg" alt="Einzelsitzung Kunsttherapie" className="w-full h-64 object-cover" />
+                      </div>
+                      <p className="text-base leading-relaxed">
+                        In der Einzelsitzung begleite ich dich durch deinen individuellen kunsttherapeutischen Prozess. Mit der Methode des Personenorientierten/Begleiteten Malens nach Bettina Egger steht nicht das fertige Bild, sondern dein persönlicher Prozess und die bewusste Erfahrung beim Malen im Mittelpunkt. Ich unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben und neue Perspektiven zu entwickeln.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Ort</p>
+                            <p className="text-sm">Verwandlungsraum, Eberswalde</p>
                           </div>
-                        )}
-
-                        {/* Beschreibung */}
-                        <p className="text-base leading-relaxed">{offer.details.description}</p>
-
-                        {/* Details Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                          {offer.details.location && (
-                            <div className="flex items-start gap-2">
-                              <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-semibold text-sm">Ort</p>
-                                <p className="text-sm">{offer.details.location}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          {offer.details.participants && (
-                            <div className="flex items-start gap-2">
-                              <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-semibold text-sm">Teilnehmende</p>
-                                <p className="text-sm">{offer.details.participants}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          {offer.details.duration && (
-                            <div className="flex items-start gap-2">
-                              <Clock className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-semibold text-sm">Dauer</p>
-                                <p className="text-sm">{offer.details.duration}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          {offer.details.nextDate && (
-                            <div className="flex items-start gap-2">
-                              <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-semibold text-sm">Nächster Termin</p>
-                                <p className="text-sm">{offer.details.nextDate}</p>
-                              </div>
-                            </div>
-                          )}
                         </div>
-
-                        {/* Ablauf */}
-                        {offer.details.schedule && (
-                          <div className="pt-2">
-                            <p className="font-semibold mb-2">Typischer Ablauf:</p>
-                            <div className="whitespace-pre-line text-sm">{offer.details.schedule}</div>
+                        <div className="flex items-start gap-2">
+                          <Clock className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Dauer</p>
+                            <p className="text-sm">60 oder 90 Minuten</p>
                           </div>
-                        )}
-
-                        {/* Beispiele für Themen */}
-                        {offer.details.examples && (
-                          <div className="pt-2">
-                            <p className="font-semibold mb-2">Beispiele für Monatsthemen:</p>
-                            <ul className="list-disc list-inside space-y-1 text-sm">
-                              {offer.details.examples.map((example, idx) => (
-                                <li key={idx}>{example}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-
-                        {/* Preis/Zusatzinfo */}
-                        {offer.details.pricing && (
-                          <div className="pt-2 border-t">
-                            <p className="text-sm italic">{offer.details.pricing}</p>
-                          </div>
-                        )}
-
-                        {/* Kontakt Link */}
-                        <div className="pt-4 border-t">
-                          <p className="text-sm">
-                            Interesse?{" "}
-                            <ScrollLink
-                              to="contact"
-                              smooth={true}
-                              duration={800}
-                              offset={-80}
-                              className="text-primary hover:text-primary/80 underline cursor-pointer font-medium"
-                            >
-                              Kontaktiere mich für weitere Informationen
-                            </ScrollLink>
-                          </p>
                         </div>
                       </div>
-                    </DialogContent>
-                  </Dialog>
+                      <div className="pt-2">
+                        <p className="font-semibold mb-2">Vorteile der Einzelsitzung:</p>
+                        <div className="whitespace-pre-line text-sm">• Keine langen Wartezeiten{"\n"}• Freie Wahl der Therapeutin{"\n"}• Inhalt, Dauer und Rhythmus an deine Bedürfnisse angepasst{"\n"}• Keine Diagnose erforderlich{"\n"}• Diskret - keine Vermerke in Krankenakten</div>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <p className="text-sm italic">Einzelsitzung 60 Min: 80€ | 90 Min: 95€ | Starter-Paket (90+60+60 Min): 200€</p>
+                        <p className="text-sm italic mt-2">Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden</p>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <p className="text-sm">
+                          Interesse?{" "}
+                          <ScrollLink to="contact" smooth={true} duration={800} offset={-80} className="text-primary hover:text-primary/80 underline cursor-pointer font-medium">
+                            Kontaktiere mich für weitere Informationen
+                          </ScrollLink>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              {/* Angebot 2: Monatliche Kunsttherapie-Gruppe */}
+              <div className="card flex flex-col h-full">
+                <div className="mb-4 rounded-lg overflow-hidden h-48">
+                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Monatliche Kunsttherapie-Gruppe" className="w-full h-full object-cover" />
                 </div>
-              ))}
+                <h4 className="text-lg sm:text-xl mb-3 font-semibold">Monatliche Kunsttherapie-Gruppe</h4>
+                <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+                  Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst.
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-auto">
+                      Details anzeigen
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">Monatliche Kunsttherapie-Gruppe</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="rounded-lg overflow-hidden">
+                        <img src="/images/vibrant-watercolor-bg.jpg" alt="Monatliche Kunsttherapie-Gruppe" className="w-full h-64 object-cover" />
+                      </div>
+                      <p className="text-base leading-relaxed">
+                        Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst. Jede Session hat ein eigenes Thema, das dich durch die Jahreszeit und deinen inneren Prozess begleitet.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Ort</p>
+                            <p className="text-sm">Verwandlungsraum, Eberswalde</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Teilnehmende</p>
+                            <p className="text-sm">max. 7 Personen</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Clock className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Dauer</p>
+                            <p className="text-sm">90–120 Minuten</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pt-2">
+                        <p className="font-semibold mb-2">Typischer Ablauf:</p>
+                        <div className="whitespace-pre-line text-sm">• Ankommen & kurze Körperreise{"\n"}• Einführung ins Monatsthema{"\n"}• Intuitives Malen / Gestalten{"\n"}• Freiwilliger Austausch in der Gruppe{"\n"}• Kleines Abschlussritual</div>
+                      </div>
+                      <div className="pt-2">
+                        <p className="font-semibold mb-2">Beispiele für Monatsthemen:</p>
+                        <ul className="list-disc list-inside space-y-1 text-sm">
+                          <li>Loslassen</li>
+                          <li>Der Hoffnung Raum geben</li>
+                          <li>Vertrauen & Träumen</li>
+                          <li>Reinigung & Erneuerung</li>
+                        </ul>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <p className="text-sm italic">Die Gruppe ist klein und persönlich – es entsteht eine warme, achtsame Atmosphäre, in der sich jede Person zeigen darf, aber nicht muss.</p>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <p className="text-sm">
+                          Interesse?{" "}
+                          <ScrollLink to="contact" smooth={true} duration={800} offset={-80} className="text-primary hover:text-primary/80 underline cursor-pointer font-medium">
+                            Kontaktiere mich für weitere Informationen
+                          </ScrollLink>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              {/* Angebot 3: Klang & Farbe */}
+              <div className="card flex flex-col h-full">
+                <div className="mb-4 rounded-lg overflow-hidden h-48">
+                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Klang & Farbe – Klangreise mit intuitivem Malen" className="w-full h-full object-cover" />
+                </div>
+                <h4 className="text-lg sm:text-xl mb-3 font-semibold">Klang & Farbe – Klangreise mit intuitivem Malen</h4>
+                <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+                  Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild.
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-auto">
+                      Details anzeigen
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">Klang & Farbe – Klangreise mit intuitivem Malen</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="rounded-lg overflow-hidden">
+                        <img src="/images/vibrant-watercolor-bg.jpg" alt="Klang & Farbe – Klangreise mit intuitivem Malen" className="w-full h-64 object-cover" />
+                      </div>
+                      <p className="text-base leading-relaxed">
+                        Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild. Ein sanfter Abend für Menschen, die Sinneswahrnehmung, Stille und kreativen Ausdruck verbinden möchten.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div className="flex items-start gap-2">
+                          <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Nächster Termin</p>
+                            <p className="text-sm">19. Dezember</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Ort</p>
+                            <p className="text-sm">Verwandlungsraum, Eberswalde</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Teilnehmende</p>
+                            <p className="text-sm">max. 7 Personen</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <p className="text-sm italic">Leitung: Verwandlungsraum + Klangtherapeutin</p>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <p className="text-sm">
+                          Interesse?{" "}
+                          <ScrollLink to="contact" smooth={true} duration={800} offset={-80} className="text-primary hover:text-primary/80 underline cursor-pointer font-medium">
+                            Kontaktiere mich für weitere Informationen
+                          </ScrollLink>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              {/* Angebot 4: Breathwork & Malen */}
+              <div className="card flex flex-col h-full">
+                <div className="mb-4 rounded-lg overflow-hidden h-48">
+                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Breathwork & Malen" className="w-full h-full object-cover" />
+                </div>
+                <h4 className="text-lg sm:text-xl mb-3 font-semibold">Breathwork & Malen</h4>
+                <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+                  Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei in Farbe um.
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-auto">
+                      Details anzeigen
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">Breathwork & Malen</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="rounded-lg overflow-hidden">
+                        <img src="/images/vibrant-watercolor-bg.jpg" alt="Breathwork & Malen" className="w-full h-64 object-cover" />
+                      </div>
+                      <p className="text-base leading-relaxed">
+                        Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei und spontan in Farbe um. Ein Angebot für alle, die Transformation körperlich UND kreativ erfahren möchten.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div className="flex items-start gap-2">
+                          <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Nächster Termin</p>
+                            <p className="text-sm">Januar 2025</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Ort</p>
+                            <p className="text-sm">Verwandlungsraum, Eberswalde</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Teilnehmende</p>
+                            <p className="text-sm">max. 7 Personen</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <p className="text-sm italic">Leitung: Verwandlungsraum + Breathwork-Coach</p>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <p className="text-sm">
+                          Interesse?{" "}
+                          <ScrollLink to="contact" smooth={true} duration={800} offset={-80} className="text-primary hover:text-primary/80 underline cursor-pointer font-medium">
+                            Kontaktiere mich für weitere Informationen
+                          </ScrollLink>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              {/* Angebot 5: Info-Workshop */}
+              <div className="card flex flex-col h-full">
+                <div className="mb-4 rounded-lg overflow-hidden h-48">
+                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Info-Workshop: Was ist Kunsttherapie?" className="w-full h-full object-cover" />
+                </div>
+                <h4 className="text-lg sm:text-xl mb-3 font-semibold">Info-Workshop: Was ist Kunsttherapie?</h4>
+                <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+                  Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat.
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-auto">
+                      Details anzeigen
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">Info-Workshop: Was ist Kunsttherapie?</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="rounded-lg overflow-hidden">
+                        <img src="/images/vibrant-watercolor-bg.jpg" alt="Info-Workshop: Was ist Kunsttherapie?" className="w-full h-64 object-cover" />
+                      </div>
+                      <p className="text-base leading-relaxed">
+                        Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat. Wir sprechen über den kreativen Prozess, emotionale Resonanz und die Rolle von Farbe und Form im Selbstausdruck. Zum Abschluss gibt es eine kleine praktische Übung.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div className="flex items-start gap-2">
+                          <Clock className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Dauer</p>
+                            <p className="text-sm">60–90 Minuten</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Ort</p>
+                            <p className="text-sm">Verwandlungsraum, Eberswalde</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">Teilnehmende</p>
+                            <p className="text-sm">max. 7 Personen</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <p className="text-sm">
+                          Interesse?{" "}
+                          <ScrollLink to="contact" smooth={true} duration={800} offset={-80} className="text-primary hover:text-primary/80 underline cursor-pointer font-medium">
+                            Kontaktiere mich für weitere Informationen
+                          </ScrollLink>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
             </div>
           </div>
         </div>
