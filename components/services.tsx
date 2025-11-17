@@ -36,17 +36,13 @@ export default function Services() {
   const { t } = useLanguage()
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null)
 
-  // Standard-Platzhalter-Bild für Angebote ohne eigenes Bild
-  // Verwende ein vorhandenes Aquarell-Bild bis das Spiral-Bild hochgeladen wird
-  const defaultImage = "/images/vibrant-watercolor-bg.jpg"
-
   const offers: Offer[] = [
     {
       id: 1,
       title: "Einzelsitzung Kunsttherapie",
       shortDescription:
         "Individueller kunsttherapeutischer Raum für deine persönliche Entwicklung. Begleitetes Malen nach der Methode von Bettina Egger.",
-      image: defaultImage,
+      image: "/images/vibrant-watercolor-bg.jpg",
       details: {
         description:
           "In der Einzelsitzung begleite ich dich durch deinen individuellen kunsttherapeutischen Prozess. Mit der Methode des Personenorientierten/Begleiteten Malens nach Bettina Egger steht nicht das fertige Bild, sondern dein persönlicher Prozess und die bewusste Erfahrung beim Malen im Mittelpunkt. Ich unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben und neue Perspektiven zu entwickeln.",
@@ -66,7 +62,7 @@ export default function Services() {
       title: "Monatliche Kunsttherapie-Gruppe",
       shortDescription:
         "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst.",
-      image: defaultImage,
+      image: "/images/vibrant-watercolor-bg.jpg",
       details: {
         description:
           "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst. Jede Session hat ein eigenes Thema, das dich durch die Jahreszeit und deinen inneren Prozess begleitet.",
@@ -84,7 +80,7 @@ export default function Services() {
       id: 3,
       title: "Klang & Farbe – Klangreise mit intuitivem Malen",
       shortDescription: "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild.",
-      image: defaultImage,
+      image: "/images/vibrant-watercolor-bg.jpg",
       details: {
         description:
           "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild. Ein sanfter Abend für Menschen, die Sinneswahrnehmung, Stille und kreativen Ausdruck verbinden möchten.",
@@ -98,7 +94,7 @@ export default function Services() {
       id: 4,
       title: "Breathwork & Malen",
       shortDescription: "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei in Farbe um.",
-      image: defaultImage,
+      image: "/images/vibrant-watercolor-bg.jpg",
       details: {
         description:
           "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei und spontan in Farbe um. Ein Angebot für alle, die Transformation körperlich UND kreativ erfahren möchten.",
@@ -112,7 +108,7 @@ export default function Services() {
       id: 5,
       title: "Info-Workshop: Was ist Kunsttherapie?",
       shortDescription: "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat.",
-      image: defaultImage,
+      image: "/images/vibrant-watercolor-bg.jpg",
       details: {
         description:
           "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat. Wir sprechen über den kreativen Prozess, emotionale Resonanz und die Rolle von Farbe und Form im Selbstausdruck. Zum Abschluss gibt es eine kleine praktische Übung.",
@@ -147,7 +143,7 @@ export default function Services() {
                 <div key={offer.id} className="card flex flex-col h-full">
                   {/* Bild */}
                   <div className="mb-4 rounded-lg overflow-hidden h-48">
-                    <img src={offer.image || defaultImage} alt={offer.title} className="w-full h-full object-cover" />
+                    <img src={offer.image} alt={offer.title} className="w-full h-full object-cover" />
                   </div>
 
                   {/* Titel */}
