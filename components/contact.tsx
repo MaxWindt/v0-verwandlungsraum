@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { Mail, Phone } from "lucide-react"
-import { useState } from "react"
-import { useLanguage } from "@/contexts/language-context"
+import { Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Contact() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
-  const [messageType, setMessageType] = useState("") // "success" or "error"
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "success" or "error"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const resetForm = () => {
     setFormData({
@@ -31,22 +31,22 @@ export default function Contact() {
       email: "",
       subject: "",
       message: "",
-    })
-  }
+    });
+  };
 
   const handleSubmit = async () => {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      setSubmitMessage(t("contact.validationError"))
-      setMessageType("error")
-      return
+      setSubmitMessage(t("contact.validationError"));
+      setMessageType("error");
+      return;
     }
 
-    setIsSubmitting(true)
-    setSubmitMessage("")
+    setIsSubmitting(true);
+    setSubmitMessage("");
 
     // Create custom subject using name
-    const customSubject = `${formData.name} sent a message from website`
+    const customSubject = `${formData.name} sent a message from website`;
 
     const submitData = {
       access_key: "a1690abd-9417-4ab0-912c-a038ffe80264",
@@ -54,7 +54,7 @@ export default function Contact() {
       email: formData.email,
       subject: customSubject,
       message: formData.message,
-    }
+    };
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -64,38 +64,40 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify(submitData),
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (response.status === 200) {
-        setSubmitMessage(t("contact.successMessage"))
-        setMessageType("success")
-        resetForm()
+        setSubmitMessage(t("contact.successMessage"));
+        setMessageType("success");
+        resetForm();
       } else {
-        setSubmitMessage(result.message || t("contact.errorMessage"))
-        setMessageType("error")
+        setSubmitMessage(result.message || t("contact.errorMessage"));
+        setMessageType("error");
       }
     } catch (error) {
-      console.error("Form submission error:", error)
-      setSubmitMessage(t("contact.errorRetry"))
-      setMessageType("error")
+      console.error("Form submission error:", error);
+      setSubmitMessage(t("contact.errorRetry"));
+      setMessageType("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
       // Hide message after 5 seconds
       setTimeout(() => {
-        setSubmitMessage("")
-        setMessageType("")
-      }, 5000)
+        setSubmitMessage("");
+        setMessageType("");
+      }, 5000);
     }
-  }
+  };
 
   return (
     <section id="contact" className="py-12 sm:py-24">
       <div className="container mx-auto">
         <div className="max-w-6xl px-4 sm:px-6 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-amber-400">{t("contact.title")}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-amber-400">
+              {t("contact.title")}
+            </h2>
             <p className="text-base sm:text-lg text-muted-foreground"></p>
           </div>
 
@@ -108,7 +110,10 @@ export default function Contact() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 font-serif">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-foreground mb-2 font-serif"
+                    >
                       {t("contact.nameLabel")}
                     </label>
                     <input
@@ -122,7 +127,10 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 font-serif">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground mb-2 font-serif"
+                    >
                       {t("contact.emailLabel")}
                     </label>
                     <input
@@ -137,7 +145,10 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 font-serif">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground mb-2 font-serif"
+                  >
                     {t("contact.messageLabel")}
                   </label>
                   <textarea
@@ -167,7 +178,9 @@ export default function Contact() {
                   className="w-full text-primary-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 bg-chart-5 text-sm sm:text-base"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? t("contact.sendingButton") : t("contact.sendButton")}
+                  {isSubmitting
+                    ? t("contact.sendingButton")
+                    : t("contact.sendButton")}
                 </button>
 
                 {/* Status Message */}
@@ -198,7 +211,9 @@ export default function Contact() {
                     <Mail className="text-primary-foreground" size={18} />
                   </div>
                   <div className="min-w-0">
-                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">{t("contact.emailTitle")}</p>
+                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">
+                      {t("contact.emailTitle")}
+                    </p>
                     <a
                       href="mailto:info@verwandlungsraum.de"
                       className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base break-all"
@@ -213,8 +228,13 @@ export default function Contact() {
                     <Phone className="text-primary-foreground" size={18} />
                   </div>
                   <div className="font-serif">
-                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">{t("contact.phoneTitle")}</p>
-                    <a href="tel:+4915679101374" className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
+                    <p className="font-medium text-foreground mb-1 font-serif text-sm sm:text-base">
+                      {t("contact.phoneTitle")}
+                    </p>
+                    <a
+                      href="tel:+4915679101374"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base"
+                    >
                       +49 (0) 15679 101374
                     </a>
                   </div>
@@ -230,5 +250,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

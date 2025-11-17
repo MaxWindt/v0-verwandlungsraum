@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { Globe } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage()
+  const { locale, setLocale } = useLanguage();
 
   const languages = [
     { code: "de" as const, name: "Deutsch", flag: "🇩🇪" },
     { code: "es" as const, name: "Español", flag: "🇪🇸" },
-  ]
+  ];
 
   // Get the next language (toggle behavior)
-  const currentIndex = languages.findIndex((lang) => lang.code === locale)
-  const nextLanguage = languages[(currentIndex + 1) % languages.length]
+  const currentIndex = languages.findIndex((lang) => lang.code === locale);
+  const nextLanguage = languages[(currentIndex + 1) % languages.length];
 
   const handleToggle = () => {
-    setLocale(nextLanguage.code)
-  }
+    setLocale(nextLanguage.code);
+  };
 
   return (
     <button
@@ -29,5 +29,5 @@ export default function LanguageSwitcher() {
       <Globe size={14} />
       <span className="text-base">{nextLanguage.flag}</span>
     </button>
-  )
+  );
 }

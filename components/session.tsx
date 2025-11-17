@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Session() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section id="session" className="py-[0]">
@@ -36,7 +36,9 @@ export default function Session() {
                   {/* Left Column */}
                   <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("session.pricesTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
+                        {t("session.pricesTitle")}
+                      </h3>
                       <p>{t("session.price1")}</p>
                       <p>{t("session.price2")}</p>
                       <p>{t("session.starterPackage")}</p>
@@ -44,13 +46,17 @@ export default function Session() {
                     </div>
 
                     <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("session.billingTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
+                        {t("session.billingTitle")}
+                      </h3>
                       <p>{t("session.billing1")}</p>
                       <p className="text-left">{t("session.billing2")}</p>
                       <p className="text-left">{t("session.billing3")}</p>
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("session.disclaimerTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
+                        {t("session.disclaimerTitle")}
+                      </h3>
                       <p>{t("session.disclaimerText")}</p>
                     </div>
                   </div>
@@ -58,18 +64,21 @@ export default function Session() {
                   {/* Right Column */}
                   <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("session.advantagesTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
+                        {t("session.advantagesTitle")}
+                      </h3>
                       <ul className="list-disc list-inside space-y-2">
                         <li>{t("session.advantage1")}</li>
                         <li>{t("session.advantage2")}</li>
                         <li>{t("session.advantage3")}</li>
                         <li>{t("session.advantage4")}</li>
-                        
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">{t("session.cancellationTitle")}</h3>
+                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
+                        {t("session.cancellationTitle")}
+                      </h3>
                       <p>{t("session.cancellation1")}</p>
                       <p className="text-left">{t("session.cancellation2")}</p>
                     </div>
@@ -81,5 +90,5 @@ export default function Session() {
         </div>
       </div>
     </section>
-  )
+  );
 }

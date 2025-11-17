@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useLanguage } from "@/contexts/language-context"
+import Image from "next/image";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function About() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section id="about" className="py-[0]">
@@ -20,9 +20,15 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start">
               <div className="space-y-4 sm:space-y-6 text-left">
-                <p className="leading-relaxed text-left">{t("about.paragraph1")}</p>
-                <p className="leading-relaxed text-left">{t("about.paragraph2")}</p>
-                <p className="leading-relaxed text-left">{t("about.paragraph3")}</p>
+                <p className="leading-relaxed text-left">
+                  {t("about.paragraph1")}
+                </p>
+                <p className="leading-relaxed text-left">
+                  {t("about.paragraph2")}
+                </p>
+                <p className="leading-relaxed text-left">
+                  {t("about.paragraph3")}
+                </p>
               </div>
               <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden hover-lift">
                 <Image
@@ -37,5 +43,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

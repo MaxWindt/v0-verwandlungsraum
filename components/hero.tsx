@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useLanguage } from "@/contexts/language-context"
-import { useState } from "react"
-import { X } from "lucide-react"
+import Image from "next/image";
+import { useLanguage } from "@/contexts/language-context";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Hero() {
-  const { t } = useLanguage()
-  const [showBanner, setShowBanner] = useState(true)
+  const { t } = useLanguage();
+  const [showBanner, setShowBanner] = useState(true);
 
   return (
     <section
@@ -51,8 +51,12 @@ export default function Hero() {
               >
                 <X className="w-5 h-5" />
               </button>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-2">{t("hero.promoTitle")}</h3>
-              <p className="text-base sm:text-lg text-foreground">{t("hero.promoText")}</p>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2">
+                {t("hero.promoTitle")}
+              </h3>
+              <p className="text-base sm:text-lg text-foreground">
+                {t("hero.promoText")}
+              </p>
             </div>
           )}
 
@@ -66,9 +70,11 @@ export default function Hero() {
             {t("hero.subtitle")}
           </p>
 
-          <div className="flex justify-center gap-4 flex-wrap">{/* Additional content can be added here */}</div>
+          <div className="flex justify-center gap-4 flex-wrap">
+            {/* Additional content can be added here */}
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

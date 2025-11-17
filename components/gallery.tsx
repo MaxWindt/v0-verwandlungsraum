@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Image from "next/image"
-import { useState, useEffect } from "react"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import type React from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const [showInfo, setShowInfo] = useState(false)
-  const [infoTimeout, setInfoTimeout] = useState<NodeJS.Timeout | null>(null)
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [showInfo, setShowInfo] = useState(false);
+  const [infoTimeout, setInfoTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const images = [
     { id: 1, src: "/images/workspace1.png", alt: "Kunsttherapie Impression 1" },
@@ -17,68 +17,84 @@ export default function Gallery() {
     { id: 4, src: "/images/meditation.png", alt: "Kunsttherapie Impression 4" },
     { id: 5, src: "/images/clay-face.jpg", alt: "Tonskulptur - Gesicht" },
     { id: 6, src: "/images/clay-animals.jpg", alt: "Tonskulpturen - Tiere" },
-    { id: 7, src: "/images/therapy-space.jpg", alt: "Therapieraum mit Mandala" },
-    { id: 8, src: "/images/art-materials.jpg", alt: "Kunsttherapie Materialien" },
-    { id: 9, src: "/images/group-artwork.jpg", alt: "Gruppenarbeit Kunsttherapie" },
-  ]
+    {
+      id: 7,
+      src: "/images/therapy-space.jpg",
+      alt: "Therapieraum mit Mandala",
+    },
+    {
+      id: 8,
+      src: "/images/art-materials.jpg",
+      alt: "Kunsttherapie Materialien",
+    },
+    {
+      id: 9,
+      src: "/images/group-artwork.jpg",
+      alt: "Gruppenarbeit Kunsttherapie",
+    },
+  ];
 
   const openLightbox = (imageIndex: number) => {
-    setSelectedImage(imageIndex)
-    document.body.style.overflow = "hidden"
-  }
+    setSelectedImage(imageIndex);
+    document.body.style.overflow = "hidden";
+  };
 
   const closeLightbox = () => {
-    setSelectedImage(null)
-    setShowInfo(false)
+    setSelectedImage(null);
+    setShowInfo(false);
     if (infoTimeout) {
-      clearTimeout(infoTimeout)
-      setInfoTimeout(null)
+      clearTimeout(infoTimeout);
+      setInfoTimeout(null);
     }
-    document.body.style.overflow = "unset"
-  }
+    document.body.style.overflow = "unset";
+  };
 
   const goToPrevious = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? images.length - 1 : selectedImage - 1)
+      setSelectedImage(
+        selectedImage === 0 ? images.length - 1 : selectedImage - 1,
+      );
     }
-  }
+  };
 
   const goToNext = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === images.length - 1 ? 0 : selectedImage + 1)
+      setSelectedImage(
+        selectedImage === images.length - 1 ? 0 : selectedImage + 1,
+      );
     }
-  }
+  };
 
   const handleMouseMove = () => {
-    setShowInfo(true)
+    setShowInfo(true);
     if (infoTimeout) {
-      clearTimeout(infoTimeout)
+      clearTimeout(infoTimeout);
     }
     const timeout = setTimeout(() => {
-      setShowInfo(false)
-    }, 3000)
-    setInfoTimeout(timeout)
-  }
+      setShowInfo(false);
+    }, 3000);
+    setInfoTimeout(timeout);
+  };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      closeLightbox()
+      closeLightbox();
     }
-  }
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") closeLightbox()
-    if (e.key === "ArrowLeft") goToPrevious()
-    if (e.key === "ArrowRight") goToNext()
-  }
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") goToPrevious();
+    if (e.key === "ArrowRight") goToNext();
+  };
 
   useEffect(() => {
     return () => {
       if (infoTimeout) {
-        clearTimeout(infoTimeout)
+        clearTimeout(infoTimeout);
       }
-    }
-  }, [infoTimeout])
+    };
+  }, [infoTimeout]);
 
   return (
     <section id="gallery" className="py-12 sm:py-16 md:py-24">
@@ -87,7 +103,9 @@ export default function Gallery() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">Impressionen</h2>
             <div className="heading-underline"></div>
-            <p className="text-base sm:text-lg">Einblicke in die kreative Arbeit</p>
+            <p className="text-base sm:text-lg">
+              Einblicke in die kreative Arbeit
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -97,11 +115,21 @@ export default function Gallery() {
                 className="relative h-48 sm:h-56 md:h-64 rounded-2xl sm:rounded-3xl overflow-hidden hover-lift cursor-pointer group"
                 onClick={() => openLightbox(index)}
               >
-                <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
+                <Image
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-amber-800/70 via-amber-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
                   <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 border-2 border-amber-300">
-                    <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-8 h-8 text-amber-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -129,8 +157,8 @@ export default function Gallery() {
           <button
             className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
-              e.stopPropagation()
-              closeLightbox()
+              e.stopPropagation();
+              closeLightbox();
             }}
             aria-label="Schließen"
           >
@@ -140,8 +168,8 @@ export default function Gallery() {
           <button
             className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
-              e.stopPropagation()
-              goToPrevious()
+              e.stopPropagation();
+              goToPrevious();
             }}
             aria-label="Vorheriges Bild"
           >
@@ -151,8 +179,8 @@ export default function Gallery() {
           <button
             className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-amber-300 transition-colors z-10 p-2"
             onClick={(e) => {
-              e.stopPropagation()
-              goToNext()
+              e.stopPropagation();
+              goToNext();
             }}
             aria-label="Nächstes Bild"
           >
@@ -160,7 +188,10 @@ export default function Gallery() {
           </button>
 
           <div className="relative max-w-[90vw] max-h-[90vh] w-full h-full flex items-center justify-center">
-            <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="relative w-full h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
               <Image
                 src={images[selectedImage].src || "/placeholder.svg"}
                 alt={images[selectedImage].alt}
@@ -184,10 +215,12 @@ export default function Gallery() {
               showInfo ? "opacity-100" : "opacity-0"
             }`}
           >
-            <p className="text-sm sm:text-base md:text-lg font-medium bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-lg">{images[selectedImage].alt}</p>
+            <p className="text-sm sm:text-base md:text-lg font-medium bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-lg">
+              {images[selectedImage].alt}
+            </p>
           </div>
         </div>
       )}
     </section>
-  )
+  );
 }

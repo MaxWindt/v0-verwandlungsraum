@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
-import { useLanguage } from '@/contexts/language-context';
+import { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { useLanguage } from "@/contexts/language-context";
 import {
   Dialog,
   DialogContent,
@@ -10,10 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { Calendar, Users, Clock, MapPin } from 'lucide-react';
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Calendar, Users, Clock, MapPin } from "lucide-react";
 
 interface Offer {
   id: number;
@@ -41,19 +41,19 @@ export default function Services() {
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">{t('services.title')}</h2>
+            <h2 className="mb-4">{t("services.title")}</h2>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
-              {t('services.description')}
+              {t("services.description")}
               <br />
               <br />
-              {t('services.description2')}
+              {t("services.description2")}
             </p>
           </div>
 
           <div className="mb-8 mt-8 sm:mt-12">
-            <h2 className="mb-6 text-center">{t('services.groupTitle')}</h2>
+            <h2 className="mb-6 text-center">{t("services.groupTitle")}</h2>
             <p className="text-base sm:text-lg max-w-3xl mx-auto mb-8 text-left">
-              {t('services.groupDescription')}
+              {t("services.groupDescription")}
             </p>
 
             {/* Responsive Grid mit Angeboten */}
@@ -121,10 +121,10 @@ export default function Services() {
                           Vorteile der Einzelsitzung:
                         </p>
                         <div className="whitespace-pre-line text-sm">
-                          • Keine langen Wartezeiten{'\n'}• Freie Wahl der
-                          Therapeutin{'\n'}• Inhalt, Dauer und Rhythmus an deine
-                          Bedürfnisse angepasst{'\n'}• Keine Diagnose
-                          erforderlich{'\n'}• Diskret - keine Vermerke in
+                          • Keine langen Wartezeiten{"\n"}• Freie Wahl der
+                          Therapeutin{"\n"}• Inhalt, Dauer und Rhythmus an deine
+                          Bedürfnisse angepasst{"\n"}• Keine Diagnose
+                          erforderlich{"\n"}• Diskret - keine Vermerke in
                           Krankenakten
                         </div>
                       </div>
@@ -144,12 +144,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById('contact');
+                                document.getElementById("contact");
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                                    behavior: "smooth",
+                                    block: "start",
                                   });
                                 }, 10);
                               }
@@ -229,9 +229,9 @@ export default function Services() {
                       <div className="pt-2">
                         <p className="font-semibold mb-2">Typischer Ablauf:</p>
                         <div className="whitespace-pre-line text-sm">
-                          • Ankommen & kurze Körperreise{'\n'}• Einführung ins
-                          Monatsthema{'\n'}• Intuitives Malen / Gestalten{'\n'}•
-                          Freiwilliger Austausch in der Gruppe{'\n'}• Kleines
+                          • Ankommen & kurze Körperreise{"\n"}• Einführung ins
+                          Monatsthema{"\n"}• Intuitives Malen / Gestalten{"\n"}•
+                          Freiwilliger Austausch in der Gruppe{"\n"}• Kleines
                           Abschlussritual
                         </div>
                       </div>
@@ -259,12 +259,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById('contact');
+                                document.getElementById("contact");
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                                    behavior: "smooth",
+                                    block: "start",
                                   });
                                 }, 10);
                               }
@@ -355,12 +355,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById('contact');
+                                document.getElementById("contact");
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                                    behavior: "smooth",
+                                    block: "start",
                                   });
                                 }, 10);
                               }
@@ -450,12 +450,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById('contact');
+                                document.getElementById("contact");
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                                    behavior: "smooth",
+                                    block: "start",
                                   });
                                 }, 10);
                               }
@@ -541,12 +541,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById('contact');
+                                document.getElementById("contact");
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                                    behavior: "smooth",
+                                    block: "start",
                                   });
                                 }, 10);
                               }

@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/contexts/language-context"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false)
-  const { t } = useLanguage()
+  const [showBanner, setShowBanner] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Check if user has already made a choice
-    const consent = localStorage.getItem("cookie-consent")
+    const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
-      setShowBanner(true)
+      setShowBanner(true);
     }
-  }, [])
+  }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem("cookie-consent", "accepted")
-    setShowBanner(false)
-  }
+    localStorage.setItem("cookie-consent", "accepted");
+    setShowBanner(false);
+  };
 
   const rejectCookies = () => {
-    localStorage.setItem("cookie-consent", "rejected")
-    setShowBanner(false)
-  }
+    localStorage.setItem("cookie-consent", "rejected");
+    setShowBanner(false);
+  };
 
-  if (!showBanner) return null
+  if (!showBanner) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/95 backdrop-blur-sm border-t shadow-lg">
@@ -42,7 +42,11 @@ export default function CookieBanner() {
             </p>
           </div>
           <div className="flex gap-3 flex-shrink-0">
-            <Button variant="outline" onClick={rejectCookies} className="whitespace-nowrap bg-transparent">
+            <Button
+              variant="outline"
+              onClick={rejectCookies}
+              className="whitespace-nowrap bg-transparent"
+            >
               {t("cookies.reject")}
             </Button>
             <Button onClick={acceptCookies} className="whitespace-nowrap">
@@ -52,5 +56,5 @@ export default function CookieBanner() {
         </div>
       </div>
     </div>
-  )
+  );
 }

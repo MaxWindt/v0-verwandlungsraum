@@ -33,7 +33,8 @@ export const translations = {
         subtitle: "Klangbad & Malen",
         description:
           "Am 4. November, 16–18 Uhr laden wir dich ein zu einem Workshop, der dich auf eine innere, kreative Reise begleitet. Du brauchst keine Vorkenntnisse – Erlaube dir einfach da zu sein, mit dem was gerade da ist und lasse dich zuerst von sanften Klängen durch Klangschalen tragen. In diesem achtsamen Rahmen laden wir dich anschließend dazu ein, intuitiv dein inneres Licht zum Ausdruck zu bringen.",
-        location: "Café des Bürgerbildungszentrums, Puschkinstraße 13, Eberswalde",
+        location:
+          "Café des Bürgerbildungszentrums, Puschkinstraße 13, Eberswalde",
         pricing:
           "Begrenzte Plätze. Vergünstigte Plätze für Alleinerziehende, Studierende, Rentner:innen, Erwerbslose... nur 15€",
         contact: "Melde dich für weitere Infos bei mir",
@@ -67,10 +68,13 @@ export const translations = {
       howItWorks: "Was ist Kunsttherapie?",
       howItWorksIntro:
         " Kunsttherapie ist ein kreativer Ansatz, der es ermöglicht, Emotionen nonverbal auszudrücken und zu reflektieren. Sie kann dazu beitragen: Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind Entspannung und Achtsamkeit zu fördern Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken. Studien geben Hinweise darauf, dass kreative Prozesse Auseinandersetzung mit Themen fördern kann.Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen. Zu beachten ist, dass die Wirkungen individuell  sind und nicht garantiert werden können.",
-      benefit1: "Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind",
+      benefit1:
+        "Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind",
       benefit2: "Entspannung und Achtsamkeit zu fördern",
-      benefit3: "Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken",
-      scientificNote: "Hinweis: Die Wirkungen sind individuell und können nicht garantiert werden.",
+      benefit3:
+        "Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken",
+      scientificNote:
+        "Hinweis: Die Wirkungen sind individuell und können nicht garantiert werden.",
       forWhomIntro:
         "Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen.",
       pomTitle: "Personenorientierte Maltherapie",
@@ -80,7 +84,8 @@ export const translations = {
         "Das Personenorientierte bzw. Begleitete Malen nach Bettina Egger, die mehrere Jahre bei Arno Stern gelernt hat, stellt den Menschen und seinen inneren Ausdruck in den Mittelpunkt. Dabei geht es nicht um das fertige Bild, sondern um den persönlichen Prozess und die bewusste Erfahrung beim Malen. Ich begleite dich durch diesen Prozess und die Entstehung des Bildes.",
       principlesTitle: "Zentrale Prinzipien",
       principle1Title: "Prozess statt Produkt",
-      principle1Text: "Wichtig ist nicht das fertige Bild, sondern der Malvorgang und das Erleben währenddessen.",
+      principle1Text:
+        "Wichtig ist nicht das fertige Bild, sondern der Malvorgang und das Erleben währenddessen.",
       principle2Title: "Innere Bilder sichtbar machen",
       principle2Text:
         "Gefühle, Erinnerungen oder Konflikte werden über Farben, Formen und Symbole zum Ausdruck gebracht. Emotionale Blockaden können bewusst und thematisiert werden.",
@@ -93,27 +98,34 @@ export const translations = {
     },
     session: {
       title: "Rahmenbedingungen und Preise",
-      imageAlt: "Individuelle Kunsttherapie-Sitzung mit Therapeutin und Klient beim gemeinsamen Malen",
+      imageAlt:
+        "Individuelle Kunsttherapie-Sitzung mit Therapeutin und Klient beim gemeinsamen Malen",
       pricesTitle: "Preise",
       price1: "Einzelsitzung (60 Minuten): 80 €",
       price2: "Einzelsitzung (90 Minuten): 95 €",
       starterPackage: "Starter Paket: 90+60+60 min. für 200€",
-      priceNote: "Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden.",
+      priceNote:
+        "Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden.",
       billingTitle: "Abrechnung und Kostenübernahme",
-      billing1: "Ich arbeite als Heilpraktikerin für Psychotherapie auf privater Basis.",
-      billing2: "Die Kosten werden von den gesetzlichen Krankenkassen grundsätzlich nicht übernommen.",
+      billing1:
+        "Ich arbeite als Heilpraktikerin für Psychotherapie auf privater Basis.",
+      billing2:
+        "Die Kosten werden von den gesetzlichen Krankenkassen grundsätzlich nicht übernommen.",
       billing3:
         "Einige private Krankenversicherungen oder Zusatzversicherungen übernehmen unter Umständen einen Teil der Kosten.",
-      advantagesTitle: "Welche sind die Vorteile einer selbst bezahlten Therapie",
+      advantagesTitle:
+        "Welche sind die Vorteile einer selbst bezahlten Therapie",
       advantage1: "Keine langen Wartezeiten",
       advantage2: "Freie Wahl einer Therapeut:in, die zu dir passt",
       advantage3:
         "Inhalt, Dauer und Rhythmus der Therapie sind nicht festgelegt sondern an deine Bedürfnisse angepasst",
-      advantage4: "Es muss keine seelische Krankheit gemäß den Diagnosekriterien ICD-10 und DSM-V vorliegen",
+      advantage4:
+        "Es muss keine seelische Krankheit gemäß den Diagnosekriterien ICD-10 und DSM-V vorliegen",
       advantage5:
         "Therapie wird in keiner Krankenakte und bei keiner Krankenversicherung vermerkt und beeinträchtigt damit nicht eine mögliche Verbeamtung oder den Abschluss künftiger Versicherungen",
       cancellationTitle: "ABSAGE",
-      cancellation1: "Termine können bis 24 Stunden vorher kostenfrei abgesagt werden.",
+      cancellation1:
+        "Termine können bis 24 Stunden vorher kostenfrei abgesagt werden.",
       cancellation2:
         "Bei späteren Absagen oder Nichterscheinen wird das volle Honorar berechnet, da der Termin nicht weitergegeben werden kann.",
       disclaimerTitle: "Hinweis zur Therapie / Haftungsausschluss",
@@ -122,7 +134,8 @@ export const translations = {
     },
     contact: {
       title: "Kontakt",
-      formTitle: "Schreib' mir gerne eine Mail mit deinen Fragen oder Terminwünschen!",
+      formTitle:
+        "Schreib' mir gerne eine Mail mit deinen Fragen oder Terminwünschen!",
       nameLabel: "Name *",
       namePlaceholder: "Dein Name",
       emailLabel: "E-Mail *",
@@ -131,14 +144,17 @@ export const translations = {
       messagePlaceholder: "Deine Nachricht...",
       sendButton: "Nachricht senden",
       sendingButton: "Wird gesendet...",
-      successMessage: "Nachricht erfolgreich gesendet! Ich melde mich bald bei dir.",
+      successMessage:
+        "Nachricht erfolgreich gesendet! Ich melde mich bald bei dir.",
       errorMessage: "Es gab einen Fehler beim Senden der Nachricht.",
-      errorRetry: "Es gab einen Fehler beim Senden der Nachricht. Bitte versuche es später erneut.",
+      errorRetry:
+        "Es gab einen Fehler beim Senden der Nachricht. Bitte versuche es später erneut.",
       validationError: "Bitte fülle alle Pflichtfelder aus.",
       infoTitle: "Kontaktinformationen",
       emailTitle: "E-Mail",
       phoneTitle: "Telefon",
-      languageNote: "También ofrezco sesiones en español!\nI also offer sessions in English!",
+      languageNote:
+        "También ofrezco sesiones en español!\nI also offer sessions in English!",
     },
     footer: {
       title: "Verwandlungsraum",
@@ -157,7 +173,8 @@ export const translations = {
       address1: "Gerichtsstr 4",
       address2: "16225 Eberswalde",
       copyright: "Mit",
-      copyrightEnd: "erstellt | © {year} Verwandlungsraum | Alle Rechte vorbehalten",
+      copyrightEnd:
+        "erstellt | © {year} Verwandlungsraum | Alle Rechte vorbehalten",
     },
     cookies: {
       title: "Cookie-Einstellungen",
@@ -197,7 +214,8 @@ export const translations = {
       },
       rights: {
         title: "5. Ihre Rechte",
-        right1: "Recht auf Auskunft über Ihre bei mir gespeicherten personenbezogenen Daten",
+        right1:
+          "Recht auf Auskunft über Ihre bei mir gespeicherten personenbezogenen Daten",
         right2: "Recht auf Berichtigung unrichtiger Daten",
         right3: "Recht auf Löschung Ihrer bei mir gespeicherten Daten",
         right4: "Recht auf Einschränkung der Datenverarbeitung",
@@ -227,10 +245,12 @@ export const translations = {
     },
     hero: {
       title: "Espacio de Transformación",
-      subtitle: "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
+      subtitle:
+        "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
       backgroundAlt: "Imagen de fondo de acuarela colorida para arteterapia",
       promoTitle: "Oferta de inauguración",
-      promoText: "30% de descuento en todas las sesiones individuales hasta el 31.12.2025",
+      promoText:
+        "30% de descuento en todas las sesiones individuales hasta el 31.12.2025",
       promoClose: "Cerrar",
     },
     services: {
@@ -248,7 +268,8 @@ export const translations = {
         subtitle: "Baño de sonido y pintura",
         description:
           "El 4 de noviembre, de 16 a 18 horas, te invitamos a un taller que te acompaña en un viaje interior y creativo. No necesitas experiencia previa – Simplemente permítete estar presente con lo que hay y déjate llevar primero por los suaves sonidos de los cuencos tibetanos. En este marco consciente, te invitamos luego a expresar intuitivamente tu luz interior.",
-        location: "Café del Centro de Educación Ciudadana, Puschkinstraße 13, Eberswalde",
+        location:
+          "Café del Centro de Educación Ciudadana, Puschkinstraße 13, Eberswalde",
         pricing:
           "Plazas limitadas. Plazas con descuento para padres/madres solteros/as, estudiantes, jubilados/as, desempleados/as... solo 15€",
         contact: "Contáctame para más información",
@@ -282,10 +303,12 @@ export const translations = {
       howItWorks: "¿Qué es la arteterapia?",
       howItWorksIntro:
         "La arteterapia es un enfoque creativo que permite expresar y reflexionar sobre las emociones de forma no verbal. Puede contribuir a: Hacer visibles sentimientos que son difíciles de expresar con palabras, Promover la relajación y la atención plena, Apoyar la autorreflexión y descubrir nuevas perspectivas. Los estudios dan indicios de que los procesos creativos pueden promover el trabajo con temas personales. Este enfoque puede, por ejemplo, apoyar a personas en situaciones de vida estresantes, como estrés, ansiedad o duelo. Hay que tener en cuenta que los efectos son individuales y no se pueden garantizar.",
-      benefit1: "Hacer visibles sentimientos que son difíciles de expresar con palabras",
+      benefit1:
+        "Hacer visibles sentimientos que son difíciles de expresar con palabras",
       benefit2: "Promover la relajación y la atención plena",
       benefit3: "Apoyar la autorreflexión y descubrir nuevas perspectivas",
-      scientificNote: "Nota: Los efectos son individuales y no se pueden garantizar.",
+      scientificNote:
+        "Nota: Los efectos son individuales y no se pueden garantizar.",
       forWhomIntro:
         "Este enfoque puede, por ejemplo, apoyar a personas en situaciones de vida estresantes, como estrés, ansiedad o duelo.",
       pomTitle: "Terapia de Pintura Orientada a la Persona",
@@ -309,26 +332,34 @@ export const translations = {
     },
     session: {
       title: "Condiciones marco y precios",
-      imageAlt: "Sesión individual de arteterapia con terapeuta y cliente pintando juntos",
+      imageAlt:
+        "Sesión individual de arteterapia con terapeuta y cliente pintando juntos",
       pricesTitle: "Precios",
       price1: "Sesión individual (60 minutos): 80 €",
       price2: "Sesión individual (90 minutos): 95 €",
       starterPackage: "Paquete inicial: 90+60+60 min. por 200€",
-      priceNote: "En caso de dificultades financieras, se puede acordar un descuento individual.",
+      priceNote:
+        "En caso de dificultades financieras, se puede acordar un descuento individual.",
       billingTitle: "Facturación y cobertura de costos",
-      billing1: "Trabajo como practicante de medicina alternativa para psicoterapia de forma privada.",
-      billing2: "Los costos generalmente no son cubiertos por los seguros de salud públicos.",
+      billing1:
+        "Trabajo como practicante de medicina alternativa para psicoterapia de forma privada.",
+      billing2:
+        "Los costos generalmente no son cubiertos por los seguros de salud públicos.",
       billing3:
         "Algunos seguros de salud privados o seguros complementarios pueden cubrir parte de los costos en determinadas circunstancias.",
-      advantagesTitle: "¿Cuáles son las ventajas de una terapia autogestionada?",
+      advantagesTitle:
+        "¿Cuáles son las ventajas de una terapia autogestionada?",
       advantage1: "Sin largos tiempos de espera",
       advantage2: "Libre elección de un/a terapeuta que se adapte a ti",
-      advantage3: "El contenido, duración y ritmo de la terapia no están fijados sino adaptados a tus necesidades",
-      advantage4: "No es necesario que exista una enfermedad mental según los criterios de diagnóstico ICD-10 y DSM-V",
+      advantage3:
+        "El contenido, duración y ritmo de la terapia no están fijados sino adaptados a tus necesidades",
+      advantage4:
+        "No es necesario que exista una enfermedad mental según los criterios de diagnóstico ICD-10 y DSM-V",
       advantage5:
         "La terapia no se registra en ningún expediente médico ni en ningún seguro de salud y, por lo tanto, no afecta una posible función pública o la contratación de seguros futuros",
       cancellationTitle: "CANCELACIÓN",
-      cancellation1: "Las citas se pueden cancelar sin costo hasta 24 horas antes.",
+      cancellation1:
+        "Las citas se pueden cancelar sin costo hasta 24 horas antes.",
       cancellation2:
         "En caso de cancelaciones posteriores o no presentación, se cobrará el honorario completo, ya que la cita no puede ser reasignada.",
       disclaimerTitle: "Aviso sobre la terapia / Descargo de responsabilidad",
@@ -346,14 +377,17 @@ export const translations = {
       messagePlaceholder: "Tu mensaje...",
       sendButton: "Enviar mensaje",
       sendingButton: "Enviando...",
-      successMessage: "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+      successMessage:
+        "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
       errorMessage: "Hubo un error al enviar el mensaje.",
-      errorRetry: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+      errorRetry:
+        "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
       validationError: "Por favor, completa todos los campos obligatorios.",
       infoTitle: "Información de contacto",
       emailTitle: "Correo electrónico",
       phoneTitle: "Teléfono",
-      languageNote: "¡También ofrezco sesiones en español!\nI also offer sessions in English!",
+      languageNote:
+        "¡También ofrezco sesiones en español!\nI also offer sessions in English!",
     },
     footer: {
       title: "Espacio de Transformación",
@@ -368,11 +402,13 @@ export const translations = {
       privacy: "Privacidad",
       imprintTitle: "Aviso legal",
       name: "Rebecca Schwindt",
-      profession: "Arteterapeuta y Practicante de Medicina Alternativa para Psicoterapia",
+      profession:
+        "Arteterapeuta y Practicante de Medicina Alternativa para Psicoterapia",
       address1: "Gerichtsstr 4",
       address2: "16225 Eberswalde",
       copyright: "Creado con",
-      copyrightEnd: "| © {year} Espacio de Transformación | Todos los derechos reservados",
+      copyrightEnd:
+        "| © {year} Espacio de Transformación | Todos los derechos reservados",
     },
     cookies: {
       title: "Configuración de cookies",
@@ -392,7 +428,8 @@ export const translations = {
         title: "2. Responsable",
         name: "Rebecca Schwindt",
         address: "Gerichtsstr 4, 16225 Eberswalde",
-        email: "Correo electrónico: rebecca.schwindt@verwandlungsraum-eberswalde.de",
+        email:
+          "Correo electrónico: rebecca.schwindt@verwandlungsraum-eberswalde.de",
       },
       contactForm: {
         title: "3. Formulario de contacto",
@@ -412,7 +449,8 @@ export const translations = {
       },
       rights: {
         title: "5. Sus derechos",
-        right1: "Derecho a información sobre sus datos personales almacenados conmigo",
+        right1:
+          "Derecho a información sobre sus datos personales almacenados conmigo",
         right2: "Derecho a corrección de datos incorrectos",
         right3: "Derecho a eliminación de sus datos almacenados conmigo",
         right4: "Derecho a restricción del procesamiento de datos",
@@ -429,21 +467,21 @@ export const translations = {
       },
     },
   },
-}
+};
 
-export type Locale = "de" | "es"
+export type Locale = "de" | "es";
 
 export function getTranslation(locale: Locale, key: string): string {
-  const keys = key.split(".")
-  let value: any = translations[locale]
+  const keys = key.split(".");
+  let value: any = translations[locale];
 
   for (const k of keys) {
     if (value && typeof value === "object") {
-      value = value[k]
+      value = value[k];
     } else {
-      return key
+      return key;
     }
   }
 
-  return typeof value === "string" ? value : key
+  return typeof value === "string" ? value : key;
 }

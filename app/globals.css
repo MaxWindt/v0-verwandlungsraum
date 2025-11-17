@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -38,7 +38,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   /* Set all font families to Crimson Text for easy design menu changes */
-  --font-crimson-text: 'Crimson Text';
+  --font-crimson-text: "Crimson Text";
   --font-sans: var(--font-crimson-text);
   --font-serif: var(--font-crimson-text);
   --font-mono: var(--font-crimson-text);

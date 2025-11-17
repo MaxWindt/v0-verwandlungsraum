@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Link as ScrollLink } from "react-scroll"
-import { Menu, X } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-import LanguageSwitcher from "./language-switcher"
+import { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
+import LanguageSwitcher from "./language-switcher";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { t } = useLanguage()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
     { name: t("navigation.start"), to: "hero" },
@@ -33,19 +33,26 @@ export default function Header() {
     { name: t("navigation.sessionInfo"), to: "session" },
     { name: t("navigation.about"), to: "about" },
     { name: t("navigation.contact"), to: "contact" },
-  ]
+  ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-cover bg-center bg-no-repeat ${
         scrolled ? "backdrop-blur-md border-b border-border" : ""
       }`}
-
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
         <div className="flex-1 min-w-0">
-          <div className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight truncate" style={{ color: '#831843' }}>Rebecca Schwindt</div>
-          <div className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md" style={{ color: '#831843' }}>
+          <div
+            className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight truncate"
+            style={{ color: "#831843" }}
+          >
+            Rebecca Schwindt
+          </div>
+          <div
+            className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md"
+            style={{ color: "#831843" }}
+          >
             Kunsttherapie Eberswalde
           </div>
         </div>
@@ -61,7 +68,7 @@ export default function Header() {
               offset={-80}
               duration={500}
               className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 font-serif text-right drop-shadow-md  whitespace-nowrap"
-              style={{ color: '#831843' }}
+              style={{ color: "#831843" }}
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
@@ -76,7 +83,9 @@ export default function Header() {
           <button
             className="text-foreground hover:text-primary transition-colors drop-shadow-md"
             onClick={toggleMenu}
-            aria-label={isMenuOpen ? t("navigation.closeMenu") : t("navigation.openMenu")}
+            aria-label={
+              isMenuOpen ? t("navigation.closeMenu") : t("navigation.openMenu")
+            }
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -105,5 +114,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }
