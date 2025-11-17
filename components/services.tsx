@@ -59,7 +59,7 @@ export default function Services() {
               {/* Angebot 1: Einzelsitzung Kunsttherapie */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
-                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Einzelsitzung Kunsttherapie" className="w-full h-full object-cover" />
+                  <img src="/images/design-mode/photo_52512509862091k84565_y.jpg" alt="Einzelsitzung Kunsttherapie" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="text-lg sm:text-xl mb-3 font-semibold">Einzelsitzung Kunsttherapie</h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
@@ -200,7 +200,7 @@ export default function Services() {
               {/* Angebot 3: Klang & Farbe */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
-                  <img src="/images/vibrant-watercolor-bg.jpg" alt="Klang & Farbe – Klangreise mit intuitivem Malen" className="w-full h-full object-cover" />
+                  <img src="/images/design-mode/photo_5251250986209184578_y.jpg" alt="Klang & Farbe – Klangreise mit intuitivem Malen" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="text-lg sm:text-xl mb-3 font-semibold">Klang & Farbe – Klangreise mit intuitivem Malen</h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
