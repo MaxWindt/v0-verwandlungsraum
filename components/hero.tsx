@@ -62,7 +62,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mb-8 max-w-2xl mx-auto italic font-normal tracking-tight sm:tracking-tighter leading-relaxed sm:leading-10 font-sans text-lg sm:text-xl md:text-2xl text-chart-5">
+          <p className="mb-8 max-w-2xl mx-auto italic font-normal tracking-tight sm:tracking-tighter leading-relaxed sm:leading-10 font-sans text-xl sm:text-xl md:text-2xl text-chart-5">
             {t("hero.subtitle")}
           </p>
 

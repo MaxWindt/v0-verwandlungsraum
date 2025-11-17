@@ -44,8 +44,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
         <div className="flex-1 min-w-0">
-          <div className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight text-foreground truncate">Rebecca Schwindt</div>
-          <div className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md text-secondary-foreground">
+          <div className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight truncate" style={{ color: '#831843' }}>Rebecca Schwindt</div>
+          <div className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md" style={{ color: '#831843' }}>
             Kunsttherapie Eberswalde
           </div>
         </div>
@@ -60,7 +60,8 @@ export default function Header() {
               smooth={true}
               offset={-80}
               duration={500}
-              className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 text-foreground font-serif text-right drop-shadow-md text-sm whitespace-nowrap"
+              className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 font-serif text-right drop-shadow-md  whitespace-nowrap"
+              style={{ color: '#831843' }}
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
