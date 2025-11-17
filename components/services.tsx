@@ -36,13 +36,17 @@ export default function Services() {
   const { t } = useLanguage()
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null)
 
+  // Standard-Platzhalter-Bild für Angebote ohne eigenes Bild
+  // Verwende ein vorhandenes Aquarell-Bild bis das Spiral-Bild hochgeladen wird
+  const defaultImage = "/images/vibrant-watercolor-bg.jpg"
+
   const offers: Offer[] = [
     {
       id: 1,
       title: "Einzelsitzung Kunsttherapie",
       shortDescription:
         "Individueller kunsttherapeutischer Raum für deine persönliche Entwicklung. Begleitetes Malen nach der Methode von Bettina Egger.",
-      image: undefined, // Platzhalter
+      image: defaultImage,
       details: {
         description:
           "In der Einzelsitzung begleite ich dich durch deinen individuellen kunsttherapeutischen Prozess. Mit der Methode des Personenorientierten/Begleiteten Malens nach Bettina Egger steht nicht das fertige Bild, sondern dein persönlicher Prozess und die bewusste Erfahrung beim Malen im Mittelpunkt. Ich unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben und neue Perspektiven zu entwickeln.",
@@ -62,7 +66,7 @@ export default function Services() {
       title: "Monatliche Kunsttherapie-Gruppe",
       shortDescription:
         "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst.",
-      image: "/images/design-mode/ChatGPT%20Image%202.%20Okt.%202025%2C%2015_52_48.png",
+      image: defaultImage,
       details: {
         description:
           "Ein geschützter Raum, in dem du über Farbe, Form und Bewegung wieder in Kontakt mit dir selbst kommst. Jede Session hat ein eigenes Thema, das dich durch die Jahreszeit und deinen inneren Prozess begleitet.",
@@ -80,7 +84,7 @@ export default function Services() {
       id: 3,
       title: "Klang & Farbe – Klangreise mit intuitivem Malen",
       shortDescription: "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild.",
-      image: undefined, // Platzhalter
+      image: defaultImage,
       details: {
         description:
           "Klangschalen führen dich in eine tiefe Entspannung. Aus dieser inneren Ruhe heraus entsteht dein intuitives Bild. Ein sanfter Abend für Menschen, die Sinneswahrnehmung, Stille und kreativen Ausdruck verbinden möchten.",
@@ -94,7 +98,7 @@ export default function Services() {
       id: 4,
       title: "Breathwork & Malen",
       shortDescription: "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei in Farbe um.",
-      image: undefined, // Platzhalter
+      image: defaultImage,
       details: {
         description:
           "Atemarbeit öffnet den Zugang zu inneren Bildern und Emotionen. Danach setzt du das Erlebte frei und spontan in Farbe um. Ein Angebot für alle, die Transformation körperlich UND kreativ erfahren möchten.",
@@ -108,7 +112,7 @@ export default function Services() {
       id: 5,
       title: "Info-Workshop: Was ist Kunsttherapie?",
       shortDescription: "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat.",
-      image: "/images/design-mode/neue%20Wege.png",
+      image: defaultImage,
       details: {
         description:
           "Ein verständlicher, praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – und weshalb sie nichts mit 'schön malen' zu tun hat. Wir sprechen über den kreativen Prozess, emotionale Resonanz und die Rolle von Farbe und Form im Selbstausdruck. Zum Abschluss gibt es eine kleine praktische Übung.",
@@ -141,16 +145,9 @@ export default function Services() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {offers.map((offer) => (
                 <div key={offer.id} className="card flex flex-col h-full">
-                  {/* Bild oder Platzhalter */}
-                  <div className="mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center h-48">
-                    {offer.image ? (
-                      <img src={offer.image} alt={offer.title} className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="text-center p-4">
-                        <div className="text-4xl mb-2">🎨</div>
-                        <p className="text-sm text-muted-foreground">Bild folgt</p>
-                      </div>
-                    )}
+                  {/* Bild */}
+                  <div className="mb-4 rounded-lg overflow-hidden h-48">
+                    <img src={offer.image || defaultImage} alt={offer.title} className="w-full h-full object-cover" />
                   </div>
 
                   {/* Titel */}
