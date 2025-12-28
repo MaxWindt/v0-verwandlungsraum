@@ -2,3 +2,4 @@ node_modules
 .next
 my-app
 database.json
+tsconfig.tsbuildinfo

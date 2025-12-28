@@ -162,17 +162,6 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
-                {/* hCaptcha */}
-                <div className="flex justify-center">
-                  <div
-                    className="h-captcha"
-                    data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                    data-callback="hCaptchaCallback"
-                    data-expired-callback="hCaptchaExpired"
-                    data-error-callback="hCaptchaError"
-                  ></div>
-                </div>
-
                 <button
                   onClick={handleSubmit}
                   className="w-full text-primary-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 bg-chart-5 text-sm sm:text-base"
