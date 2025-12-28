@@ -1,7 +1,8 @@
 "use client";
 
+import React from "react";
 import { Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function Contact() {
@@ -10,6 +11,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // "success" or "error"
+  const [hcaptchaToken, setHcaptchaToken] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +19,32 @@ export default function Contact() {
     message: "",
   });
 
-  const handleInputChange = (e) => {
+  // Set up hCaptcha callbacks
+  useEffect(() => {
+    // Define global callback functions for hCaptcha
+    (window as any).hCaptchaCallback = (token: string) => {
+      setHcaptchaToken(token);
+    };
+
+    (window as any).hCaptchaExpired = () => {
+      setHcaptchaToken("");
+    };
+
+    (window as any).hCaptchaError = () => {
+      setHcaptchaToken("");
+      setSubmitMessage(t("contact.captchaError") || "hCaptcha error occurred");
+      setMessageType("error");
+    };
+
+    return () => {
+      // Cleanup
+      delete (window as any).hCaptchaCallback;
+      delete (window as any).hCaptchaExpired;
+      delete (window as any).hCaptchaError;
+    };
+  }, [t]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -32,12 +59,24 @@ export default function Contact() {
       subject: "",
       message: "",
     });
+    setHcaptchaToken("");
+    // Reset hCaptcha widget if it exists
+    if ((window as any).hcaptcha) {
+      (window as any).hcaptcha.reset();
+    }
   };
 
   const handleSubmit = async () => {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setSubmitMessage(t("contact.validationError"));
+      setMessageType("error");
+      return;
+    }
+
+    // Validate hCaptcha token
+    if (!hcaptchaToken) {
+      setSubmitMessage(t("contact.captchaRequired") || "Please complete the captcha verification");
       setMessageType("error");
       return;
     }
@@ -54,6 +93,7 @@ export default function Contact() {
       email: formData.email,
       subject: customSubject,
       message: formData.message,
+      "h-captcha-response": hcaptchaToken,
     };
 
     try {
@@ -160,6 +200,17 @@ export default function Contact() {
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none font-serif text-sm sm:text-base"
                     placeholder={t("contact.messagePlaceholder")}
                   ></textarea>
+                </div>
+
+                {/* hCaptcha */}
+                <div className="flex justify-center">
+                  <div
+                    className="h-captcha"
+                    data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                    data-callback="hCaptchaCallback"
+                    data-expired-callback="hCaptchaExpired"
+                    data-error-callback="hCaptchaError"
+                  ></div>
                 </div>
 
                 <button

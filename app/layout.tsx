@@ -1,6 +1,7 @@
 import type React from "react";
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { LanguageProvider } from "@/contexts/language-context";
 import CookieBanner from "@/components/cookie-banner";
@@ -33,6 +34,10 @@ export default function RootLayout({
           {children}
           <CookieBanner />
         </LanguageProvider>
+        <Script
+          src="https://js.hcaptcha.com/1/api.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
