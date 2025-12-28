@@ -165,7 +165,7 @@ export default function Services() {
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
-                    src="/images/vibrant-watercolor-bg.jpg"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5348175586192460911-OckkD41v0OqyIn6TDYhGZfQCnxLCyM.jpg"
                     alt="Monatliche Kunsttherapie-Gruppe"
                     className="w-full h-full object-cover"
                   />
@@ -379,7 +379,7 @@ export default function Services() {
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
-                    src="/images/vibrant-watercolor-bg.jpg"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/df3a897caf547c3f103abfe1c75c7689-JRksrnjs6KKCvo9HYwQsTNjJRasmCE.jpg"
                     alt="Breathwork & Malen"
                     className="w-full h-full object-cover"
                   />
@@ -475,7 +475,7 @@ export default function Services() {
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
-                    src="/images/vibrant-watercolor-bg.jpg"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5348175586192460915-1PB938G8jtaEHOA1JduWGdtgLynR6O.jpg"
                     alt="Info-Workshop: Was ist Kunsttherapie?"
                     className="w-full h-full object-cover"
                   />
