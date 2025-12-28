@@ -1,19 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Calendar, Users, Clock, MapPin } from "lucide-react";
+  DialogClose
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Calendar, Users, Clock, MapPin } from 'lucide-react';
 
 interface Offer {
   id: number;
@@ -41,19 +38,19 @@ export default function Services() {
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">{t("services.title")}</h2>
+            <h2 className="mb-4">{t('services.title')}</h2>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
-              {t("services.description")}
+              {t('services.description')}
               <br />
               <br />
-              {t("services.description2")}
+              {t('services.description2')}
             </p>
           </div>
 
           <div className="mb-8 mt-8 sm:mt-12">
-            <h2 className="mb-6 text-center">{t("services.groupTitle")}</h2>
+            <h2 className="mb-6 text-center">{t('services.groupTitle')}</h2>
             <p className="text-base sm:text-lg max-w-3xl mx-auto mb-8 text-left">
-              {t("services.groupDescription")}
+              {t('services.groupDescription')}
             </p>
 
             {/* Responsive Grid mit Angeboten */}
@@ -121,10 +118,10 @@ export default function Services() {
                           Vorteile der Einzelsitzung:
                         </p>
                         <div className="whitespace-pre-line text-sm">
-                          • Keine langen Wartezeiten{"\n"}• Freie Wahl der
-                          Therapeutin{"\n"}• Inhalt, Dauer und Rhythmus an deine
-                          Bedürfnisse angepasst{"\n"}• Keine Diagnose
-                          erforderlich{"\n"}• Diskret - keine Vermerke in
+                          • Keine langen Wartezeiten{'\n'}• Freie Wahl der
+                          Therapeutin{'\n'}• Inhalt, Dauer und Rhythmus an deine
+                          Bedürfnisse angepasst{'\n'}• Keine Diagnose
+                          erforderlich{'\n'}• Diskret - keine Vermerke in
                           Krankenakten
                         </div>
                       </div>
@@ -144,12 +141,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById("contact");
+                                document.getElementById('contact');
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
+                                    behavior: 'smooth',
+                                    block: 'start'
                                   });
                                 }, 10);
                               }
@@ -225,13 +222,16 @@ export default function Services() {
                             <p className="text-sm">90–120 Minuten</p>
                           </div>
                         </div>
+                        <p className="text-sm font-semibold text-blue-700">
+                          Online
+                        </p>
                       </div>
                       <div className="pt-2">
                         <p className="font-semibold mb-2">Typischer Ablauf:</p>
                         <div className="whitespace-pre-line text-sm">
-                          • Ankommen & kurze Körperreise{"\n"}• Einführung ins
-                          Monatsthema{"\n"}• Intuitives Malen / Gestalten{"\n"}•
-                          Freiwilliger Austausch in der Gruppe{"\n"}• Kleines
+                          • Ankommen & kurze Körperreise{'\n'}• Einführung ins
+                          Monatsthema{'\n'}• Intuitives Malen / Gestalten{'\n'}•
+                          Freiwilliger Austausch in der Gruppe{'\n'}• Kleines
                           Abschlussritual
                         </div>
                       </div>
@@ -259,12 +259,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById("contact");
+                                document.getElementById('contact');
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
+                                    behavior: 'smooth',
+                                    block: 'start'
                                   });
                                 }, 10);
                               }
@@ -322,7 +322,7 @@ export default function Services() {
                             <p className="font-semibold text-sm">
                               Nächster Termin
                             </p>
-                            <p className="text-sm">19. Dezember</p>
+                            <p className="text-sm">in Planung</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2">
@@ -346,7 +346,7 @@ export default function Services() {
                       </div>
                       <div className="pt-2 border-t">
                         <p className="text-sm italic">
-                          Leitung: Verwandlungsraum + Klangtherapeutin
+                          Leitung: Rebecca + Kathi
                         </p>
                       </div>
                       <div className="pt-4 border-t">
@@ -355,12 +355,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById("contact");
+                                document.getElementById('contact');
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
+                                    behavior: 'smooth',
+                                    block: 'start'
                                   });
                                 }, 10);
                               }
@@ -417,7 +417,8 @@ export default function Services() {
                             <p className="font-semibold text-sm">
                               Nächster Termin
                             </p>
-                            <p className="text-sm">Januar 2025</p>
+                            <p className="text-sm">1. Februar 2026</p>
+                            <p className="text-sm">Uhrzeit: 9:30-12:30 Uhr</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2">
@@ -450,12 +451,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById("contact");
+                                document.getElementById('contact');
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
+                                    behavior: 'smooth',
+                                    block: 'start'
                                   });
                                 }, 10);
                               }
@@ -501,37 +502,32 @@ export default function Services() {
                     </DialogHeader>
                     <div className="space-y-4">
                       <p className="text-base leading-relaxed">
-                        Ein verständlicher, praxisnaher Abend, der zeigt, wie
-                        Kunsttherapie wirkt – und weshalb sie nichts mit 'schön
-                        malen' zu tun hat. Wir sprechen über den kreativen
-                        Prozess, emotionale Resonanz und die Rolle von Farbe und
-                        Form im Selbstausdruck. Zum Abschluss gibt es eine
-                        kleine praktische Übung.
+                        Der Info-Workshop gibt einen Einblick in Kunsttherapie
+                        und das personenorientierte Malen (POM). Es geht darum,
+                        innere Prozesse kreativ sichtbar zu machen – unabhängig
+                        vom Ergebnis. Am Ende gibt es eine kleine praktische
+                        Übung (bitte Blatt und Stifte bereithalten). Die
+                        Teilnahme ist kostenlos und online.
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div className="flex items-start gap-2">
                           <Clock className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
                           <div>
                             <p className="font-semibold text-sm">Dauer</p>
-                            <p className="text-sm">60–90 Minuten</p>
+                            <p className="text-sm">60 Minuten</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2">
-                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">Ort</p>
-                            <p className="text-sm">
-                              Verwandlungsraum, Eberswalde
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
+                          <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
                           <div>
                             <p className="font-semibold text-sm">
-                              Teilnehmende
+                              Nächster Termin
                             </p>
-                            <p className="text-sm">max. 7 Personen</p>
+                            <p className="text-sm">20. Januar, 18 Uhr</p>
+                            <p className="text-sm font-semibold text-green-700">
+                              Kostenlos
+                            </p>
+                            <p className="text-sm">Online</p>
                           </div>
                         </div>
                       </div>
@@ -541,12 +537,12 @@ export default function Services() {
                             className="w-full"
                             onClick={() => {
                               const contactSection =
-                                document.getElementById("contact");
+                                document.getElementById('contact');
                               if (contactSection) {
                                 setTimeout(() => {
                                   contactSection.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
+                                    behavior: 'smooth',
+                                    block: 'start'
                                   });
                                 }, 10);
                               }
