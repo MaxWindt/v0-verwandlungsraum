@@ -150,6 +150,8 @@ export const translations = {
       errorRetry:
         "Es gab einen Fehler beim Senden der Nachricht. Bitte versuche es später erneut.",
       validationError: "Bitte fülle alle Pflichtfelder aus.",
+      captchaRequired: "Bitte bestätige das Captcha.",
+      captchaError: "Fehler beim Laden des Captchas. Bitte lade die Seite neu.",
       infoTitle: "Kontaktinformationen",
       emailTitle: "E-Mail",
       phoneTitle: "Telefon",
@@ -383,6 +385,8 @@ export const translations = {
       errorRetry:
         "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
       validationError: "Por favor, completa todos los campos obligatorios.",
+      captchaRequired: "Por favor, completa el captcha.",
+      captchaError: "Error al cargar el captcha. Por favor, recarga la página.",
       infoTitle: "Información de contacto",
       emailTitle: "Correo electrónico",
       phoneTitle: "Teléfono",
