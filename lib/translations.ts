@@ -32,19 +32,20 @@ export const translations = {
         title: "Verbinde dich mit deinem inneren Licht in der Dunkelheit",
         subtitle: "Klangbad & Malen",
         description:
-          "Am 4. November, 16–18 Uhr laden wir dich ein zu einem Workshop, der dich auf eine innere, kreative Reise begleitet. Du brauchst keine Vorkenntnisse – Erlaube dir einfach da zu sein, mit dem was gerade da ist und lasse dich zuerst von sanften Klängen durch Klangschalen tragen. In diesem achtsamen Rahmen laden wir dich anschließend dazu ein, intuitiv dein inneres Licht zum Ausdruck zu bringen.",
+          "Ein Workshop, der dich auf eine innere, kreative Reise begleitet. Du brauchst keine Vorkenntnisse – Erlaube dir einfach da zu sein, mit dem was gerade da ist und lasse dich zuerst von sanften Klängen durch Klangschalen tragen. In diesem achtsamen Rahmen laden wir dich anschließend dazu ein, intuitiv dein inneres Licht zum Ausdruck zu bringen.",
         location:
           "Café des Bürgerbildungszentrums, Puschkinstraße 13, Eberswalde",
         pricing:
-          "Begrenzte Plätze. Vergünstigte Plätze für Alleinerziehende, Studierende, Rentner:innen, Erwerbslose... nur 15€",
+          "",
         contact: "Melde dich für weitere Infos bei mir",
+        nextDate: "Nächster Termin in Planung",
         alt: "Workshop - Verbinde dich mit deinem inneren Licht",
       },
       workshop2: {
         title: 'Workshop: „Innere Bilder – neue Wege"',
         description:
           "Ein kreativer Vormittag zur Selbstreflexion und Stärkung innerer Ressourcen. Mit begleiteter Malzeit, Austausch und einer abschließenden Entspannungsübung.",
-        nextDate: "Nächster Termin: November",
+        nextDate: "Nächster Termin in Planung",
         contact: "Melde dich für weitere Infos bei mir",
         alt: "Workshop Innere Bilder – neue Wege",
       },
@@ -269,19 +270,20 @@ export const translations = {
         title: "Conéctate con tu luz interior en la oscuridad",
         subtitle: "Baño de sonido y pintura",
         description:
-          "El 4 de noviembre, de 16 a 18 horas, te invitamos a un taller que te acompaña en un viaje interior y creativo. No necesitas experiencia previa – Simplemente permítete estar presente con lo que hay y déjate llevar primero por los suaves sonidos de los cuencos tibetanos. En este marco consciente, te invitamos luego a expresar intuitivamente tu luz interior.",
+          "Un taller que te acompaña en un viaje interior y creativo. No necesitas experiencia previa – Simplemente permítete estar presente con lo que hay y déjate llevar primero por los suaves sonidos de los cuencos tibetanos. En este marco consciente, te invitamos luego a expresar intuitivamente tu luz interior.",
         location:
           "Café del Centro de Educación Ciudadana, Puschkinstraße 13, Eberswalde",
         pricing:
-          "Plazas limitadas. Plazas con descuento para padres/madres solteros/as, estudiantes, jubilados/as, desempleados/as... solo 15€",
+          "",
         contact: "Contáctame para más información",
+        nextDate: "Próxima fecha en planificación",
         alt: "Taller - Conéctate con tu luz interior",
       },
       workshop2: {
         title: "Taller: 'Imágenes interiores – nuevos caminos'",
         description:
           "Una mañana creativa para la autorreflexión y el fortalecimiento de los recursos internos. Con tiempo de pintura guiada, intercambio y un ejercicio de relajación final.",
-        nextDate: "Próxima fecha: Noviembre",
+        nextDate: "Próxima fecha en planificación",
         contact: "Contáctame para más información",
         alt: "Taller Imágenes interiores – nuevos caminos",
       },
