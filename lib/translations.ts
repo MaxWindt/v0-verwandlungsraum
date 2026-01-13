@@ -36,7 +36,7 @@ export const translations = {
         location:
           "Café des Bürgerbildungszentrums, Puschkinstraße 13, Eberswalde",
         pricing:
-          "Begrenzte Plätze.",
+          "",
         contact: "Melde dich für weitere Infos bei mir",
         nextDate: "Nächster Termin in Planung",
         alt: "Workshop - Verbinde dich mit deinem inneren Licht",
