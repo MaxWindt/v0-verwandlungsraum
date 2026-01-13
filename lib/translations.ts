@@ -274,7 +274,7 @@ export const translations = {
         location:
           "Café del Centro de Educación Ciudadana, Puschkinstraße 13, Eberswalde",
         pricing:
-          "Plazas limitadas. Plazas con descuento para padres/madres solteros/as, estudiantes, jubilados/as, desempleados/as... solo 15€",
+          "",
         contact: "Contáctame para más información",
         nextDate: "Próxima fecha en planificación",
         alt: "Taller - Conéctate con tu luz interior",
