@@ -523,7 +523,7 @@ export default function Services() {
                             <p className="font-semibold text-sm">
                               Nächster Termin
                             </p>
-                            <p className="text-sm">20. Januar, 18 Uhr</p>
+                            <p className="text-sm">Februar, Details folgen</p>
                             <p className="text-sm font-semibold text-green-700">
                               Kostenlos
                             </p>
