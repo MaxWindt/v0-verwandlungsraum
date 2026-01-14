@@ -21,12 +21,12 @@ export const translations = {
     services: {
       title: "Was biete ich an?",
       description:
-        "Ich biete einen Raum an, in dem sich Dinge zeigen und offenbaren können, für die sonst kein Platz da ist. Ich begleite dich durch deinen inneren Prozess und unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben. Die Kunsttherapie (Maltherapie) bietet dafür eine wunderbare Möglichkeit, um unbewusstes Sichtbar zu machen, um Dingen die nicht mit Worten auszudrücken sind, eine Stimme zu geben, um im geschützten Rahmen Veränderung zu ermöglichen.",
+        "Ich biete einen Raum an, in dem sich Dinge zeigen und offenbaren können, für die sonst kein Platz da ist. Ich begleite dich durch deinen inneren Prozess und unterstütze dich dabei, mehr Liebe und Wertschätzung für dein Sein zu erlauben. Die Kunsttherapie (Maltherapie) bietet dafür eine wunderbare Möglichkeit, um Unbewusstes sichtbar zu machen, um Dingen, die nicht mit Worten auszudrücken sind, eine Stimme zu geben, um im geschützten Rahmen Veränderung zu ermöglichen.",
       description2:
         'Eine Methode, die ich in meiner Arbeit gerne einsetze, ist das „Personenorientierte Malen" (POM). Dieser Malprozess lädt- ähnlich wie eine meditative Praxis- dazu ein, innere Empfindungen und Impulse achtsam wahrzunehmen, ohne sie sofort zu bewerten oder zu interpretieren. Das Erlebte wird stattdessen auf der Bildebene zum Ausdruck gebracht. Die Malbegleiterin bzw. Kunsttherapeutin übernimmt dabei die Rolle einer „Hebamme des Bildes" und fördert die Entfaltung neuer Perspektiven sowie das Entstehen von innerer Ruhe und Selbstverbundenheit.',
-      groupTitle: "GRUPPENANGEBOTE & WORKSHOPS",
+      groupTitle: "Gruppenangebote & Workshops",
       groupDescription:
-        "In meinen Gruppenangeboten und Workshops biete ich Raum für kreatives, schöpferisches Erleben, stärkung von Resourcen und achtsame Begegnung. Gemeinsam in einer kleinen Gruppe zu malen bedeutet: gesehen werden, sich selbst spüren und Da-Sein.",
+        "In meinen Gruppenangeboten und Workshops biete ich Raum für kreatives, schöpferisches Erleben, Stärkung von Ressourcen und achtsame Begegnung. Gemeinsam in einer kleinen Gruppe zu malen bedeutet: gesehen werden, sich selbst spüren und Da-Sein.",
       currentOffers: "Aktuelle Angebote:",
       workshop1: {
         title: "Verbinde dich mit deinem inneren Licht in der Dunkelheit",
@@ -68,7 +68,7 @@ export const translations = {
         "Stell dir einen Ort vor, an dem du innere Ruhe und Freude erleben kannst. Schon die Imagination kann unterstützend auf Entspannung und Wohlbefinden wirken. Wenn zudem der Körper und die Hände in den kreativen Prozess einbezogen werden, werden unterschiedliche Ebenen – Geist und Körper – gleichzeitig angesprochen, was die persönliche Entwicklung fördern kann.",
       howItWorks: "Was ist Kunsttherapie?",
       howItWorksIntro:
-        " Kunsttherapie ist ein kreativer Ansatz, der es ermöglicht, Emotionen nonverbal auszudrücken und zu reflektieren. Sie kann dazu beitragen: Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind Entspannung und Achtsamkeit zu fördern Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken. Studien geben Hinweise darauf, dass kreative Prozesse Auseinandersetzung mit Themen fördern kann.Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen. Zu beachten ist, dass die Wirkungen individuell  sind und nicht garantiert werden können.",
+        "Kunsttherapie ist ein kreativer Ansatz, der es ermöglicht, Emotionen nonverbal auszudrücken und zu reflektieren. Sie kann dazu beitragen: Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind, Entspannung und Achtsamkeit zu fördern, Selbstreflexion zu unterstützen und neue Perspektiven zu entdecken. Studien geben Hinweise darauf, dass kreative Prozesse die Auseinandersetzung mit Themen fördern können. Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen. Zu beachten ist, dass die Wirkungen individuell sind und nicht garantiert werden können.",
       benefit1:
         "Gefühle sichtbar zu machen, die schwer in Worte zu fassen sind",
       benefit2: "Entspannung und Achtsamkeit zu fördern",
@@ -95,7 +95,7 @@ export const translations = {
         "Die Bedeutung der Bilder wird nicht von der Therapeutin gedeutet, sondern entsteht aus dem eigenen Erleben der malenden Person.",
       principle4Title: "Ressourcenorientierung",
       principle4Text:
-        "Der Fokus liegt nicht bei der Diagnose, sondern bei der Selbstwahrnehmung und der Stärkung von inneren Ressourcen, um immer mehr ein Gefühl für eigene Lösungen zu entwickeln.",
+        "Der Fokus liegt nicht auf der Diagnose, sondern auf der Selbstwahrnehmung und der Stärkung von inneren Ressourcen, um immer mehr ein Gefühl für eigene Lösungen zu entwickeln.",
     },
     session: {
       title: "Rahmenbedingungen und Preise",
@@ -115,16 +115,16 @@ export const translations = {
       billing3:
         "Einige private Krankenversicherungen oder Zusatzversicherungen übernehmen unter Umständen einen Teil der Kosten.",
       advantagesTitle:
-        "Welche sind die Vorteile einer selbst bezahlten Therapie",
+        "Was sind die Vorteile einer selbst bezahlten Therapie?",
       advantage1: "Keine langen Wartezeiten",
       advantage2: "Freie Wahl einer Therapeut:in, die zu dir passt",
       advantage3:
-        "Inhalt, Dauer und Rhythmus der Therapie sind nicht festgelegt sondern an deine Bedürfnisse angepasst",
+        "Inhalt, Dauer und Rhythmus der Therapie sind nicht festgelegt, sondern an deine Bedürfnisse angepasst",
       advantage4:
         "Es muss keine seelische Krankheit gemäß den Diagnosekriterien ICD-10 und DSM-V vorliegen",
       advantage5:
         "Therapie wird in keiner Krankenakte und bei keiner Krankenversicherung vermerkt und beeinträchtigt damit nicht eine mögliche Verbeamtung oder den Abschluss künftiger Versicherungen",
-      cancellationTitle: "ABSAGE",
+      cancellationTitle: "Absage",
       cancellation1:
         "Termine können bis 24 Stunden vorher kostenfrei abgesagt werden.",
       cancellation2:
