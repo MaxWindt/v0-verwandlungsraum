@@ -39,13 +39,13 @@ export default function Hero() {
             style={{ animationDelay: "1s" }}
           ></div>
 
-          <h1 className="font-serif font-bold mb-8 sm:mb-12 relative">
+          <h1 className="font-forum text-5xl sm:text-7xl font-bold mb-8 sm:mb-12 relative">
             <span className="bg-gradient-to-r from-emerald-200 via-emerald-50 to-emerald-200 bg-clip-text animate-fade-in-up bg-white hero-title font-medium text-chart-4">
               {t("hero.title")}
             </span>
           </h1>
 
-          <p className="mb-8 max-w-2xl mx-auto italic font-normal tracking-tight sm:tracking-tighter leading-relaxed sm:leading-10 font-sans text-xl sm:text-xl md:text-2xl text-chart-5">
+          <p className="mb-8 max-w-2xl mx-auto font-forum text-2xl sm:text-4xl text-chart-5">
             {t("hero.subtitle")}
           </p>
 
