@@ -21,11 +21,7 @@ export default function Kunsttherapie() {
                 <ul className="space-y-3 max-w-3xl mx-auto"></ul>
               </div>
 
-              <div className="relative overflow-hidden p-4 sm:p-6 md:p-8 rounded-2xl bg-muted/30 my-0 py-px">
-                <p className="text-center italic text-sm sm:text-base">
-                  {t("kunsttherapie.scientificNote")}
-                </p>
-              </div>
+
             </div>
           </div>
 

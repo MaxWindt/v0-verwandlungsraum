@@ -6,13 +6,13 @@ import Script from "next/script";
 import { LanguageProvider } from "@/contexts/language-context";
 import CookieBanner from "@/components/cookie-banner";
 
-import { Crimson_Text } from "next/font/google";
+import { Forum } from "next/font/google";
 
-const crimsonText = Crimson_Text({
+const forum = Forum({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-crimson-text",
-  weight: ["400", "600", "700"],
+  variable: "--font-forum",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={crimsonText.variable}>
+    <html lang="de" className={forum.variable}>
       <body>
         <LanguageProvider>
           {children}

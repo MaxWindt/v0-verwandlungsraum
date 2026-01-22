@@ -1,6 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Glacial Indifference font - loaded from CDN */
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('https://cdn.jsdelivr.net/gh/nickshanks/Glacial-Indifference@master/GlacialIndifference-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('https://cdn.jsdelivr.net/gh/nickshanks/Glacial-Indifference@master/GlacialIndifference-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -37,11 +54,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  /* Set all font families to Crimson Text for easy design menu changes */
-  --font-crimson-text: "Crimson Text";
-  --font-sans: var(--font-crimson-text);
-  --font-serif: var(--font-crimson-text);
-  --font-mono: var(--font-crimson-text);
+  /* Font families - Forum for titles, Glacial Indifference for body */
+  --font-forum: "Forum", serif;
+  --font-glacial: "Glacial Indifference", sans-serif;
+  --font-sans: var(--font-glacial);
+  --font-serif: var(--font-forum);
+  --font-mono: var(--font-glacial);
 }
 
 .dark {
@@ -93,7 +111,7 @@ html {
 }
 
 body {
-  font-family: var(--font-crimson-text), serif;
+  font-family: var(--font-glacial), sans-serif;
   color: #1f2937; /* Softer dark gray instead of pure black for watercolor feel */
   background: linear-gradient(
     135deg,
@@ -105,9 +123,9 @@ body {
 }
 
 h1 {
-  font-family: var(--font-crimson-text), serif;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-family: var(--font-forum), serif;
+  font-weight: 400;
+  letter-spacing: 0.025em;
   color: #92400e; /* Deep amber for better contrast */
 }
 
@@ -116,9 +134,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-crimson-text), serif;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-family: var(--font-forum), serif;
+  font-weight: 400;
+  letter-spacing: 0.025em;
   color: #831843; /* Pink-900 color */
 }
 
@@ -158,7 +176,7 @@ p,
 li,
 span,
 div {
-  font-family: var(--font-crimson-text), serif;
+  font-family: var(--font-glacial), sans-serif;
 }
 
 /* Responsive base text size */
@@ -560,10 +578,10 @@ img {
 }
 
 @theme inline {
-  /* Updated font family variables to use Crimson Text */
-  --font-sans: var(--font-crimson-text);
-  --font-serif: var(--font-crimson-text);
-  --font-mono: var(--font-crimson-text);
+  /* Font family variables - Forum for titles, Glacial Indifference for body */
+  --font-sans: var(--font-glacial);
+  --font-serif: var(--font-forum);
+  --font-mono: var(--font-glacial);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
