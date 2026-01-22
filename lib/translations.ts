@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       title: "Verwandlungsraum",
-      subtitle: "Wo Altes sanft weicht, kann Neues leise wachsen.",
+      subtitle: "Ein Raum für inneren Wandel",
       backgroundAlt: "Buntes Aquarell Hintergrundbild für Kunsttherapie",
       promoTitle: "Eröffnungsangebot",
       promoText: "30% auf alle Einzelsitzungen bis 31.12.2025",
