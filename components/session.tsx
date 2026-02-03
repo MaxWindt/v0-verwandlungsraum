@@ -15,13 +15,14 @@ export default function Session() {
               <img
                 src="/images/photo_2026-02-02_11-16-29.jpg"
                 alt={t("session.imageAlt")}
-                className="rounded-lg shadow-lg max-w-md w-full"
+                className="rounded-lg shadow-lg max-w-md w-full object-cover"
+                style={{ maxHeight: "320px" }}
               />
             </div>
           </div>
 
           <div className="relative mb-12 sm:mb-16">
-            {/* Entferne den farbigen Hintergrund, nutze nur content-box */}
+            {/* Einheitliches Layout ohne farbigen Hintergrund */}
             <div className="relative rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12">
               <div className="max-w-5xl mx-auto text-base sm:text-lg leading-relaxed">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
@@ -59,7 +60,7 @@ export default function Session() {
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
                         {t("session.advantagesTitle")}
                       </h3>
-                      <ul className="list-disc list-inside space-y-2">
+                      <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
                         <li>{t("session.advantage1")}</li>
                         <li>{t("session.advantage2")}</li>
                         <li>{t("session.advantage3")}</li>
