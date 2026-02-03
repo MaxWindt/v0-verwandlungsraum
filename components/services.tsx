@@ -116,12 +116,7 @@ export default function Services(): JSX.Element {
                     <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
                       {offer.shortDescription}
                     </p>
-            {/* Neue Überschrift für Workshops */}
-            <div className="mb-6">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-                Aktuelles: Workshops
-              </h3>
-            </div>
+
                     {offer.id === 3 ? (
                       // Klang & Farbe — nur Embed + Link + Attribution
                       <Dialog>
