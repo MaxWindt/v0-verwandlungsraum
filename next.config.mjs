@@ -15,6 +15,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Explicitly provide an empty turbopack config so Next.js doesn't error
+  // when a custom webpack configuration is present.
+  turbopack: {},
   webpack: (config, { dev }) => {
     if (process.env.NODE_ENV === "development") {
       config.module.rules.push({
