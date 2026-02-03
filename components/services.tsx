@@ -94,12 +94,7 @@ export default function Services(): JSX.Element {
           <div className="mb-8 mt-8 sm:mt-12">
             <h2 className="mb-6 text-center">{t('services.title')}</h2>
 
-            {/* Neue Überschrift für Workshops */}
-            <div className="mb-6">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-                Aktuelles: Workshops
-              </h3>
-            </div>
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {offers
@@ -121,7 +116,12 @@ export default function Services(): JSX.Element {
                     <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
                       {offer.shortDescription}
                     </p>
-
+            {/* Neue Überschrift für Workshops */}
+            <div className="mb-6">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-center">
+                Aktuelles: Workshops
+              </h3>
+            </div>
                     {offer.id === 3 ? (
                       // Klang & Farbe — nur Embed + Link + Attribution
                       <Dialog>
@@ -171,18 +171,7 @@ export default function Services(): JSX.Element {
                             />
                           </div>
 
-                          <a
-                            href="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?utm_content=DAHATjF4a2M&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary underline text-sm block mb-2"
-                          >
-                            Klang & Farbe13.2.pdf
-                          </a>
 
-                          <div className="text-xs text-muted-foreground mb-4">
-                            von beccy_d-r
-                          </div>
 
                           <div className="pt-4">
                             <DialogClose asChild>
