@@ -385,6 +385,46 @@ export default function Services() {
                       <p className="text-base leading-relaxed">
                         Anschließend kann das Malen das Erlebte auf die materielle Ebene bringen, und das was dich bewegt sichtbar werden lassen. Das Malen hat eine erdende Kraft und weckt die Gestaltungskraft in dir.
                       </p>
+                      {/* Canva Embed */}
+                      <div style={{
+                        position: "relative",
+                        width: "100%",
+                        height: 0,
+                        paddingTop: "141.4286%",
+                        paddingBottom: 0,
+                        boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+                        marginTop: "1.6em",
+                        marginBottom: "0.9em",
+                        overflow: "hidden",
+                        borderRadius: "8px",
+                        willChange: "transform"
+                      }}>
+                        <iframe
+                          loading="lazy"
+                          style={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+top: 0,
+                            left: 0,
+                            border: "none",
+                            padding: 0,
+                            margin: 0
+                          }}
+                          src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
+                          allowFullScreen={true}
+                          allow="fullscreen"
+                        ></iframe>
+                      </div>
+                      <a
+                        href="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?utm_content=DAHATnYCdVo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                        target="_blank"
+                        rel="noopener"
+                        className="text-primary underline text-sm block mb-2"
+                      >
+                        Kopie von Beige and Brown Modern Corporate Mindfulness Flyer
+                      </a>{" "}
+                      <span className="text-xs text-muted-foreground">von beccy_d-r</span>
                       <div className="pt-2">
                         <p className="font-semibold mb-2">Was erwartet dich:</p>
                         <ul className="list-disc list-inside space-y-1 text-sm">
