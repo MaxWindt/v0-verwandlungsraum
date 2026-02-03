@@ -55,22 +55,20 @@ export default function Services() {
 
             {/* Responsive Grid mit Angeboten */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Angebot 1: Einzelsitzung Kunsttherapie */}
+              {/* Angebot 1: 1:1 Einzelsitzung */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
                     src="/images/design-mode/photo_52512509862091k84565_y.jpg"
-                    alt="Einzelsitzung Kunsttherapie"
+                    alt="1:1 Einzelsitzung Kunsttherapie"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <h4 className="text-lg sm:text-xl mb-3 font-semibold">
-                  Einzelsitzung Kunsttherapie
+                  1:1 Einzelsitzung
                 </h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
-                  Individueller kunsttherapeutischer Raum für deine persönliche
-                  Entwicklung. Begleitetes Malen nach der Methode von Bettina
-                  Egger.
+                  Gemeinsam schauen wir was dein Anliegen ist. Wo? Co-Working Space Thinkfarm Eberswalde.
                 </p>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -81,19 +79,12 @@ export default function Services() {
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle className="text-2xl mb-4">
-                        Einzelsitzung Kunsttherapie
+                        1:1 Einzelsitzung
                       </DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4">
                       <p className="text-base leading-relaxed">
-                        In der Einzelsitzung begleite ich dich durch deinen
-                        individuellen kunsttherapeutischen Prozess. Mit der
-                        Methode des Personenorientierten/Begleiteten Malens nach
-                        Bettina Egger steht nicht das fertige Bild, sondern dein
-                        persönlicher Prozess und die bewusste Erfahrung beim
-                        Malen im Mittelpunkt. Ich unterstütze dich dabei, mehr
-                        Liebe und Wertschätzung für dein Sein zu erlauben und
-                        neue Perspektiven zu entwickeln.
+                        Gemeinsam schauen wir, was dein Anliegen ist und wie ich dich begleiten kann. Die Sitzung findet im Co-Working Space Thinkfarm Eberswalde statt. Du erhältst einen individuellen kunsttherapeutischen Raum für deine persönliche Entwicklung.
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div className="flex items-start gap-2">
@@ -101,7 +92,7 @@ export default function Services() {
                           <div>
                             <p className="font-semibold text-sm">Ort</p>
                             <p className="text-sm">
-                              Verwandlungsraum, Eberswalde
+                              Co-Working Space Thinkfarm Eberswalde
                             </p>
                           </div>
                         </div>
@@ -111,18 +102,6 @@ export default function Services() {
                             <p className="font-semibold text-sm">Dauer</p>
                             <p className="text-sm">60 oder 90 Minuten</p>
                           </div>
-                        </div>
-                      </div>
-                      <div className="pt-2">
-                        <p className="font-semibold mb-2">
-                          Vorteile der Einzelsitzung:
-                        </p>
-                        <div className="whitespace-pre-line text-sm">
-                          • Keine langen Wartezeiten{'\n'}• Freie Wahl der
-                          Therapeutin{'\n'}• Inhalt, Dauer und Rhythmus an deine
-                          Bedürfnisse angepasst{'\n'}• Keine Diagnose
-                          erforderlich{'\n'}• Diskret - keine Vermerke in
-                          Krankenakten
                         </div>
                       </div>
                       <div className="pt-2 border-t">
@@ -161,21 +140,20 @@ export default function Services() {
                 </Dialog>
               </div>
 
-              {/* Angebot 2: Monatliche Kunsttherapie-Gruppe */}
+              {/* Angebot 2: Monatliche Gruppe - Im Fluss sein */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
                     src="/images/5348175586192460911.jpg"
-                    alt="Monatliche Kunsttherapie-Gruppe"
+                    alt="Monatliche Gruppe: Im Fluss sein"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <h4 className="text-lg sm:text-xl mb-3 font-semibold">
-                  Monatliche Kunsttherapie-Gruppe
+                  Im Fluss sein
                 </h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
-                  Ein geschützter Raum, in dem du über Farbe, Form und Bewegung
-                  wieder in Kontakt mit dir selbst kommst.
+                  Monatliche Gruppe für kreativen Ausdruck und achtsames Miteinander. Gemeinsam im Fluss sein und sich selbst neu erleben.
                 </p>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -186,15 +164,12 @@ export default function Services() {
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle className="text-2xl mb-4">
-                        Monatliche Kunsttherapie-Gruppe
+                        Im Fluss sein – Monatliche Gruppe
                       </DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4">
                       <p className="text-base leading-relaxed">
-                        Ein geschützter Raum, in dem du über Farbe, Form und
-                        Bewegung wieder in Kontakt mit dir selbst kommst. Jede
-                        Session hat ein eigenes Thema, das dich durch die
-                        Jahreszeit und deinen inneren Prozess begleitet.
+                        In der monatlichen Gruppe "Im Fluss sein" tauchen wir gemeinsam in kreative Prozesse ein. Über Farbe, Form und Bewegung kommst du wieder in Kontakt mit dir selbst. Jede Session hat ein eigenes Thema, das dich durch die Jahreszeit und deinen inneren Prozess begleitet.
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div className="flex items-start gap-2">
