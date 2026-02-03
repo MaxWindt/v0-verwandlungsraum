@@ -252,7 +252,7 @@ export default function Services() {
                 </Dialog>
               </div>
 
-              {/* Angebot 3: Klang & Farbe */}
+              {/* Angebot 3: Klang & Farbe - nur Embed */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
@@ -275,75 +275,45 @@ export default function Services() {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl mb-4">
-                        Klang & Farbe – Klangreise mit intuitivem Malen
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="space-y-4">
-                      <p className="text-base leading-relaxed">
-                        Klangschalen führen dich in eine tiefe Entspannung. Aus
-                        dieser inneren Ruhe heraus entsteht dein intuitives
-                        Bild. Ein sanfter Abend für Menschen, die
-                        Sinneswahrnehmung, Stille und kreativen Ausdruck
-                        verbinden möchten.
-                      </p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div className="flex items-start gap-2">
-                          <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">
-                              Nächster Termin
-                            </p>
-                            <p className="text-sm">in Planung</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">Ort</p>
-                            <p className="text-sm">
-                              Verwandlungsraum, Eberswalde
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Users className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">
-                              Teilnehmende
-                            </p>
-                            <p className="text-sm">max. 7 Personen</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pt-2 border-t">
-                        <p className="text-sm italic">
-                          Leitung: Rebecca + Kathi
-                        </p>
-                      </div>
-                      <div className="pt-4 border-t">
-                        <DialogClose asChild>
-                          <Button
-                            className="w-full"
-                            onClick={() => {
-                              const contactSection =
-                                document.getElementById('contact');
-                              if (contactSection) {
-                                setTimeout(() => {
-                                  contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                  });
-                                }, 10);
-                              }
-                            }}
-                          >
-                            Jetzt Kontakt aufnehmen
-                          </Button>
-                        </DialogClose>
-                      </div>
+                    <div style={{
+                      position: "relative",
+                      width: "100%",
+                      height: 0,
+                      paddingTop: "141.4286%",
+                      paddingBottom: 0,
+                      boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+                      marginTop: "1.6em",
+                      marginBottom: "0.9em",
+                      overflow: "hidden",
+                      borderRadius: "8px",
+                      willChange: "transform"
+                    }}>
+                      <iframe
+                        loading="lazy"
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+top: 0,
+                          left: 0,
+                          border: "none",
+                          padding: 0,
+                          margin: 0
+                        }}
+                        src="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?embed"
+                        allowFullScreen={true}
+                        allow="fullscreen"
+                      ></iframe>
                     </div>
+                    <a
+                      href="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?utm_content=DAHATjF4a2M&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                      target="_blank"
+                      rel="noopener"
+                      className="text-primary underline text-sm block mb-2"
+                    >
+                      Klang & Farbe13.2.pdf
+                    </a>{" "}
+                    <span className="text-xs text-muted-foreground">von beccy_d-r</span>
                   </DialogContent>
                 </Dialog>
               </div>
@@ -390,7 +360,7 @@ export default function Services() {
                           width: "100%",
                           height: "100%",
 top: 0,
-                          left: 0,
+left: 0,
                           border: "none",
                           padding: 0,
                           margin: 0
