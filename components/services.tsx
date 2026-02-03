@@ -111,9 +111,8 @@ export default function Services(): JSX.Element {
                     {offer.shortDescription}
                   </p>
 
-                  {/* Dialogs */}
                   {offer.id === 3 ? (
-                    // Klang & Farbe dialog — only embed + link + attribution
+                    // Klang & Farbe dialog — only embed + link + attribution (kept)
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="w-full mt-auto bg-transparent">
@@ -128,7 +127,6 @@ export default function Services(): JSX.Element {
                           </DialogTitle>
                         </DialogHeader>
 
-                        {/* ONLY the embed, external link and attribution */}
                         <div
                           style={{
                             position: 'relative',
@@ -162,7 +160,74 @@ export default function Services(): JSX.Element {
                           />
                         </div>
 
-                      
+                        <a
+                          href="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?utm_content=DAHATjF4a2M&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary underline text-sm block mb-2"
+                        >
+                          Klang & Farbe13.2.pdf
+                        </a>
+
+                        <div className="text-xs text-muted-foreground mb-4">
+                          von beccy_d-r
+                        </div>
+
+                        <div className="pt-4">
+                          <DialogClose asChild>
+                            <Button className="w-full">Schließen</Button>
+                          </DialogClose>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ) : offer.id === 4 ? (
+                    // Atmen und Malen — only the provided Canva embed, no links/attribution
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" className="w-full mt-auto bg-transparent">
+                          Details anzeigen
+                        </Button>
+                      </DialogTrigger>
+
+                      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl mb-4">
+                            {offer.title}
+                          </DialogTitle>
+                        </DialogHeader>
+
+                        <div
+                          style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: 0,
+                            paddingTop: '141.4286%',
+                            boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+                            marginTop: '1.6em',
+                            marginBottom: '0.9em',
+                            overflow: 'hidden',
+                            borderRadius: '8px',
+                            willChange: 'transform',
+                          }}
+                        >
+                          <iframe
+                            loading="lazy"
+                            style={{
+                              position: 'absolute',
+                              width: '100%',
+                              height: '100%',
+                              top: 0,
+                              left: 0,
+                              border: 'none',
+                              padding: 0,
+                              margin: 0,
+                            }}
+                            src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
+                            allowFullScreen
+                            allow="fullscreen"
+                            title="Atmen und Malen Embed"
+                          />
+                        </div>
 
                         <div className="pt-4">
                           <DialogClose asChild>
