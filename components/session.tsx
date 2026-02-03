@@ -13,7 +13,7 @@ export default function Session() {
             <h2 className="mb-4">{t("session.title")}</h2>
             <div className="flex justify-center mb-6 sm:mb-8">
               <img
-                src="/images/session-hero.jpg"
+                src="/images/photo_2026-02-02_11-16-29.jpg"
                 alt={t("session.imageAlt")}
                 className="rounded-lg shadow-lg max-w-md w-full"
               />
@@ -21,16 +21,8 @@ export default function Session() {
           </div>
 
           <div className="relative mb-12 sm:mb-16">
-            <div
-              className="absolute inset-0 rounded-3xl "
-              style={{
-                backgroundImage: "url(/images/vibrant-watercolor-bg.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-            <div className="relative bg-card/80 rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 shadow-lg">
+            {/* Entferne den farbigen Hintergrund, nutze nur content-box */}
+            <div className="relative rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12">
               <div className="max-w-5xl mx-auto text-base sm:text-lg leading-relaxed">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   {/* Left Column */}
