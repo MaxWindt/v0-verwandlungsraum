@@ -48,7 +48,7 @@ export default function Services() {
           </div>
 
           <div className="mb-8 mt-8 sm:mt-12">
-            <h2 className="mb-6 text-center">{t('services.groupTitle')}</h2>
+            <h2 className="mb-6 text-center">{t('services.title')}</h2>
             <p className="text-base sm:text-lg max-w-3xl mx-auto mb-8 text-left">
               {t('services.groupDescription')}
             </p>
