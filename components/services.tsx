@@ -348,7 +348,7 @@ export default function Services() {
                 </Dialog>
               </div>
 
-              {/* Angebot 4: Workshop Atmen und Malen */}
+              {/* Angebot 4: Workshop Atmen und Malen - nur Embed */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
@@ -370,120 +370,45 @@ export default function Services() {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl mb-4">
-                        Atmen und Malen – Workshop für Klarheit und Vision
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="space-y-4">
-                      <p className="text-base leading-relaxed">
-                        In diesem Workshop laden wir dich dazu ein, dein Leben ganz klar in die Hand zu nehmen. Spüre: Was möchtest du in dein Leben einladen? Wie möchtest du dein Leben gestalten?
-                      </p>
-                      <p className="text-base leading-relaxed">
-                        Der Atem lädt dich ein, Schwung in Festgesetztes zu bringen und gleichzeitig fest verankert bei dir zu sein. Du gestaltest deine Atmung und dein Leben.
-                      </p>
-                      <p className="text-base leading-relaxed">
-                        Anschließend kann das Malen das Erlebte auf die materielle Ebene bringen, und das was dich bewegt sichtbar werden lassen. Das Malen hat eine erdende Kraft und weckt die Gestaltungskraft in dir.
-                      </p>
-                      {/* Canva Embed */}
-                      <div style={{
-                        position: "relative",
-                        width: "100%",
-                        height: 0,
-                        paddingTop: "141.4286%",
-                        paddingBottom: 0,
-                        boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
-                        marginTop: "1.6em",
-                        marginBottom: "0.9em",
-                        overflow: "hidden",
-                        borderRadius: "8px",
-                        willChange: "transform"
-                      }}>
-                        <iframe
-                          loading="lazy"
-                          style={{
-                            position: "absolute",
-                            width: "100%",
-                            height: "100%",
+                    <div style={{
+                      position: "relative",
+                      width: "100%",
+                      height: 0,
+                      paddingTop: "141.4286%",
+                      paddingBottom: 0,
+                      boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+                      marginTop: "1.6em",
+                      marginBottom: "0.9em",
+                      overflow: "hidden",
+                      borderRadius: "8px",
+                      willChange: "transform"
+                    }}>
+                      <iframe
+                        loading="lazy"
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
 top: 0,
-                            left: 0,
-                            border: "none",
-                            padding: 0,
-                            margin: 0
-                          }}
-                          src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
-                          allowFullScreen={true}
-                          allow="fullscreen"
-                        ></iframe>
-                      </div>
-                      <a
-                        href="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?utm_content=DAHATnYCdVo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-                        target="_blank"
-                        rel="noopener"
-                        className="text-primary underline text-sm block mb-2"
-                      >
-                        Kopie von Beige and Brown Modern Corporate Mindfulness Flyer
-                      </a>{" "}
-                      <span className="text-xs text-muted-foreground">von beccy_d-r</span>
-                      <div className="pt-2">
-                        <p className="font-semibold mb-2">Was erwartet dich:</p>
-                        <ul className="list-disc list-inside space-y-1 text-sm">
-                          <li>Atemarbeit</li>
-                          <li>Intuitives Malen</li>
-                          <li>Ein achtsamer Raum</li>
-                          <li>Warmer Tee und gesunde Snacks</li>
-                          <li>Gruppenreflexion</li>
-                        </ul>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div className="flex items-start gap-2">
-                          <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">Termin</p>
-                            <p className="text-sm">Sonntag, 22. Februar</p>
-                            <p className="text-sm">11:00–14:00 Uhr</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-sm">Ort</p>
-                            <p className="text-sm">Lebensraum, Spechthausen 45, 16225 Eberswalde</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pt-2 border-t">
-                        <p className="font-semibold text-sm mb-2">Leitung:</p>
-                        <div className="space-y-2">
-                          <p className="text-sm">Rebecca Schwegel</p>
-                          <p className="text-sm italic">Begleiterin für Atemarbeit, B.Sc. Psychologie</p>
-                        </div>
-                      </div>
-                      <div className="pt-2 border-t">
-                        <p className="text-sm font-semibold">Energieausgleich: 33–55 €</p>
-                      </div>
-                      <div className="pt-4 border-t">
-                        <DialogClose asChild>
-                          <Button
-                            className="w-full"
-                            onClick={() => {
-                              const contactSection =
-                                document.getElementById('contact');
-                              if (contactSection) {
-                                setTimeout(() => {
-                                  contactSection.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                  });
-                                }, 10);
-                              }
-                            }}
-                          >
-                            Anmeldung
-                          </Button>
-                        </DialogClose>
-                      </div>
+                          left: 0,
+                          border: "none",
+                          padding: 0,
+                          margin: 0
+                        }}
+                        src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
+                        allowFullScreen={true}
+                        allow="fullscreen"
+                      ></iframe>
                     </div>
+                    <a
+                      href="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?utm_content=DAHATnYCdVo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                      target="_blank"
+                      rel="noopener"
+                      className="text-primary underline text-sm block mb-2"
+                    >
+                      Kopie von Beige and Brown Modern Corporate Mindfulness Flyer
+                    </a>{" "}
+                    <span className="text-xs text-muted-foreground">von beccy_d-r</span>
                   </DialogContent>
                 </Dialog>
               </div>
