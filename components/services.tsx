@@ -348,20 +348,20 @@ export default function Services() {
                 </Dialog>
               </div>
 
-              {/* Angebot 4: Atmen und Malen */}
+              {/* Angebot 4: Workshop Atmen und Malen */}
               <div className="card flex flex-col h-full">
                 <div className="mb-4 rounded-lg overflow-hidden h-48">
                   <img
                     src="/images/df3a897caf547c3f103abfe1c75c7689.jpg"
-                    alt="Atmen und Malen zur Wiederkehr des Lichts"
+                    alt="Workshop Atmen und Malen"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <h4 className="text-lg sm:text-xl mb-3 font-semibold">
-                  Atmen und Malen zur Wiederkehr des Lichts
+                  Atmen und Malen
                 </h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
-                  Imbolc - Fest des Lichts. Wir nutzen den verbundenen Atem, um das Licht in uns einzuladen.
+                  Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum, Gruppenreflexion, Tee & Snacks.
                 </p>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -372,50 +372,55 @@ export default function Services() {
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle className="text-2xl mb-4">
-                        Atmen und Malen zur Wiederkehr des Lichts
+                        Atmen und Malen – Workshop für Klarheit und Vision
                       </DialogTitle>
-                      <p className="text-lg text-primary font-medium">Imbolc - Fest des Lichts</p>
                     </DialogHeader>
                     <div className="space-y-4">
                       <p className="text-base leading-relaxed">
-                        Wir nutzen den verbundenen Atem, um das Licht in uns einzuladen. 
-                        Wir atmen tief ohne Pausen zwischen dem Ein- und Ausatmen. 
-                        Diese Atemtechnik kann einen Trance-Zustand auslösen.
+                        In diesem Workshop laden wir dich dazu ein, dein Leben ganz klar in die Hand zu nehmen. Spüre: Was möchtest du in dein Leben einladen? Wie möchtest du dein Leben gestalten?
                       </p>
                       <p className="text-base leading-relaxed">
-                        Du kannst die Erfahrungen aus der Atemreise anschließend durch einen 
-                        begleiteten künstlerischen Prozess zu Papier bringen. So kannst du 
-                        Erfahrungen, die sich nicht in Worte fassen lassen, kreativ ausdrücken.
+                        Der Atem lädt dich ein, Schwung in Festgesetztes zu bringen und gleichzeitig fest verankert bei dir zu sein. Du gestaltest deine Atmung und dein Leben.
                       </p>
+                      <p className="text-base leading-relaxed">
+                        Anschließend kann das Malen das Erlebte auf die materielle Ebene bringen, und das was dich bewegt sichtbar werden lassen. Das Malen hat eine erdende Kraft und weckt die Gestaltungskraft in dir.
+                      </p>
+                      <div className="pt-2">
+                        <p className="font-semibold mb-2">Was erwartet dich:</p>
+                        <ul className="list-disc list-inside space-y-1 text-sm">
+                          <li>Atemarbeit</li>
+                          <li>Intuitives Malen</li>
+                          <li>Ein achtsamer Raum</li>
+                          <li>Warmer Tee und gesunde Snacks</li>
+                          <li>Gruppenreflexion</li>
+                        </ul>
+                      </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div className="flex items-start gap-2">
                           <Calendar className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
                           <div>
                             <p className="font-semibold text-sm">Termin</p>
-                            <p className="text-sm">Sonntag, 1. Februar</p>
-                            <p className="text-sm">9:30-12:30 Uhr</p>
+                            <p className="text-sm">Sonntag, 22. Februar</p>
+                            <p className="text-sm">11:00–14:00 Uhr</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2">
                           <MapPin className="w-5 h-5 mt-1 text-primary flex-shrink-0" />
                           <div>
                             <p className="font-semibold text-sm">Ort</p>
-                            <p className="text-sm">im Lebensraum in Spechthausen</p>
+                            <p className="text-sm">Lebensraum, Spechthausen 45, 16225 Eberswalde</p>
                           </div>
                         </div>
-                      </div>
-                      <div className="pt-2 border-t">
-                        <p className="text-sm font-semibold">Energieausgleich: 33-55 EUR</p>
                       </div>
                       <div className="pt-2 border-t">
                         <p className="font-semibold text-sm mb-2">Leitung:</p>
                         <div className="space-y-2">
-                          <p className="text-sm">Rebecca Schwindt</p>
-                          <div>
-                            <p className="text-sm">Rebecca Schwegel</p>
-                            <p className="text-sm italic">Begleiterin für Atemarbeit, B.Sc. Psychologie</p>
-                          </div>
+                          <p className="text-sm">Rebecca Schwegel</p>
+                          <p className="text-sm italic">Begleiterin für Atemarbeit, B.Sc. Psychologie</p>
                         </div>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <p className="text-sm font-semibold">Energieausgleich: 33–55 €</p>
                       </div>
                       <div className="pt-4 border-t">
                         <DialogClose asChild>
