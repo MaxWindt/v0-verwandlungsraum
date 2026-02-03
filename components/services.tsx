@@ -38,7 +38,7 @@ export default function Services() {
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">{t('services.title')}</h2>
+            <h2 className="mb-4">Willkommen</h2>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
               {t('services.description')}
               <br />
@@ -49,8 +49,6 @@ export default function Services() {
 
           <div className="mb-8 mt-8 sm:mt-12">
             <h2 className="mb-6 text-center">{t('services.title')}</h2>
-            {/* Gruppenangebot-Text entfernt */}
-
             {/* Responsive Grid mit Angeboten */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Angebot 1: 1:1 Einzelsitzung */}
