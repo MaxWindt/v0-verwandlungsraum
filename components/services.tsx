@@ -68,7 +68,7 @@ export default function Services() {
                   1:1 Einzelsitzung
                 </h4>
                 <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
-                  Gemeinsam schauen wir was dein Anliegen ist. Wo? Co-Working Space Thinkfarm Eberswalde.
+                  Gemeinsam schauen wir was dein Anliegen ist. Wo? Thinkfarm Eberswalde, Eisenbahnstr. 92/93, 16225 Eberswalde.
                 </p>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -84,7 +84,7 @@ export default function Services() {
                     </DialogHeader>
                     <div className="space-y-4">
                       <p className="text-base leading-relaxed">
-                        Gemeinsam schauen wir, was dein Anliegen ist und wie ich dich begleiten kann. Die Sitzung findet im Co-Working Space Thinkfarm Eberswalde statt. Du erhältst einen individuellen kunsttherapeutischen Raum für deine persönliche Entwicklung.
+                        Gemeinsam schauen wir, was dein Anliegen ist und wie ich dich begleiten kann. Die Sitzung findet in der Thinkfarm Eberswalde, Eisenbahnstr. 92/93, 16225 Eberswalde statt. Du erhältst einen individuellen kunsttherapeutischen Raum für deine persönliche Entwicklung.
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div className="flex items-start gap-2">
@@ -92,7 +92,9 @@ export default function Services() {
                           <div>
                             <p className="font-semibold text-sm">Ort</p>
                             <p className="text-sm">
-                              Co-Working Space Thinkfarm Eberswalde
+                              Thinkfarm Eberswalde<br />
+                              Eisenbahnstr. 92/93<br />
+                              16225 Eberswalde
                             </p>
                           </div>
                         </div>
