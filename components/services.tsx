@@ -162,18 +162,7 @@ export default function Services(): JSX.Element {
                           />
                         </div>
 
-                        <a
-                          href="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?utm_content=DAHATjF4a2M&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary underline text-sm block mb-2"
-                        >
-                          Klang & Farbe13.2.pdf
-                        </a>
-
-                        <div className="text-xs text-muted-foreground mb-4">
-                          von beccy_d-r
-                        </div>
+                      
 
                         <div className="pt-4">
                           <DialogClose asChild>
