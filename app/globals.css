@@ -1,22 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Glacial Indifference font - loaded from CDN */
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('https://cdn.jsdelivr.net/gh/nickshanks/Glacial-Indifference@master/GlacialIndifference-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('https://cdn.jsdelivr.net/gh/nickshanks/Glacial-Indifference@master/GlacialIndifference-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -54,12 +40,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  /* Font families - Forum for titles, Glacial Indifference for body */
-  --font-forum: "Forum", serif;
-  --font-glacial: "Glacial Indifference", sans-serif;
-  --font-sans: var(--font-glacial);
-  --font-serif: var(--font-forum);
-  --font-mono: var(--font-glacial);
+  /* Font families - Montserrat for all */
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-montserrat);
+  --font-mono: var(--font-montserrat);
 }
 
 .dark {
@@ -111,7 +96,7 @@ html {
 }
 
 body {
-  font-family: var(--font-glacial), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   color: #1f2937; /* Softer dark gray instead of pure black for watercolor feel */
   background: linear-gradient(
     135deg,
@@ -123,10 +108,10 @@ body {
 }
 
 h1 {
-  font-family: var(--font-forum), serif;
-  font-weight: 400;
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 700;
   letter-spacing: 0.025em;
-  color: #92400e; /* Deep amber for better contrast */
+  color: #f46000;
 }
 
 h2,
@@ -134,10 +119,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-forum), serif;
-  font-weight: 400;
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 700;
   letter-spacing: 0.025em;
-  color: #831843; /* Pink-900 color */
+  color: #f46000;
 }
 
 /* Responsive heading sizing with clamp */
@@ -176,7 +161,7 @@ p,
 li,
 span,
 div {
-  font-family: var(--font-glacial), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 /* Responsive base text size */
@@ -578,10 +563,10 @@ img {
 }
 
 @theme inline {
-  /* Font family variables - Forum for titles, Glacial Indifference for body */
-  --font-sans: var(--font-glacial);
-  --font-serif: var(--font-forum);
-  --font-mono: var(--font-glacial);
+  /* Font family variables - Montserrat for all */
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-montserrat);
+  --font-mono: var(--font-montserrat);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

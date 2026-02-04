@@ -45,13 +45,13 @@ export default function Header() {
         <div className="flex-1 min-w-0">
           <div
             className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight truncate"
-            style={{ color: "#831843" }}
+            style={{ color: "#f46000", fontFamily: "Montserrat, sans-serif" }}
           >
             Rebecca Schwindt
           </div>
           <div
             className="font-medium tracking-wide uppercase text-xs sm:text-sm drop-shadow-md"
-            style={{ color: "#831843" }}
+            style={{ color: "#f46000", fontFamily: "Montserrat, sans-serif" }}
           >
             Kunsttherapie Eberswalde
           </div>
@@ -68,7 +68,7 @@ export default function Header() {
               offset={-80}
               duration={500}
               className="font-medium hover:text-primary cursor-pointer transition-colors duration-300 relative group transform hover:scale-105 font-serif text-right drop-shadow-md  whitespace-nowrap"
-              style={{ color: "#831843" }}
+              style={{ color: "#f46000", fontFamily: "Montserrat, sans-serif" }}
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
