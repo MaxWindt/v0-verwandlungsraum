@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
+  DialogClose
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
@@ -32,11 +32,11 @@ const offers: Offer[] = [
     title: '1:1 Einzelsitzung',
     shortDescription:
       'Gemeinsam schauen wir, was dein Anliegen ist — individueller kunsttherapeutischer Raum.',
-    image: '/images/design-mode/photo_52512509862091k84565_y.jpg',
+    image: '/images/Einzeltherapie raum.jpg',
     details: {
       location: 'Thinkfarm Eberswalde, Eisenbahnstr. 92/93, 16225 Eberswalde',
-      duration: '60 oder 90 Minuten',
-    },
+      duration: '60 oder 90 Minuten'
+    }
   },
   {
     id: 2,
@@ -48,40 +48,42 @@ const offers: Offer[] = [
     details: {
       location: 'Verwandlungsraum, Eberswalde',
       participants: 'max. 7 Personen',
-      duration: '90–120 Minuten',
-    },
+      duration: '90–120 Minuten'
+    }
   },
   {
     id: 3,
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/Klang.png',
+    image: '/images/Klang.png'
   },
   {
     id: 4,
     title: 'Atmen und Malen',
     shortDescription:
       'Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum.',
-    image: '/images/Atmen.png',
+    image: '/images/Atmen.png'
   },
   {
     id: 5,
     title: 'Info-Workshop: Was ist Kunsttherapie?',
     shortDescription:
-      "Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung.",
-    image: '/images/5348175586192460915.jpg',
-  },
+      'Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung.',
+    image: '/images/5348175586192460915.jpg'
+  }
 ];
 
 function OfferCard({ offer }: { offer: Offer }) {
+  const { t } = useLanguage();
+
   return (
     <div className="card flex flex-col h-full">
-      <div className="mb-4 rounded-lg overflow-hidden h-48">
+      <div className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}>
         <img
           src={offer.image}
           alt={offer.title}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${offer.id === 1 ? 'object-center' : ''}`}
         />
       </div>
 
@@ -91,7 +93,56 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.shortDescription}
       </p>
 
-      {offer.id === 3 ? (
+      {offer.id === 1 ? (
+        // 1:1 Einzelsitzung - detailed dialog with moved session content
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="w-full mt-auto bg-transparent">
+              Details anzeigen
+            </Button>
+          </DialogTrigger>
+
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-4">
+              <img
+                src={offer.image}
+                alt={offer.title}
+                className="w-full rounded-lg object-cover"
+                style={{ maxHeight: 360 }}
+              />
+
+              <div className="prose max-w-none text-sm sm:text-base">
+                <p>{t('session.description1')}</p>
+                <p>{t('session.description2')}</p>
+                <p>{t('session.description3')}</p>
+                <p>{t('session.description4')}</p>
+                <p>{t('session.description5')}</p>
+
+                <p className="text-sm italic mt-4">
+                  {t('session.disclaimerNote')}
+                </p>
+
+                <h4 className="mt-4">{t('session.pricesTitle')}</h4>
+                <p>{t('session.price1')}</p>
+                <p>{t('session.price2')}</p>
+                <p className="font-semibold mt-2">
+                  {t('session.starterPackage')}
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <DialogClose asChild>
+                  <Button className="w-full">Jetzt Kontakt aufnehmen</Button>
+                </DialogClose>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      ) : offer.id === 3 ? (
         // Klang & Farbe — only embed + link + attribution
         <Dialog>
           <DialogTrigger asChild>
@@ -116,7 +167,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginBottom: '0.9em',
                 overflow: 'hidden',
                 borderRadius: '8px',
-                willChange: 'transform',
+                willChange: 'transform'
               }}
             >
               <iframe
@@ -129,7 +180,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                   left: 0,
                   border: 'none',
                   padding: 0,
-                  margin: 0,
+                  margin: 0
                 }}
                 src="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?embed"
                 allowFullScreen
@@ -137,7 +188,6 @@ function OfferCard({ offer }: { offer: Offer }) {
                 title="Klang & Farbe Embed"
               />
             </div>
-
 
             <div className="pt-4">
               <DialogClose asChild>
@@ -171,7 +221,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginBottom: '0.9em',
                 overflow: 'hidden',
                 borderRadius: '8px',
-                willChange: 'transform',
+                willChange: 'transform'
               }}
             >
               <iframe
@@ -184,7 +234,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                   left: 0,
                   border: 'none',
                   padding: 0,
-                  margin: 0,
+                  margin: 0
                 }}
                 src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
                 allowFullScreen
@@ -255,7 +305,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                         setTimeout(() => {
                           contactSection.scrollIntoView({
                             behavior: 'smooth',
-                            block: 'start',
+                            block: 'start'
                           });
                         }, 10);
                       }
@@ -298,11 +348,13 @@ export default function Services(): JSX.Element {
 
             {/* Render individual offers first */}
             {individualOffers.length > 0 && (
-              <div className="mb-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {individualOffers.map((offer) => (
-                    <OfferCard key={offer.id} offer={offer} />
-                  ))}
+              <div className="mb-6 flex justify-center">
+                <div className="w-full sm:w-3/4 md:w-2/3">
+                  <div className="grid grid-cols-1 gap-6">
+                    {individualOffers.map((offer) => (
+                      <OfferCard key={offer.id} offer={offer} />
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -310,7 +362,7 @@ export default function Services(): JSX.Element {
             {/* Workshops heading */}
             <div className="mb-6">
               <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-                Aktuelles: Workshops
+                Aktuelle Angebote
               </h3>
             </div>
 

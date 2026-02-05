@@ -128,7 +128,7 @@ export const translations = {
       pricesTitle: "Preise",
       price1: "Einzelsitzung (60 Minuten): 80 €",
       price2: "Einzelsitzung (90 Minuten): 95 €",
-      starterPackage: "Starterpaket: 3 Sitzungen (90 / 60 / 60 Minuten) → 20 % Ermäßigung – 180 €",
+      starterPackage: "Starterpaket: 3 Sitzungen (90 / 60 / 60 Minuten) 204€ (20 % Ermäßigung)",
       priceNote:
         "Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden.",
       billingTitle: "Abrechnung und Kostenübernahme",

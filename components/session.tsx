@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from '@/contexts/language-context';
 
 export default function Session() {
   const { t } = useLanguage();
@@ -9,45 +9,15 @@ export default function Session() {
     <section id="session" className="py-[0]">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto content-box">
-          {/* Einzelsitzungen Section */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-6">{t("session.sectionTitle")}</h2>
-            <div className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed space-y-4 text-left">
-              <p>{t("session.description1")}</p>
-              <p>{t("session.description2")}</p>
-              <p>{t("session.description3")}</p>
-              <p>{t("session.description4")}</p>
-              <p>{t("session.description5")}</p>
-              
-              <div className="mt-6 p-4 bg-card/50 rounded-lg">
-                <p className="font-semibold mb-2">{t("session.starterPackageTitle")}</p>
-                <p>{t("session.starterPackageDetails")}</p>
-                <p>{t("session.starterPackagePrice")}</p>
-              </div>
-              
-              <p className="text-sm italic mt-4">{t("session.disclaimerNote")}</p>
-            </div>
-            
-            {/* Therapy Room Image */}
-            <div className="flex justify-center mt-8">
-              <img
-                src="/images/Einzeltherapie raum.jpg"
-                alt={t("session.therapyRoomAlt")}
-                className="rounded-lg shadow-lg max-w-2xl w-full object-cover"
-                style={{ maxHeight: "400px" }}
-              />
-            </div>
-          </div>
-
           {/* Rahmenbedingungen und Preise Section */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">{t("session.title")}</h2>
+            <h2 className="mb-4">{t('session.title')}</h2>
             <div className="flex justify-center items-center mb-6 sm:mb-8">
               <img
                 src="/images/photo_2026-02-02_11-16-29.jpg"
-                alt={t("session.imageAlt")}
+                alt={t('session.imageAlt')}
                 className="rounded-lg shadow-lg max-w-md w-full object-cover"
-                style={{ maxHeight: "320px" }}
+                style={{ maxHeight: '320px' }}
               />
             </div>
           </div>
@@ -61,27 +31,27 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.pricesTitle")}
+                        {t('session.pricesTitle')}
                       </h3>
-                      <p>{t("session.price1")}</p>
-                      <p>{t("session.price2")}</p>
-                      <p>{t("session.starterPackage")}</p>
-                      <p>{t("session.priceNote")}</p>
+                      <p>{t('session.price1')}</p>
+                      <p>{t('session.price2')}</p>
+                      <p>{t('session.starterPackage')}</p>
+                      <p>{t('session.priceNote')}</p>
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.billingTitle")}
+                        {t('session.billingTitle')}
                       </h3>
-                      <p>{t("session.billing1")}</p>
-                      <p className="text-left">{t("session.billing2")}</p>
-                      <p className="text-left">{t("session.billing3")}</p>
+                      <p>{t('session.billing1')}</p>
+                      <p className="text-left">{t('session.billing2')}</p>
+                      <p className="text-left">{t('session.billing3')}</p>
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.disclaimerTitle")}
+                        {t('session.disclaimerTitle')}
                       </h3>
-                      <p>{t("session.disclaimerText")}</p>
+                      <p>{t('session.disclaimerText')}</p>
                     </div>
                   </div>
 
@@ -89,22 +59,22 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.advantagesTitle")}
+                        {t('session.advantagesTitle')}
                       </h3>
                       <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
-                        <li>{t("session.advantage1")}</li>
-                        <li>{t("session.advantage2")}</li>
-                        <li>{t("session.advantage3")}</li>
-                        <li>{t("session.advantage4")}</li>
+                        <li>{t('session.advantage1')}</li>
+                        <li>{t('session.advantage2')}</li>
+                        <li>{t('session.advantage3')}</li>
+                        <li>{t('session.advantage4')}</li>
                       </ul>
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.cancellationTitle")}
+                        {t('session.cancellationTitle')}
                       </h3>
-                      <p>{t("session.cancellation1")}</p>
-                      <p className="text-left">{t("session.cancellation2")}</p>
+                      <p>{t('session.cancellation1')}</p>
+                      <p className="text-left">{t('session.cancellation2')}</p>
                     </div>
                   </div>
                 </div>
