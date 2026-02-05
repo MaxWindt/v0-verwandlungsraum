@@ -66,7 +66,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-8 items-center flex-shrink-0">
+        <nav className="hidden xl:flex space-x-8 items-center flex-shrink-0">
           {menuItems.map((item) => (
             <ScrollLink
               key={item.to}
@@ -86,7 +86,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button and Language Switcher */}
-        <div className="lg:hidden flex items-center gap-3 flex-shrink-0 ml-4">
+        <div className="xl:hidden flex items-center gap-3 flex-shrink-0 ml-4">
           <LanguageSwitcher />
           <button
             className="text-foreground hover:text-primary transition-colors drop-shadow-md"
@@ -102,7 +102,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-card/95 backdrop-blur-md border-t border-border">
+        <div className="xl:hidden bg-card/95 backdrop-blur-md border-t border-border">
           <div className="container mx-auto px-4 sm:px-6 py-6 flex flex-col space-y-4">
             {menuItems.map((item) => (
               <ScrollLink
