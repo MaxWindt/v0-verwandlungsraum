@@ -42,7 +42,12 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 flex flex-col items-start">
+          <img 
+            src="/images/Visitenkarte Logo.png" 
+            alt="Verwandlungsraum Logo" 
+            className="h-12 sm:h-16 md:h-20 w-auto mb-2 drop-shadow-lg"
+          />
           <div
             className="text-xl sm:text-2xl tracking-tight drop-shadow-lg font-extralight truncate"
             style={{ color: "#f46000", fontFamily: "Montserrat, sans-serif" }}

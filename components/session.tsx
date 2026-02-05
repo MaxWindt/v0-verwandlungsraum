@@ -42,7 +42,7 @@ export default function Session() {
           {/* Rahmenbedingungen und Preise Section */}
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">{t("session.title")}</h2>
-            <div className="flex justify-center mb-6 sm:mb-8">
+            <div className="flex justify-center items-center mb-6 sm:mb-8">
               <img
                 src="/images/photo_2026-02-02_11-16-29.jpg"
                 alt={t("session.imageAlt")}
