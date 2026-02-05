@@ -1,8 +1,8 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 /* Montserrat font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,7 +41,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   /* Font families - Montserrat for all */
-  --font-montserrat: "Montserrat", sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
   --font-sans: var(--font-montserrat);
   --font-serif: var(--font-montserrat);
   --font-mono: var(--font-montserrat);
