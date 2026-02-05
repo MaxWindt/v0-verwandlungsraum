@@ -1,13 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  DialogClose,
+  DialogTrigger
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
@@ -32,11 +32,11 @@ const offers: Offer[] = [
     title: '1:1 Einzelsitzung',
     shortDescription:
       'Gemeinsam schauen wir, was dein Anliegen ist — individueller kunsttherapeutischer Raum.',
-    image: '/images/design-mode/photo_52512509862091k84565_y.jpg',
+    image: '/images/Einzeltherapie raum.jpg',
     details: {
       location: 'Thinkfarm Eberswalde, Eisenbahnstr. 92/93, 16225 Eberswalde',
-      duration: '60 oder 90 Minuten',
-    },
+      duration: '60 oder 90 Minuten'
+    }
   },
   {
     id: 2,
@@ -48,40 +48,58 @@ const offers: Offer[] = [
     details: {
       location: 'Verwandlungsraum, Eberswalde',
       participants: 'max. 7 Personen',
-      duration: '90–120 Minuten',
-    },
+      duration: '90–120 Minuten'
+    }
   },
   {
     id: 3,
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/design-mode/photo_5251250986209184578_y.jpg',
+    image: '/images/Klang.png'
   },
   {
     id: 4,
     title: 'Atmen und Malen',
     shortDescription:
       'Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum.',
-    image: '/images/df3a897caf547c3f103abfe1c75c7689.jpg',
+    image: '/images/Atmen.png'
   },
   {
     id: 5,
     title: 'Info-Workshop: Was ist Kunsttherapie?',
     shortDescription:
-      "Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung.",
-    image: '/images/5348175586192460915.jpg',
-  },
+      'Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung. Weitere Details folgen im Dialog.',
+    image: '/images/5348175586192460915.jpg'
+  }
 ];
 
 function OfferCard({ offer }: { offer: Offer }) {
+  const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleContactClick = () => {
+    // Close dialog then scroll after a small delay to let dialog close animation finish
+    setOpen(false);
+    setTimeout(scrollToContact, 450);
+  };
+
   return (
     <div className="card flex flex-col h-full">
-      <div className="mb-4 rounded-lg overflow-hidden h-48">
+      <div
+        className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}
+      >
         <img
           src={offer.image}
           alt={offer.title}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${offer.id === 1 ? 'object-center' : ''}`}
         />
       </div>
 
@@ -91,15 +109,47 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.shortDescription}
       </p>
 
-      {offer.id === 3 ? (
-        // Klang & Farbe — only embed + link + attribution
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button variant="outline" className="w-full mt-auto bg-transparent">
+            Details anzeigen
+          </Button>
+        </DialogTrigger>
 
+        {offer.id === 1 ? (
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-4">
+              <img
+                src={offer.image}
+                alt={offer.title}
+                className="w-full rounded-lg object-cover"
+                style={{ maxHeight: 360 }}
+              />
+
+              <div className="prose max-w-none text-sm sm:text-base">
+                <p>{t('session.description1')}</p>
+                <p>{t('session.description2')}</p>
+                <p>{t('session.description3')}</p>
+                <p>{t('session.description4')}</p>
+                <p>{t('session.description5')}</p>
+
+                <p className="text-sm italic mt-4">
+                  {t('session.disclaimerNote')}
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <Button className="w-full" onClick={handleContactClick}>
+                  Jetzt Kontakt aufnehmen
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        ) : offer.id === 3 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -116,7 +166,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginBottom: '0.9em',
                 overflow: 'hidden',
                 borderRadius: '8px',
-                willChange: 'transform',
+                willChange: 'transform'
               }}
             >
               <iframe
@@ -129,7 +179,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                   left: 0,
                   border: 'none',
                   padding: 0,
-                  margin: 0,
+                  margin: 0
                 }}
                 src="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?embed"
                 allowFullScreen
@@ -138,23 +188,13 @@ function OfferCard({ offer }: { offer: Offer }) {
               />
             </div>
 
-
             <div className="pt-4">
-              <DialogClose asChild>
-                <Button className="w-full">Schließen</Button>
-              </DialogClose>
+              <Button className="w-full" onClick={handleContactClick}>
+                Jetzt Kontakt aufnehmen
+              </Button>
             </div>
           </DialogContent>
-        </Dialog>
-      ) : offer.id === 4 ? (
-        // Atmen und Malen — only the provided iframe embed, no links/attribution
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
-
+        ) : offer.id === 4 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -171,7 +211,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginBottom: '0.9em',
                 overflow: 'hidden',
                 borderRadius: '8px',
-                willChange: 'transform',
+                willChange: 'transform'
               }}
             >
               <iframe
@@ -184,7 +224,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                   left: 0,
                   border: 'none',
                   padding: 0,
-                  margin: 0,
+                  margin: 0
                 }}
                 src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
                 allowFullScreen
@@ -194,21 +234,12 @@ function OfferCard({ offer }: { offer: Offer }) {
             </div>
 
             <div className="pt-4">
-              <DialogClose asChild>
-                <Button className="w-full">Schließen</Button>
-              </DialogClose>
+              <Button className="w-full" onClick={handleContactClick}>
+                Jetzt Kontakt aufnehmen
+              </Button>
             </div>
           </DialogContent>
-        </Dialog>
-      ) : (
-        // Generic dialog for other offers with concise info + contact CTA
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
-
+        ) : (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -245,30 +276,21 @@ function OfferCard({ offer }: { offer: Offer }) {
                 </div>
               )}
 
+              {offer.id === 5 && (
+                <div className="mt-2">
+                  <p className="text-sm italic">Weitere Details folgen.</p>
+                </div>
+              )}
+
               <div className="pt-4 border-t">
-                <DialogClose asChild>
-                  <Button
-                    className="w-full"
-                    onClick={() => {
-                      const contactSection = document.getElementById('contact');
-                      if (contactSection) {
-                        setTimeout(() => {
-                          contactSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start',
-                          });
-                        }, 10);
-                      }
-                    }}
-                  >
-                    Jetzt Kontakt aufnehmen
-                  </Button>
-                </DialogClose>
+                <Button className="w-full" onClick={handleContactClick}>
+                  Jetzt Kontakt aufnehmen
+                </Button>
               </div>
             </div>
           </DialogContent>
-        </Dialog>
-      )}
+        )}
+      </Dialog>
     </div>
   );
 }
@@ -280,12 +302,12 @@ export default function Services(): JSX.Element {
   const workshopOffers = offers.filter((o) => !o.hidden && o.id !== 1);
 
   return (
-    <section id="services" className="py-0">
+    <section id="welcome" className="py-0">
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">Willkommen</h2>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
+            <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
               {t('services.description')}
               <br />
               <br />
@@ -293,16 +315,18 @@ export default function Services(): JSX.Element {
             </p>
           </div>
 
-          <div className="mb-8 mt-8 sm:mt-12">
+          <div id="services" className="mb-8 mt-8 sm:mt-12">
             <h2 className="mb-6 text-center">{t('services.title')}</h2>
 
             {/* Render individual offers first */}
             {individualOffers.length > 0 && (
-              <div className="mb-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {individualOffers.map((offer) => (
-                    <OfferCard key={offer.id} offer={offer} />
-                  ))}
+              <div className="mb-6 flex justify-center">
+                <div className="w-full sm:w-3/4 md:w-2/3">
+                  <div className="grid grid-cols-1 gap-6">
+                    {individualOffers.map((offer) => (
+                      <OfferCard key={offer.id} offer={offer} />
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -310,7 +334,7 @@ export default function Services(): JSX.Element {
             {/* Workshops heading */}
             <div className="mb-6">
               <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-                Aktuelles: Workshops
+                Aktuelle Angebote
               </h3>
             </div>
 

@@ -78,33 +78,38 @@ export const translations = {
         "Hinweis: Die Wirkungen sind individuell und können nicht garantiert werden.",
       forWhomIntro:
         "Dieser Ansatz kann zum Beispiel Menschen in belastenden Lebenssituationen, wie Stress, Ängsten oder Trauer, unterstützen.",
-      pomTitle: "Personenorientierte Maltherapie",
+      pomTitle: "Personenorientiertes Malen (POM)",
       whyMethodIntro:
-        "Wir malen auf dieselbe Art und Weise, wie wir unser Leben leben.\n Dr. phil. Bettina Egger, Begründerin der Methode.",
+        "Das personenorientierte Malen wurde von Bettina Egger entwickelt und unterscheidet sich etwas von anderen kunsttherapeutischen Ansätzen.",
       methodDescription:
-        "Das Personenorientierte bzw. Begleitete Malen nach Bettina Egger, die mehrere Jahre bei Arno Stern gelernt hat, stellt den Menschen und seinen inneren Ausdruck in den Mittelpunkt. Dabei geht es nicht um das fertige Bild, sondern um den persönlichen Prozess und die bewusste Erfahrung beim Malen. Ich begleite dich durch diesen Prozess und die Entstehung des Bildes.",
-      principlesTitle: "Zentrale Prinzipien",
-      principle1Title: "Prozess statt Produkt",
-      principle1Text:
-        "Wichtig ist nicht das fertige Bild, sondern der Malvorgang und das Erleben währenddessen.",
-      principle2Title: "Innere Bilder sichtbar machen",
-      principle2Text:
-        "Gefühle, Erinnerungen oder Konflikte werden über Farben, Formen und Symbole zum Ausdruck gebracht. Emotionale Blockaden können bewusst und thematisiert werden.",
-      principle3Title: "Keine Interpretation von außen",
-      principle3Text:
-        "Die Bedeutung der Bilder wird nicht von der Therapeutin gedeutet, sondern entsteht aus dem eigenen Erleben der malenden Person.",
-      principle4Title: "Ressourcenorientierung",
-      principle4Text:
-        "Der Fokus liegt nicht auf der Diagnose, sondern auf der Selbstwahrnehmung und der Stärkung von inneren Ressourcen, um immer mehr ein Gefühl für eigene Lösungen zu entwickeln.",
+        "In der Personenorientierten Maltherapie gibt es in der Regel keine vorgegebenen Aufgaben oder Themen. Dein Bild entsteht aus einem ersten inneren Impuls und entwickelt sich daraus weiter. Der offene Malprozess steht im Mittelpunkt.\n\nAlles, was sich zeigt – Farben, Formen, Bewegungen – ist Teil deines persönlichen Ausdrucks. Ziele, Themen und Erkenntnisse entstehen aus diesem Prozess heraus.\n\nMeine wichtigste Aufgabe dabei ist das Begleiten:\nIch bin präsent, aufmerksam und unterstützend an deiner Seite – und gehe mit dir den Weg, wohin auch immer das Bild dich führt.",
+
     },
     session: {
       title: "Rahmenbedingungen und Preise",
+      sectionTitle: "Einzelsitzungen",
+      description1:
+        "Im Zentrum der Waldstadt Eberswalde biete ich – bis zur Anmietung eines eigenen Ateliers – Einzelsitzungen im ruhigen Coachingraum des Coworking-Spaces Thinkfarm an.",
+      description2:
+        "Der Raum bietet einen geschützten Rahmen, in dem mit unterschiedlichen künstlerischen Materialien wie Pastellkreide, Gouache oder Zeichenkreide gearbeitet werden kann. Der gestalterische Prozess dient der Selbsterforschung und dem Ausdruck innerer Themen.",
+      description3:
+        "Die Dauer eines begleitenden Prozesses ist individuell sehr unterschiedlich. In einzelnen Fällen kann bereits eine einmalige Sitzung als hilfreich erlebt werden, häufig werden jedoch Themen über mehrere Wochen hinweg vertieft bearbeitet, bis sich ein stimmiger Abschluss zeigt. Umfang und Verlauf werden dabei stets gemeinsam abgestimmt.",
+      description4:
+        "Die erste Kennenlernsitzung dauert in der Regel 90 Minuten. Die erste halbe Stunde ist dem gegenseitigen Kennenlernen, der Klärung von Fragen sowie der Besprechung deines Anliegens gewidmet. Anschließend findet die praktische Arbeit statt.",
+      description5:
+        "Nach der ersten Sitzung kannst du individuell entscheiden, ob du künftig 60 oder 90 Minuten buchen möchtest.",
       imageAlt:
         "Individuelle Kunsttherapie-Sitzung mit Therapeutin und Klient beim gemeinsamen Malen",
+      therapyRoomAlt: "Coachingraum für Einzelsitzungen bei Thinkfarm",
+      starterPackageTitle: "Starterpaket:",
+      starterPackageDetails: "3 Sitzungen (90 / 60 / 60 Minuten)",
+      starterPackagePrice: "→ 20 % Ermäßigung – 180 €",
+      disclaimerNote:
+        "Hinweis: Das Angebot stellt keine Psychotherapie im Sinne des Psychotherapeutengesetzes dar und ersetzt keine medizinische oder psychotherapeutische Behandlung.",
       pricesTitle: "Preise",
       price1: "Einzelsitzung (60 Minuten): 80 €",
       price2: "Einzelsitzung (90 Minuten): 95 €",
-      starterPackage: "Starter Paket: 90+60+60 min. für 200€",
+      starterPackage: "Starterpaket: 3 Sitzungen (90 / 60 / 60 Minuten) 204€ (20 % Ermäßigung)",
       priceNote:
         "Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden.",
       billingTitle: "Abrechnung und Kostenübernahme",
@@ -315,33 +320,38 @@ export const translations = {
         "Nota: Los efectos son individuales y no se pueden garantizar.",
       forWhomIntro:
         "Este enfoque puede, por ejemplo, apoyar a personas en situaciones de vida estresantes, como estrés, ansiedad o duelo.",
-      pomTitle: "Terapia de Pintura Orientada a la Persona",
+      pomTitle: "Pintura Orientada a la Persona (POM)",
       whyMethodIntro:
-        "Pintamos de la misma manera que vivimos nuestras vidas.\n Dra. phil. Bettina Egger, fundadora del método.",
+        "La pintura orientada a la persona fue desarrollada por Bettina Egger y se diferencia un poco de otros enfoques de arteterapia.",
       methodDescription:
-        "La Pintura Orientada a la Persona o Pintura Acompañada según Bettina Egger, quien estudió varios años con Arno Stern, pone a la persona y su expresión interior en el centro. No se trata de la imagen terminada, sino del proceso personal y la experiencia consciente durante la pintura. Te acompaño a través de este proceso y la creación de la imagen.",
-      principlesTitle: "Principios centrales",
-      principle1Title: "Proceso en lugar de producto",
-      principle1Text:
-        "Lo importante no es la imagen terminada, sino el proceso de pintura y la experiencia durante el mismo.",
-      principle2Title: "Hacer visibles las imágenes internas",
-      principle2Text:
-        "Los sentimientos, recuerdos o conflictos se expresan a través de colores, formas y símbolos. Los bloqueos emocionales pueden hacerse conscientes y tematizarse.",
-      principle3Title: "Sin interpretación externa",
-      principle3Text:
-        "El significado de las imágenes no es interpretado por la terapeuta, sino que surge de la propia experiencia de la persona que pinta.",
-      principle4Title: "Orientación a los recursos",
-      principle4Text:
-        "El enfoque no está en el diagnóstico, sino en la autopercepción y el fortalecimiento de los recursos internos, para desarrollar cada vez más un sentimiento de soluciones propias.",
+        "En la terapia de pintura orientada a la persona, por lo general no hay tareas o temas predefinidos. Tu imagen surge de un primer impulso interno y se desarrolla a partir de allí. El proceso abierto de pintura está en el centro.\n\nTodo lo que se muestra – colores, formas, movimientos – es parte de tu expresión personal. Los objetivos, temas y percepciones surgen de este proceso.\n\nMi tarea más importante es acompañar:\nEstoy presente, atenta y apoyándote a tu lado – y camino contigo por donde la imagen te lleve.",
+
     },
     session: {
       title: "Condiciones marco y precios",
+      sectionTitle: "Sesiones Individuales",
+      description1:
+        "En el centro de Waldstadt Eberswalde ofrezco – hasta el alquiler de mi propio estudio – sesiones individuales en la tranquila sala de coaching del espacio de coworking Thinkfarm.",
+      description2:
+        "La sala ofrece un marco protegido, en el que se puede trabajar con diferentes materiales artísticos como tiza pastel, gouache o tiza de dibujo. El proceso creativo sirve para la autoexploración y la expresión de temas internos.",
+      description3:
+        "La duración de un proceso de acompañamiento es individualmente muy diferente. En casos individuales, una sola sesión puede ser experimentada como útil, sin embargo, los temas a menudo se trabajan en profundidad durante varias semanas, hasta que se muestra un cierre armonioso. El alcance y el curso siempre se coordinan juntos.",
+      description4:
+        "La primera sesión de conocimiento generalmente dura 90 minutos. La primera media hora está dedicada al conocimiento mutuo, aclaración de preguntas y discusión de tu preocupación. Luego se realiza el trabajo práctico.",
+      description5:
+        "Después de la primera sesión, puedes decidir individualmente si deseas reservar 60 o 90 minutos en el futuro.",
       imageAlt:
         "Sesión individual de arteterapia con terapeuta y cliente pintando juntos",
+      therapyRoomAlt: "Sala de coaching para sesiones individuales en Thinkfarm",
+      starterPackageTitle: "Paquete de inicio:",
+      starterPackageDetails: "3 sesiones (90 / 60 / 60 minutos)",
+      starterPackagePrice: "→ 20% de descuento – 180 €",
+      disclaimerNote:
+        "Nota: La oferta no constituye psicoterapia en el sentido de la Ley de Psicoterapeutas y no reemplaza tratamiento médico o psicoterapéutico.",
       pricesTitle: "Precios",
       price1: "Sesión individual (60 minutos): 80 €",
       price2: "Sesión individual (90 minutos): 95 €",
-      starterPackage: "Paquete inicial: 90+60+60 min. por 200€",
+      starterPackage: "Paquete de inicio: 3 sesiones (90 / 60 / 60 minutos) → 20% de descuento – 180 €",
       priceNote:
         "En caso de dificultades financieras, se puede acordar un descuento individual.",
       billingTitle: "Facturación y cobertura de costos",

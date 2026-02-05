@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from '@/contexts/language-context';
 
 export default function Session() {
   const { t } = useLanguage();
@@ -9,14 +9,15 @@ export default function Session() {
     <section id="session" className="py-[0]">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto content-box">
+          {/* Rahmenbedingungen und Preise Section */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">{t("session.title")}</h2>
-            <div className="flex justify-center mb-6 sm:mb-8">
+            <h2 className="mb-4">{t('session.title')}</h2>
+            <div className="flex justify-center items-center mb-6 sm:mb-8 min-h-[320px] sm:min-h-[380px]">
               <img
                 src="/images/photo_2026-02-02_11-16-29.jpg"
-                alt={t("session.imageAlt")}
-                className="rounded-lg shadow-lg max-w-md w-full object-cover"
-                style={{ maxHeight: "320px" }}
+                alt={t('session.imageAlt')}
+                className="rounded-lg shadow-lg max-w-md w-full object-cover object-center"
+                style={{ maxHeight: '420px' }}
               />
             </div>
           </div>
@@ -30,27 +31,27 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.pricesTitle")}
+                        {t('session.pricesTitle')}
                       </h3>
-                      <p>{t("session.price1")}</p>
-                      <p>{t("session.price2")}</p>
-                      <p>{t("session.starterPackage")}</p>
-                      <p>{t("session.priceNote")}</p>
+                      <p>{t('session.price1')}</p>
+                      <p>{t('session.price2')}</p>
+                      <p>{t('session.starterPackage')}</p>
+                      <p>{t('session.priceNote')}</p>
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.billingTitle")}
+                        {t('session.billingTitle')}
                       </h3>
-                      <p>{t("session.billing1")}</p>
-                      <p className="text-left">{t("session.billing2")}</p>
-                      <p className="text-left">{t("session.billing3")}</p>
+                      <p>{t('session.billing1')}</p>
+                      <p className="text-left">{t('session.billing2')}</p>
+                      <p className="text-left">{t('session.billing3')}</p>
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.disclaimerTitle")}
+                        {t('session.disclaimerTitle')}
                       </h3>
-                      <p>{t("session.disclaimerText")}</p>
+                      <p>{t('session.disclaimerText')}</p>
                     </div>
                   </div>
 
@@ -58,22 +59,22 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.advantagesTitle")}
+                        {t('session.advantagesTitle')}
                       </h3>
                       <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
-                        <li>{t("session.advantage1")}</li>
-                        <li>{t("session.advantage2")}</li>
-                        <li>{t("session.advantage3")}</li>
-                        <li>{t("session.advantage4")}</li>
+                        <li>{t('session.advantage1')}</li>
+                        <li>{t('session.advantage2')}</li>
+                        <li>{t('session.advantage3')}</li>
+                        <li>{t('session.advantage4')}</li>
                       </ul>
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t("session.cancellationTitle")}
+                        {t('session.cancellationTitle')}
                       </h3>
-                      <p>{t("session.cancellation1")}</p>
-                      <p className="text-left">{t("session.cancellation2")}</p>
+                      <p>{t('session.cancellation1')}</p>
+                      <p className="text-left">{t('session.cancellation2')}</p>
                     </div>
                   </div>
                 </div>

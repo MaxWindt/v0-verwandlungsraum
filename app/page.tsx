@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import Header from "@/components/header";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Services from "@/components/services";
-import Session from "@/components/session";
-import Kunsttherapie from "@/components/kunsttherapie";
-import Contact from "@/components/contact";
-import Footer from "@/components/footer";
+import { useEffect } from 'react';
+import Header from '@/components/header';
+import Hero from '@/components/hero';
+import About from '@/components/about';
+import Services from '@/components/services';
+import Session from '@/components/session';
+import Kunsttherapie from '@/components/kunsttherapie';
+import Contact from '@/components/contact';
+import Footer from '@/components/footer';
 
 export default function Home() {
   useEffect(() => {
     // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = "smooth";
+    document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
-      document.documentElement.style.scrollBehavior = "auto";
+      document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
 
