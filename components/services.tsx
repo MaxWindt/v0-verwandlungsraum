@@ -56,14 +56,14 @@ const offers: Offer[] = [
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/design-mode/photo_5251250986209184578_y.jpg',
+    image: '/images/Klang.png',
   },
   {
     id: 4,
     title: 'Atmen und Malen',
     shortDescription:
       'Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum.',
-    image: '/images/df3a897caf547c3f103abfe1c75c7689.jpg',
+    image: '/images/Atmen.png',
   },
   {
     id: 5,

@@ -28,8 +28,8 @@ export default function Kunsttherapie() {
           <div>
             <div className="mb-6 sm:mb-8 flex justify-center">
               <img
-                src="/images/pom-painting-example.jpg"
-                alt="Beispiel eines personenorientierten Maltherapie-Bildes"
+                src="/images/POM_header.jpg"
+                alt="Personenorientiertes Malen - Kunsttherapie"
                 className="rounded-2xl shadow-lg max-w-2xl w-full sm:w-10/12 md:w-8/12 lg:w-5/12"
               />
             </div>
@@ -42,16 +42,10 @@ export default function Kunsttherapie() {
               <div className="absolute inset-0 bg-card/80 rounded-2xl"></div>
               <div className="relative z-10 my-0 p-4 sm:p-6 md:p-8 lg:p-10">
                 <div className="mb-4 text-base sm:text-lg text-center">
-                  {t("kunsttherapie.whyMethodIntro")
-                    .split("\n")
-                    .map((line, index) => (
-                      <p key={index} className={index === 0 ? "italic" : ""}>
-                        {line}
-                      </p>
-                    ))}
+                  <p className="mb-4">{t("kunsttherapie.whyMethodIntro")}</p>
                 </div>
                 <div className="text-base sm:text-lg">
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed whitespace-pre-line">
                     {t("kunsttherapie.methodDescription")}
                   </p>
                 </div>

@@ -7,6 +7,7 @@ import About from "@/components/about";
 import Services from "@/components/services";
 import Session from "@/components/session";
 import Kunsttherapie from "@/components/kunsttherapie";
+import HpPsych from "@/components/hp-psych";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Kunsttherapie />
+      <HpPsych />
       <Session />
       <About />
       <Contact />
