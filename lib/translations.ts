@@ -166,7 +166,7 @@ export const translations = {
     },
     footer: {
       title: "Verwandlungsraum",
-      subtitle: "Kreativer Ausdruck als Einladung zur Veränderung.",
+      subtitle: "Ein Raum für inneren Wandel",
       quickLinks: "Schnelllinks",
       start: "Start",
       about: "Über mich",
@@ -407,7 +407,7 @@ export const translations = {
     },
     footer: {
       title: "Espacio de Transformación",
-      subtitle: "Expresión creativa como invitación al cambio.",
+      subtitle: "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
       quickLinks: "Enlaces rápidos",
       start: "Inicio",
       about: "Sobre mí",
