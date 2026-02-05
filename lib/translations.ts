@@ -85,25 +85,6 @@ export const translations = {
         "In der Personenorientierten Maltherapie gibt es in der Regel keine vorgegebenen Aufgaben oder Themen. Dein Bild entsteht aus einem ersten inneren Impuls und entwickelt sich daraus weiter. Der offene Malprozess steht im Mittelpunkt.\n\nAlles, was sich zeigt – Farben, Formen, Bewegungen – ist Teil deines persönlichen Ausdrucks. Ziele, Themen und Erkenntnisse entstehen aus diesem Prozess heraus.\n\nMeine wichtigste Aufgabe dabei ist das Begleiten:\nIch bin präsent, aufmerksam und unterstützend an deiner Seite – und gehe mit dir den Weg, wohin auch immer das Bild dich führt.",
 
     },
-    hpPsych: {
-      title: "Heilpraktikerin für Psychotherapie & Kunsttherapie",
-      intro1:
-        "Manchmal verlieren wir die Verbindung zu uns und unserer Mitte. Stress, Umbrüche oder belastende Erfahrungen können uns aus dem Gleichgewicht bringen. In meiner Praxis begegne ich dir als Heilpraktikerin für Psychotherapie und Kunsttherapeutin mit Achtsamkeit, Respekt und Offenheit – und begleite dich in deinem eigenen Rhythmus, mit einem wachen Blick für deine inneren Kräfte und Möglichkeiten.",
-      intro2:
-        "Mein Angebot richtet sich an Menschen, die sich in einer herausfordernden Lebensphase befinden oder den Wunsch verspüren, sich selbst auf einer tieferen Ebene zu verstehen und ihren inneren Themen Raum zu geben.",
-      topicsTitle: "Dabei kann es zum Beispiel gehen um:",
-      topic1: "anhaltende innere Unruhe, Stress oder Erschöpfung",
-      topic2: "kreisende Gedanken oder emotionale Anspannung",
-      topic3: "Schwierigkeiten in Beziehungen oder im sozialen Umfeld",
-      topic4: "Trennung, berufliche Veränderungen oder andere Umbrüche",
-      topic5: "Fragen zu Selbstwert, Selbstwahrnehmung und persönlicher Entwicklung",
-      topic6: "Trauer- und Abschiedsprozesse",
-      topic7: "belastende innere Erfahrungen aus schwierigen Lebensphasen",
-      qualificationNote:
-        "Ich begleite dich stabilisierend, klärend und unterstützend im Rahmen meiner Qualifikation als Heilpraktikerin für Psychotherapie.",
-      limitationsNote:
-        "In Situationen, die eine intensive medizinische oder psychiatrische Behandlung erfordern, ist eine andere Form der Unterstützung sinnvoll und notwendig – dabei helfe ich dir gern, passende Wege zu finden.",
-    },
     session: {
       title: "Rahmenbedingungen und Preise",
       sectionTitle: "Einzelsitzungen",
@@ -345,25 +326,6 @@ export const translations = {
       methodDescription:
         "En la terapia de pintura orientada a la persona, por lo general no hay tareas o temas predefinidos. Tu imagen surge de un primer impulso interno y se desarrolla a partir de allí. El proceso abierto de pintura está en el centro.\n\nTodo lo que se muestra – colores, formas, movimientos – es parte de tu expresión personal. Los objetivos, temas y percepciones surgen de este proceso.\n\nMi tarea más importante es acompañar:\nEstoy presente, atenta y apoyándote a tu lado – y camino contigo por donde la imagen te lleve.",
 
-    },
-    hpPsych: {
-      title: "Practicante de Psicoterapia & Arteterapia",
-      intro1:
-        "A veces perdemos la conexión con nosotros mismos y nuestro centro. El estrés, los cambios o las experiencias estresantes pueden desequilibrarnos. En mi consulta te encuentro como practicante de psicoterapia y arteterapeuta con atención plena, respeto y apertura – y te acompaño en tu propio ritmo, con una mirada atenta a tus fuerzas internas y posibilidades.",
-      intro2:
-        "Mi oferta está dirigida a personas que se encuentran en una fase de vida desafiante o que sienten el deseo de entenderse a sí mismas a un nivel más profundo y dar espacio a sus temas internos.",
-      topicsTitle: "Por ejemplo, puede tratarse de:",
-      topic1: "inquietud interior persistente, estrés o agotamiento",
-      topic2: "pensamientos circulares o tensión emocional",
-      topic3: "dificultades en las relaciones o en el entorno social",
-      topic4: "separación, cambios profesionales u otros cambios",
-      topic5: "preguntas sobre la autoestima, la autopercepción y el desarrollo personal",
-      topic6: "procesos de duelo y despedida",
-      topic7: "experiencias internas estresantes de fases difíciles de la vida",
-      qualificationNote:
-        "Te acompaño de manera estabilizadora, aclaradora y de apoyo en el marco de mi calificación como practicante de psicoterapia.",
-      limitationsNote:
-        "En situaciones que requieren un tratamiento médico o psiquiátrico intensivo, otra forma de apoyo es sensata y necesaria – con gusto te ayudo a encontrar caminos adecuados.",
     },
     session: {
       title: "Condiciones marco y precios",

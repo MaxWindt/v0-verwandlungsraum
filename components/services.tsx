@@ -1,13 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  DialogClose
+  DialogTrigger
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
@@ -69,17 +69,33 @@ const offers: Offer[] = [
     id: 5,
     title: 'Info-Workshop: Was ist Kunsttherapie?',
     shortDescription:
-      'Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung.',
+      'Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung. Weitere Details folgen im Dialog.',
     image: '/images/5348175586192460915.jpg'
   }
 ];
 
 function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleContactClick = () => {
+    // Close dialog then scroll after a small delay to let dialog close animation finish
+    setOpen(false);
+    setTimeout(scrollToContact, 450);
+  };
 
   return (
     <div className="card flex flex-col h-full">
-      <div className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}>
+      <div
+        className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}
+      >
         <img
           src={offer.image}
           alt={offer.title}
@@ -93,15 +109,14 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.shortDescription}
       </p>
 
-      {offer.id === 1 ? (
-        // 1:1 Einzelsitzung - detailed dialog with moved session content
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button variant="outline" className="w-full mt-auto bg-transparent">
+            Details anzeigen
+          </Button>
+        </DialogTrigger>
 
+        {offer.id === 1 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -125,32 +140,16 @@ function OfferCard({ offer }: { offer: Offer }) {
                 <p className="text-sm italic mt-4">
                   {t('session.disclaimerNote')}
                 </p>
-
-                <h4 className="mt-4">{t('session.pricesTitle')}</h4>
-                <p>{t('session.price1')}</p>
-                <p>{t('session.price2')}</p>
-                <p className="font-semibold mt-2">
-                  {t('session.starterPackage')}
-                </p>
               </div>
 
               <div className="pt-4">
-                <DialogClose asChild>
-                  <Button className="w-full">Jetzt Kontakt aufnehmen</Button>
-                </DialogClose>
+                <Button className="w-full" onClick={handleContactClick}>
+                  Jetzt Kontakt aufnehmen
+                </Button>
               </div>
             </div>
           </DialogContent>
-        </Dialog>
-      ) : offer.id === 3 ? (
-        // Klang & Farbe — only embed + link + attribution
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
-
+        ) : offer.id === 3 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -190,21 +189,12 @@ function OfferCard({ offer }: { offer: Offer }) {
             </div>
 
             <div className="pt-4">
-              <DialogClose asChild>
-                <Button className="w-full">Schließen</Button>
-              </DialogClose>
+              <Button className="w-full" onClick={handleContactClick}>
+                Jetzt Kontakt aufnehmen
+              </Button>
             </div>
           </DialogContent>
-        </Dialog>
-      ) : offer.id === 4 ? (
-        // Atmen und Malen — only the provided iframe embed, no links/attribution
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
-
+        ) : offer.id === 4 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -244,21 +234,12 @@ function OfferCard({ offer }: { offer: Offer }) {
             </div>
 
             <div className="pt-4">
-              <DialogClose asChild>
-                <Button className="w-full">Schließen</Button>
-              </DialogClose>
+              <Button className="w-full" onClick={handleContactClick}>
+                Jetzt Kontakt aufnehmen
+              </Button>
             </div>
           </DialogContent>
-        </Dialog>
-      ) : (
-        // Generic dialog for other offers with concise info + contact CTA
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full mt-auto bg-transparent">
-              Details anzeigen
-            </Button>
-          </DialogTrigger>
-
+        ) : (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
@@ -295,30 +276,21 @@ function OfferCard({ offer }: { offer: Offer }) {
                 </div>
               )}
 
+              {offer.id === 5 && (
+                <div className="mt-2">
+                  <p className="text-sm italic">Weitere Details folgen.</p>
+                </div>
+              )}
+
               <div className="pt-4 border-t">
-                <DialogClose asChild>
-                  <Button
-                    className="w-full"
-                    onClick={() => {
-                      const contactSection = document.getElementById('contact');
-                      if (contactSection) {
-                        setTimeout(() => {
-                          contactSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                          });
-                        }, 10);
-                      }
-                    }}
-                  >
-                    Jetzt Kontakt aufnehmen
-                  </Button>
-                </DialogClose>
+                <Button className="w-full" onClick={handleContactClick}>
+                  Jetzt Kontakt aufnehmen
+                </Button>
               </div>
             </div>
           </DialogContent>
-        </Dialog>
-      )}
+        )}
+      </Dialog>
     </div>
   );
 }
@@ -330,12 +302,12 @@ export default function Services(): JSX.Element {
   const workshopOffers = offers.filter((o) => !o.hidden && o.id !== 1);
 
   return (
-    <section id="services" className="py-0">
+    <section id="welcome" className="py-0">
       <div className="container mx-auto">
         <div className="max-w-6xl content-box my-0 mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">Willkommen</h2>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto mt-4 font-serif text-left">
+            <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
               {t('services.description')}
               <br />
               <br />
@@ -343,7 +315,7 @@ export default function Services(): JSX.Element {
             </p>
           </div>
 
-          <div className="mb-8 mt-8 sm:mt-12">
+          <div id="services" className="mb-8 mt-8 sm:mt-12">
             <h2 className="mb-6 text-center">{t('services.title')}</h2>
 
             {/* Render individual offers first */}

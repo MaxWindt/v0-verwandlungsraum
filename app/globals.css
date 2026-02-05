@@ -193,9 +193,33 @@ p {
   line-height: 1.5;
 }
 
-/* Section backgrounds */
+/* Section backgrounds and spacing - reduced vertical gaps */
 section {
   background: transparent; /* Let the body gradient show through */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove spacing created by first/last child margins inside sections */
+section > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Reduce space around content boxes */
+.content-box {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* More translucent for watercolor effect */
+  border-radius: 2rem; /* More organic rounded corners */
+  padding: 1rem; /* px-4 equivalent on mobile */
+  backdrop-filter: blur(10px); /* Added blur for watercolor effect */
+  margin: clamp(0.5rem, 1vw, 1rem) auto; /* Reduced responsive margin */
 }
 
 /* Removed box-shadow from content boxes */

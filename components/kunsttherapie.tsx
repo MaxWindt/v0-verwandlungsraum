@@ -39,7 +39,7 @@ export default function Kunsttherapie() {
             <div className="relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-card/80 rounded-2xl"></div>
               <div className="relative z-10 my-0 p-4 sm:p-6 md:p-8 lg:p-10">
-                <div className="mb-4 text-base sm:text-lg text-center">
+                <div className="mb-4 text-base sm:text-lg">
                   <p className="mb-4">{t('kunsttherapie.whyMethodIntro')}</p>
                 </div>
                 <div className="text-base sm:text-lg">

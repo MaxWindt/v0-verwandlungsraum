@@ -27,7 +27,7 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
-    { name: t('navigation.start'), to: 'hero' },
+    { name: t('navigation.start'), to: 'welcome' },
     { name: t('navigation.services'), to: 'services' },
     { name: t('navigation.artTherapy'), to: 'kunsttherapie' },
     { name: t('navigation.sessionInfo'), to: 'session' },
@@ -42,7 +42,14 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">
-        <div className="flex-1 min-w-0 flex items-center">
+        <ScrollLink
+          to="hero"
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
+          className="flex-1 min-w-0 flex items-center cursor-pointer"
+        >
           <img
             src="/images/Visitenkarte Logo.png"
             alt="Verwandlungsraum Logo"
@@ -63,7 +70,7 @@ export default function Header() {
               Kunsttherapie Eberswalde
             </div>
           </div>
-        </div>
+        </ScrollLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex space-x-8 items-center flex-shrink-0">

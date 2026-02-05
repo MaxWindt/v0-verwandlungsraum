@@ -12,12 +12,12 @@ export default function Session() {
           {/* Rahmenbedingungen und Preise Section */}
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">{t('session.title')}</h2>
-            <div className="flex justify-center items-center mb-6 sm:mb-8">
+            <div className="flex justify-center items-center mb-6 sm:mb-8 min-h-[320px] sm:min-h-[380px]">
               <img
                 src="/images/photo_2026-02-02_11-16-29.jpg"
                 alt={t('session.imageAlt')}
-                className="rounded-lg shadow-lg max-w-md w-full object-cover"
-                style={{ maxHeight: '320px' }}
+                className="rounded-lg shadow-lg max-w-md w-full object-cover object-center"
+                style={{ maxHeight: '420px' }}
               />
             </div>
           </div>
