@@ -83,19 +83,7 @@ export const translations = {
         "Das personenorientierte Malen wurde von Bettina Egger entwickelt und unterscheidet sich etwas von anderen kunsttherapeutischen Ansätzen.",
       methodDescription:
         "In der Personenorientierten Maltherapie gibt es in der Regel keine vorgegebenen Aufgaben oder Themen. Dein Bild entsteht aus einem ersten inneren Impuls und entwickelt sich daraus weiter. Der offene Malprozess steht im Mittelpunkt.\n\nAlles, was sich zeigt – Farben, Formen, Bewegungen – ist Teil deines persönlichen Ausdrucks. Ziele, Themen und Erkenntnisse entstehen aus diesem Prozess heraus.\n\nMeine wichtigste Aufgabe dabei ist das Begleiten:\nIch bin präsent, aufmerksam und unterstützend an deiner Seite – und gehe mit dir den Weg, wohin auch immer das Bild dich führt.",
-      principlesTitle: "Zentrale Prinzipien",
-      principle1Title: "Prozess statt Produkt",
-      principle1Text:
-        "Wichtig ist nicht das fertige Bild, sondern der Malvorgang und das Erleben währenddessen.",
-      principle2Title: "Innere Bilder sichtbar machen",
-      principle2Text:
-        "Gefühle, Erinnerungen oder Konflikte werden über Farben, Formen und Symbole zum Ausdruck gebracht. Emotionale Blockaden können bewusst und thematisiert werden.",
-      principle3Title: "Keine Interpretation von außen",
-      principle3Text:
-        "Die Bedeutung der Bilder wird nicht von der Therapeutin gedeutet, sondern entsteht aus dem eigenen Erleben der malenden Person.",
-      principle4Title: "Ressourcenorientierung",
-      principle4Text:
-        "Der Fokus liegt nicht auf der Diagnose, sondern auf der Selbstwahrnehmung und der Stärkung von inneren Ressourcen, um immer mehr ein Gefühl für eigene Lösungen zu entwickeln.",
+
     },
     hpPsych: {
       title: "Heilpraktikerin für Psychotherapie & Kunsttherapie",
@@ -356,19 +344,7 @@ export const translations = {
         "La pintura orientada a la persona fue desarrollada por Bettina Egger y se diferencia un poco de otros enfoques de arteterapia.",
       methodDescription:
         "En la terapia de pintura orientada a la persona, por lo general no hay tareas o temas predefinidos. Tu imagen surge de un primer impulso interno y se desarrolla a partir de allí. El proceso abierto de pintura está en el centro.\n\nTodo lo que se muestra – colores, formas, movimientos – es parte de tu expresión personal. Los objetivos, temas y percepciones surgen de este proceso.\n\nMi tarea más importante es acompañar:\nEstoy presente, atenta y apoyándote a tu lado – y camino contigo por donde la imagen te lleve.",
-      principlesTitle: "Principios centrales",
-      principle1Title: "Proceso en lugar de producto",
-      principle1Text:
-        "Lo importante no es la imagen terminada, sino el proceso de pintura y la experiencia durante el mismo.",
-      principle2Title: "Hacer visibles las imágenes internas",
-      principle2Text:
-        "Los sentimientos, recuerdos o conflictos se expresan a través de colores, formas y símbolos. Los bloqueos emocionales pueden hacerse conscientes y tematizarse.",
-      principle3Title: "Sin interpretación externa",
-      principle3Text:
-        "El significado de las imágenes no es interpretado por la terapeuta, sino que surge de la propia experiencia de la persona que pinta.",
-      principle4Title: "Orientación a los recursos",
-      principle4Text:
-        "El enfoque no está en el diagnóstico, sino en la autopercepción y el fortalecimiento de los recursos internos, para desarrollar cada vez más un sentimiento de soluciones propias.",
+
     },
     hpPsych: {
       title: "Practicante de Psicoterapia & Arteterapia",
