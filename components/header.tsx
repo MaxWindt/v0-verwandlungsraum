@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import Image from 'next/image';
+import OptimizedImage from './ui/optimized-image';
+import type { StaticImageData } from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import LanguageSwitcher from './language-switcher';
@@ -59,9 +62,11 @@ export default function Header() {
           duration={500}
           className="flex-1 min-w-0 flex items-center cursor-pointer"
         >
-          <img
+          <OptimizedImage
             src="/images/Visitenkarte Logo.png"
             alt="Verwandlungsraum Logo"
+            width={120}
+            height={48}
             className="h-auto max-h-[2.2rem] sm:max-h-[2.6rem] md:max-h-[3rem] w-auto mr-3 drop-shadow-lg"
             style={{ objectFit: 'contain' }}
           />

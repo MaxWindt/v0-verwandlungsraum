@@ -1,6 +1,8 @@
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
+import Image from 'next/image';
+import OptimizedImage from './ui/optimized-image';
 
 export default function Session() {
   const { t } = useLanguage();
@@ -13,12 +15,18 @@ export default function Session() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">{t('session.title')}</h2>
             <div className="flex justify-center items-center mb-6 sm:mb-8 min-h-[320px] sm:min-h-[380px]">
-              <img
-                src="/images/photo_2026-02-02_11-16-29.jpg"
-                alt={t('session.imageAlt')}
-                className="rounded-lg shadow-lg max-w-md w-full object-cover object-center"
-                style={{ maxHeight: '420px' }}
-              />
+              <div
+                className="rounded-lg shadow-lg max-w-md w-full overflow-hidden"
+                style={{ maxHeight: 420 }}
+              >
+                <OptimizedImage
+                  src="/images/photo_2026-02-02_11-16-29.jpg"
+                  alt={t('session.imageAlt')}
+                  width={800}
+                  height={600}
+                  className="object-cover object-center w-full h-full"
+                />
+              </div>
             </div>
           </div>
 

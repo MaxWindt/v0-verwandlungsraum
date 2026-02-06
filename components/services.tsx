@@ -10,6 +10,7 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
 
 interface Offer {
@@ -96,9 +97,11 @@ function OfferCard({ offer }: { offer: Offer }) {
       <div
         className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}
       >
-        <img
-          src={offer.image}
+        <OptimizedImage
+          src={offer.image || ''}
           alt={offer.title}
+          width={600}
+          height={360}
           className={`w-full h-full object-cover ${offer.id === 1 ? 'object-center' : ''}`}
         />
       </div>
@@ -123,9 +126,11 @@ function OfferCard({ offer }: { offer: Offer }) {
             </DialogHeader>
 
             <div className="space-y-4">
-              <img
-                src={offer.image}
+              <OptimizedImage
+                src={offer.image || ''}
                 alt={offer.title}
+                width={1200}
+                height={720}
                 className="w-full rounded-lg object-cover"
                 style={{ maxHeight: 360 }}
               />

@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import type React from "react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import type React from 'react';
+import Image from 'next/image';
+import OptimizedImage from './ui/optimized-image';
+import { useState, useEffect } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -11,32 +12,32 @@ export default function Gallery() {
   const [infoTimeout, setInfoTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const images = [
-    { id: 1, src: "/images/workspace1.png", alt: "Kunsttherapie Impression 1" },
-    { id: 2, src: "/images/workspace2.png", alt: "Kunsttherapie Impression 2" },
-    { id: 3, src: "/images/workspace3.png", alt: "Kunsttherapie Impression 3" },
-    { id: 4, src: "/images/meditation.png", alt: "Kunsttherapie Impression 4" },
-    { id: 5, src: "/images/clay-face.jpg", alt: "Tonskulptur - Gesicht" },
-    { id: 6, src: "/images/clay-animals.jpg", alt: "Tonskulpturen - Tiere" },
+    { id: 1, src: '/images/workspace1.png', alt: 'Kunsttherapie Impression 1' },
+    { id: 2, src: '/images/workspace2.png', alt: 'Kunsttherapie Impression 2' },
+    { id: 3, src: '/images/workspace3.png', alt: 'Kunsttherapie Impression 3' },
+    { id: 4, src: '/images/meditation.png', alt: 'Kunsttherapie Impression 4' },
+    { id: 5, src: '/images/clay-face.jpg', alt: 'Tonskulptur - Gesicht' },
+    { id: 6, src: '/images/clay-animals.jpg', alt: 'Tonskulpturen - Tiere' },
     {
       id: 7,
-      src: "/images/therapy-space.jpg",
-      alt: "Therapieraum mit Mandala",
+      src: '/images/therapy-space.jpg',
+      alt: 'Therapieraum mit Mandala'
     },
     {
       id: 8,
-      src: "/images/art-materials.jpg",
-      alt: "Kunsttherapie Materialien",
+      src: '/images/art-materials.jpg',
+      alt: 'Kunsttherapie Materialien'
     },
     {
       id: 9,
-      src: "/images/group-artwork.jpg",
-      alt: "Gruppenarbeit Kunsttherapie",
-    },
+      src: '/images/group-artwork.jpg',
+      alt: 'Gruppenarbeit Kunsttherapie'
+    }
   ];
 
   const openLightbox = (imageIndex: number) => {
     setSelectedImage(imageIndex);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
@@ -46,13 +47,13 @@ export default function Gallery() {
       clearTimeout(infoTimeout);
       setInfoTimeout(null);
     }
-    document.body.style.overflow = "unset";
+    document.body.style.overflow = 'unset';
   };
 
   const goToPrevious = () => {
     if (selectedImage !== null) {
       setSelectedImage(
-        selectedImage === 0 ? images.length - 1 : selectedImage - 1,
+        selectedImage === 0 ? images.length - 1 : selectedImage - 1
       );
     }
   };
@@ -60,7 +61,7 @@ export default function Gallery() {
   const goToNext = () => {
     if (selectedImage !== null) {
       setSelectedImage(
-        selectedImage === images.length - 1 ? 0 : selectedImage + 1,
+        selectedImage === images.length - 1 ? 0 : selectedImage + 1
       );
     }
   };
@@ -83,9 +84,9 @@ export default function Gallery() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowLeft") goToPrevious();
-    if (e.key === "ArrowRight") goToNext();
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') goToPrevious();
+    if (e.key === 'ArrowRight') goToNext();
   };
 
   useEffect(() => {
@@ -115,8 +116,8 @@ export default function Gallery() {
                 className="relative h-48 sm:h-56 md:h-64 rounded-2xl sm:rounded-3xl overflow-hidden hover-lift cursor-pointer group"
                 onClick={() => openLightbox(index)}
               >
-                <Image
-                  src={image.src || "/placeholder.svg"}
+                <OptimizedImage
+                  src={image.src || '/placeholder.svg'}
                   alt={image.alt}
                   fill
                   className="object-cover"
@@ -192,8 +193,8 @@ export default function Gallery() {
               className="relative w-full h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
-                src={images[selectedImage].src || "/placeholder.svg"}
+              <OptimizedImage
+                src={images[selectedImage].src || '/placeholder.svg'}
                 alt={images[selectedImage].alt}
                 fill
                 className="object-contain"
@@ -204,7 +205,7 @@ export default function Gallery() {
 
           <div
             className={`absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-full transition-opacity duration-300 pointer-events-none text-sm sm:text-base ${
-              showInfo ? "opacity-100" : "opacity-0"
+              showInfo ? 'opacity-100' : 'opacity-0'
             }`}
           >
             {selectedImage + 1} / {images.length}
@@ -212,7 +213,7 @@ export default function Gallery() {
 
           <div
             className={`absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 text-white text-center transition-opacity duration-300 pointer-events-none max-w-[90vw] ${
-              showInfo ? "opacity-100" : "opacity-0"
+              showInfo ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <p className="text-sm sm:text-base md:text-lg font-medium bg-amber-800/70 px-3 py-1 sm:px-4 sm:py-2 rounded-lg">

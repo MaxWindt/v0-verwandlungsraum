@@ -1,6 +1,8 @@
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
+import Image from 'next/image';
+import OptimizedImage from './ui/optimized-image';
 
 export default function Kunsttherapie() {
   const { t } = useLanguage();
@@ -25,11 +27,15 @@ export default function Kunsttherapie() {
 
           <div>
             <div className="mb-6 sm:mb-8 flex justify-center">
-              <img
-                src="/images/POM_header.jpg"
-                alt="Personenorientiertes Malen - Kunsttherapie"
-                className="rounded-2xl shadow-lg max-w-2xl w-full sm:w-10/12 md:w-8/12 lg:w-5/12"
-              />
+              <div className="rounded-2xl shadow-lg max-w-2xl w-full sm:w-10/12 md:w-8/12 lg:w-5/12 overflow-hidden">
+                <OptimizedImage
+                  src="/images/POM_header.jpg"
+                  alt="Personenorientiertes Malen - Kunsttherapie"
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-2xl sm:text-3xl mb-4 sm:mb-6">
