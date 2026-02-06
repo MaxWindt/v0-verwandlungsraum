@@ -79,6 +79,8 @@ function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
 
+  const isCenterPreview = offer.id === 1 || offer.id === 3 || offer.id === 4;
+
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -95,14 +97,14 @@ function OfferCard({ offer }: { offer: Offer }) {
   return (
     <div className="card flex flex-col h-full">
       <div
-        className={`mb-4 rounded-lg overflow-hidden h-48 ${offer.id === 1 ? 'flex items-center justify-center' : ''}`}
+        className={`mb-4 rounded-lg overflow-hidden h-48 ${isCenterPreview ? 'flex items-center justify-center' : ''}`}
       >
         <OptimizedImage
           src={offer.image || ''}
           alt={offer.title}
           width={600}
           height={360}
-          className={`w-full h-full object-cover ${offer.id === 1 ? 'object-center' : ''}`}
+          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2' : 'object-cover'} ${offer.id === 1 ? 'object-center' : ''}`}
         />
       </div>
 
