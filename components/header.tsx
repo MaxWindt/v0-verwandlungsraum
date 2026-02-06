@@ -12,15 +12,24 @@ export default function Header() {
   const { t } = useLanguage();
 
   useEffect(() => {
+    // Throttle scroll handling with requestAnimationFrame and use a passive listener
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      const y = window.scrollY;
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          setScrolled((prev) => {
+            const next = y > 50;
+            return prev === next ? prev : next;
+          });
+          ticking = false;
+        });
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -38,7 +47,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-cover bg-center bg-no-repeat ${
-        scrolled ? 'backdrop-blur-md border-b border-border' : ''
+        scrolled ? 'bg-white/90 border-b border-border' : ''
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 py-6 flex justify-between leading-7 tracking-widest items-center text-base w-full">

@@ -165,8 +165,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginTop: '1.6em',
                 marginBottom: '0.9em',
                 overflow: 'hidden',
-                borderRadius: '8px',
-                willChange: 'transform'
+                borderRadius: '8px'
               }}
             >
               <iframe
@@ -210,8 +209,7 @@ function OfferCard({ offer }: { offer: Offer }) {
                 marginTop: '1.6em',
                 marginBottom: '0.9em',
                 overflow: 'hidden',
-                borderRadius: '8px',
-                willChange: 'transform'
+                borderRadius: '8px'
               }}
             >
               <iframe
@@ -302,51 +300,53 @@ export default function Services(): JSX.Element {
   const workshopOffers = offers.filter((o) => !o.hidden && o.id !== 1);
 
   return (
-    <section id="welcome" className="py-0">
-      <div className="container mx-auto">
-        <div className="max-w-6xl content-box my-0 mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-4">Willkommen</h2>
-            <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
-              {t('services.description')}
-              <br />
-              <br />
-              {t('services.description2')}
-            </p>
-          </div>
-
-          <div id="services" className="mb-8 mt-8 sm:mt-12">
-            <h2 className="mb-6 text-center">{t('services.title')}</h2>
-
-            {/* Render individual offers first */}
-            {individualOffers.length > 0 && (
-              <div className="mb-6 flex justify-center">
-                <div className="w-full sm:w-3/4 md:w-2/3">
-                  <div className="grid grid-cols-1 gap-6">
-                    {individualOffers.map((offer) => (
-                      <OfferCard key={offer.id} offer={offer} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Workshops heading */}
-            <div className="mb-6">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-                Aktuelle Angebote
-              </h3>
-            </div>
-
-            {/* Render workshops (visible ones) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {workshopOffers.map((offer) => (
-                <OfferCard key={offer.id} offer={offer} />
-              ))}
+    <>
+      <section id="welcome" className="py-0">
+        <div className="container mx-auto">
+          <div className="max-w-6xl content-box my-0 mx-auto">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="mb-4">Willkommen</h2>
+              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
+                {t('services.description')}
+                <br />
+                <br />
+                {t('services.description2')}
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="services" className="mb-8 mt-8 sm:mt-12">
+        <h2 className="mb-6 text-center">{t('services.title')}</h2>
+
+        {/* Render individual offers first */}
+        {individualOffers.length > 0 && (
+          <div className="mb-6 flex justify-center">
+            <div className="w-full sm:w-3/4 md:w-2/3">
+              <div className="grid grid-cols-1 gap-6">
+                {individualOffers.map((offer) => (
+                  <OfferCard key={offer.id} offer={offer} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Workshops heading */}
+        <div className="mb-6">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-center">
+            Aktuelle Angebote
+          </h3>
+        </div>
+
+        {/* Render workshops (visible ones) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {workshopOffers.map((offer) => (
+            <OfferCard key={offer.id} offer={offer} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
