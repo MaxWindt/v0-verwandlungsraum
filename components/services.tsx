@@ -104,7 +104,7 @@ function OfferCard({ offer }: { offer: Offer }) {
           alt={offer.title}
           width={600}
           height={360}
-          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2' : 'object-cover'} ${offer.id === 1 ? 'object-center' : ''}`}
+          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg'} ${offer.id === 1 ? 'object-center' : ''}`}
         />
       </div>
 
