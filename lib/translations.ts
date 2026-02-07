@@ -103,7 +103,7 @@ export const translations = {
       therapyRoomAlt: "Coachingraum für Einzelsitzungen bei Thinkfarm",
       starterPackageTitle: "Starterpaket:",
       starterPackageDetails: "3 Sitzungen (90 / 60 / 60 Minuten)",
-      starterPackagePrice: "→ 20 % Ermäßigung – 180 €",
+      starterPackagePrice: "→ 20 % Ermäßigung – 204 €",
       disclaimerNote:
         "Hinweis: Das Angebot stellt keine Psychotherapie im Sinne des Psychotherapeutengesetzes dar und ersetzt keine medizinische oder psychotherapeutische Behandlung.",
       pricesTitle: "Preise",
@@ -344,13 +344,13 @@ export const translations = {
       therapyRoomAlt: "Sala de coaching para sesiones individuales en Thinkfarm",
       starterPackageTitle: "Paquete de inicio:",
       starterPackageDetails: "3 sesiones (90 / 60 / 60 minutos)",
-      starterPackagePrice: "→ 20% de descuento – 180 €",
+      starterPackagePrice: "→ 20% de descuento – 204 €",
       disclaimerNote:
         "Nota: La oferta no constituye psicoterapia en el sentido de la Ley de Psicoterapeutas y no reemplaza tratamiento médico o psicoterapéutico.",
       pricesTitle: "Precios",
       price1: "Sesión individual (60 minutos): 80 €",
       price2: "Sesión individual (90 minutos): 95 €",
-      starterPackage: "Paquete de inicio: 3 sesiones (90 / 60 / 60 minutos) → 20% de descuento – 180 €",
+      starterPackage: "Paquete de inicio: 3 sesiones (90 / 60 / 60 minutos) → 20% de descuento – 204 €",
       priceNote:
         "En caso de dificultades financieras, se puede acordar un descuento individual.",
       billingTitle: "Facturación y cobertura de costos",
