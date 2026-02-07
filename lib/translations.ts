@@ -274,7 +274,7 @@ export const translations = {
         title: "Conéctate con tu luz interior en la oscuridad",
         subtitle: "Baño de sonido y pintura",
         description:
-          "Un taller que te acompaña en un viaje interior y creativo. No necesitas experiencia previa – Simplemente permítete estar presente con lo que hay y déjate llevar primero por los suaves sonidos de los cuencos tibetanos. En este marco consciente, te invitamos luego a expresar intuitivamente tu luz interior.",
+          "Un taller que te acompaña en un viaje interior y creativo. No necesitas experiencia previa – Simplemente permítete estar presente con lo que hay y déjate llevar primero por los suaves sonidos de los cuencos sonoros. En este marco consciente, te invitamos luego a expresar intuitivamente tu luz interior.",
         location:
           "Café del Centro de Educación Ciudadana, Puschkinstraße 13, Eberswalde",
         pricing:
@@ -361,7 +361,7 @@ export const translations = {
       billing3:
         "Algunos seguros de salud privados o seguros complementarios pueden cubrir parte de los costos en determinadas circunstancias.",
       advantagesTitle:
-        "¿Cuáles son las ventajas de una terapia autogestionada?",
+        "¿Cuáles son las ventajas de una terapia pagada por ti mismo?",
       advantage1: "Sin largos tiempos de espera",
       advantage2: "Libre elección de un/a terapeuta que se adapte a ti",
       advantage3:
