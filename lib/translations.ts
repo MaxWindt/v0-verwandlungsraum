@@ -253,8 +253,7 @@ export const translations = {
     },
     hero: {
       title: "Espacio de Transformación",
-      subtitle:
-        "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
+      subtitle: "Un espacio para la transformación interior",
       backgroundAlt: "Imagen de fondo de acuarela colorida para arteterapia",
       promoTitle: "Oferta de inauguración",
       promoText:
@@ -267,7 +266,7 @@ export const translations = {
         "Ofrezco un espacio donde las cosas pueden mostrarse y revelarse, para las que de otro modo no hay lugar. Te acompaño a través de tu proceso interior y te apoyo para permitir más amor y aprecio por tu ser. La arteterapia (terapia de pintura) ofrece una maravillosa oportunidad para hacer visible lo inconsciente, para dar voz a cosas que no se pueden expresar con palabras, para permitir el cambio en un marco protegido.",
       description2:
         'Un método que me gusta usar en mi trabajo es la "Pintura Orientada a la Persona" (POM). Este proceso de pintura invita, similar a una práctica meditativa, a percibir conscientemente los sentimientos e impulsos internos sin evaluarlos o interpretarlos inmediatamente. Lo experimentado se expresa en el nivel de la imagen. La acompañante de pintura o arteterapeuta asume el papel de "comadrona de la imagen" y promueve el desarrollo de nuevas perspectivas, así como la creación de calma interior y autoconexión.',
-      groupTitle: "OFERTAS GRUPALES Y TALLERES",
+      groupTitle: "Ofertas grupales y talleres",
       groupDescription:
         "En mis ofertas grupales y talleres, ofrezco espacio para la experiencia creativa, la expresión personal y el encuentro consciente. Pintar juntos en un grupo pequeño significa: ser visto, sentirse a uno mismo y estar presente.",
       currentOffers: "Ofertas actuales:",
@@ -371,7 +370,7 @@ export const translations = {
         "No es necesario que exista una enfermedad mental según los criterios de diagnóstico ICD-10 y DSM-V",
       advantage5:
         "La terapia no se registra en ningún expediente médico ni en ningún seguro de salud y, por lo tanto, no afecta una posible función pública o la contratación de seguros futuros",
-      cancellationTitle: "CANCELACIÓN",
+      cancellationTitle: "Cancelación",
       cancellation1:
         "Las citas se pueden cancelar sin costo hasta 24 horas antes.",
       cancellation2:
@@ -407,7 +406,7 @@ export const translations = {
     },
     footer: {
       title: "Espacio de Transformación",
-      subtitle: "Donde lo viejo cede suavemente, lo nuevo puede crecer silenciosamente.",
+      subtitle: "Un espacio para la transformación interior",
       quickLinks: "Enlaces rápidos",
       start: "Inicio",
       about: "Sobre mí",

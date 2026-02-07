@@ -12,14 +12,16 @@ const forum = Forum({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-forum',
-  weight: ['400']
+  weight: ['400'],
+  fallback: ['Georgia', 'serif']
 });
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-montserrat',
-  weight: ['400', '500', '600', '700']
+  weight: ['400', '500', '600', '700'],
+  fallback: ['Arial', 'sans-serif']
 });
 
 export const metadata: Metadata = {
