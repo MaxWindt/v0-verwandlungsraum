@@ -198,7 +198,7 @@ function OfferCard({ offer }: { offer: Offer }) {
               }}
             >
               <IframeWithSpinner
-                src="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?embed"
+                src="https://www.canva.com/design/DAHC4blyFwk/qVyzuQCbOgBq-lduaEGEdw/view?embed"
                 title="Klang & Farbe Embed"
               />
             </div>
