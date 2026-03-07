@@ -16,7 +16,7 @@ import { Calendar, Users, Clock, MapPin } from 'lucide-react';
 function IframeWithSpinner({ src, title }: { src: string; title: string }) {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div className="relative w-full h-full">
+    <div className="absolute inset-0">
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
           <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-gray-500 animate-spin" />
@@ -24,7 +24,7 @@ function IframeWithSpinner({ src, title }: { src: string; title: string }) {
       )}
       <iframe
         loading="lazy"
-        className="absolute inset-0 w-full h-full border-0"
+        className={`absolute inset-0 w-full h-full border-0 transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
         src={src}
         allowFullScreen
         allow="fullscreen"
