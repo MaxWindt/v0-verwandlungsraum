@@ -13,6 +13,28 @@ import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
 
+function IframeWithSpinner({ src, title }: { src: string; title: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="relative w-full h-full">
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+          <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-gray-500 animate-spin" />
+        </div>
+      )}
+      <iframe
+        loading="lazy"
+        className="absolute inset-0 w-full h-full border-0"
+        src={src}
+        allowFullScreen
+        allow="fullscreen"
+        title={title}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
+
 interface Offer {
   id: number;
   title: string;
@@ -175,28 +197,21 @@ function OfferCard({ offer }: { offer: Offer }) {
                 borderRadius: '8px'
               }}
             >
-              <iframe
-                loading="lazy"
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  top: 0,
-                  left: 0,
-                  border: 'none',
-                  padding: 0,
-                  margin: 0
-                }}
-                src="https://www.canva.com/design/DAHATjF4a2M/JYJnL8t36o_pqPDd-0c46g/view?embed"
-                allowFullScreen
-                allow="fullscreen"
+              <IframeWithSpinner
+                src="https://www.canva.com/design/DAHC4blyFwk/qVyzuQCbOgBq-lduaEGEdw/view?embed"
                 title="Klang & Farbe Embed"
               />
             </div>
 
             <div className="pt-4">
-              <Button className="w-full" onClick={handleContactClick}>
-                Jetzt Kontakt aufnehmen
+              <Button className="w-full" asChild>
+                <a
+                  href="https://ko-fi.com/s/ac14a632a6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Jetzt anmelden
+                </a>
               </Button>
             </div>
           </DialogContent>
@@ -219,21 +234,8 @@ function OfferCard({ offer }: { offer: Offer }) {
                 borderRadius: '8px'
               }}
             >
-              <iframe
-                loading="lazy"
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  top: 0,
-                  left: 0,
-                  border: 'none',
-                  padding: 0,
-                  margin: 0
-                }}
+              <IframeWithSpinner
                 src="https://www.canva.com/design/DAHATnYCdVo/0wnTlpVzmpPiZom1GnqNNg/view?embed"
-                allowFullScreen
-                allow="fullscreen"
                 title="Atmen und Malen Embed"
               />
             </div>
