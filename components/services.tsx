@@ -41,6 +41,8 @@ interface Offer {
   shortDescription: string;
   image?: string;
   hidden?: boolean;
+  dates?: string[];
+  registrationUrl?: string;
   details?: {
     location?: string;
     participants?: string;
@@ -79,7 +81,9 @@ const offers: Offer[] = [
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/Klang.png'
+    image: '/images/Klang.png',
+    dates: ['Sa, 29.03.2026', 'Sa, 09.05.2026'],
+    registrationUrl: 'https://ko-fi.com/s/ac14a632a6'
   },
   {
     id: 4,
@@ -132,16 +136,47 @@ function OfferCard({ offer }: { offer: Offer }) {
 
       <h4 className="text-lg sm:text-xl mb-3 font-semibold">{offer.title}</h4>
 
-      <p className="text-sm sm:text-base mb-4 flex-grow line-clamp-3">
+      <p className="text-sm sm:text-base mb-3 flex-grow">
         {offer.shortDescription}
       </p>
 
+      {/* Klang & Farbe: show dates + mehr Details link */}
+      {offer.id === 3 && offer.dates && offer.dates.length > 0 && (
+        <div className="mb-3 text-sm">
+          <p className="font-semibold mb-1">Termine:</p>
+          {offer.dates.map((date) => (
+            <p key={date}>{date}</p>
+          ))}
+        </div>
+      )}
+
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button variant="outline" className="w-full mt-auto bg-transparent">
-            Details anzeigen
-          </Button>
-        </DialogTrigger>
+        {offer.id === 3 ? (
+          /* Klang & Farbe: "Anmelden" as main button, "mehr Details" as text link */
+          <div className="mt-auto space-y-2">
+            <a
+              href={offer.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Anmelden
+            </a>
+            <div className="text-center">
+              <DialogTrigger asChild>
+                <button className="text-sm text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors bg-transparent border-0 cursor-pointer p-0">
+                  mehr Details
+                </button>
+              </DialogTrigger>
+            </div>
+          </div>
+        ) : (
+          <DialogTrigger asChild>
+            <Button variant="outline" className="w-full mt-auto bg-transparent">
+              Details anzeigen
+            </Button>
+          </DialogTrigger>
+        )}
 
         {offer.id === 1 ? (
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
