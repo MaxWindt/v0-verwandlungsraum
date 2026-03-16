@@ -82,8 +82,12 @@ const offers: Offer[] = [
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
     image: '/images/Klang.png',
-    dates: ['Sa, 29.03.2026', 'Sa, 09.05.2026'],
-    registrationUrl: 'https://ko-fi.com/s/ac14a632a6'
+    dates: [
+      'Fr, 24.04.2026 – Erde',
+      'Fr, 22.05.2026 – Feuer',
+      'Fr, 12.06.2026 – Wasser',
+      'Fr, 03.07.2026 – Luft'
+    ]
   },
   {
     id: 4,
@@ -154,14 +158,12 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.id === 3 ? (
           /* Klang & Farbe: "Anmelden" as main button, "mehr Details" as text link */
           <div className="mt-auto space-y-2">
-            <a
-              href={offer.registrationUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 text-sm font-medium transition-colors"
+            <Button
+              className="w-full"
+              onClick={handleContactClick}
             >
               Anmelden
-            </a>
+            </Button>
             <div className="text-center">
               <DialogTrigger asChild>
                 <button className="text-sm text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors bg-transparent border-0 cursor-pointer p-0">
@@ -239,14 +241,8 @@ function OfferCard({ offer }: { offer: Offer }) {
             </div>
 
             <div className="pt-4">
-              <Button className="w-full" asChild>
-                <a
-                  href="https://ko-fi.com/s/ac14a632a6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Jetzt anmelden
-                </a>
+              <Button className="w-full" onClick={handleContactClick}>
+                Jetzt anmelden
               </Button>
             </div>
           </DialogContent>
