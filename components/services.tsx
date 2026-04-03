@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
+import About from './about';
 
 function IframeWithSpinner({ src, title }: { src: string; title: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -98,10 +99,14 @@ const offers: Offer[] = [
   },
   {
     id: 5,
-    title: 'Info-Workshop: Was ist Kunsttherapie?',
+    title: 'Kennenlernabend – Ein Abend mit Farbe',
     shortDescription:
-      'Ein praxisnaher Abend, der zeigt, wie Kunsttherapie wirkt – mit kleiner praktischer Übung. Weitere Details folgen im Dialog.',
-    image: '/images/5348175586192460915.jpg'
+      'Ein Abend, an dem du mich und meine Arbeit als Kunsttherapeutin sowie die Methode des Personenorientierten Malens kennenlernen kannst.',
+    image: '/images/5348175586192460915.jpg',
+    dates: ['Di, 28. April 2026, 17:00–18:30 Uhr'],
+    details: {
+      location: 'Café des Bürgerbildungszentrum Amadeu Antonio BBZ',
+    }
   }
 ];
 
@@ -144,10 +149,10 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.shortDescription}
       </p>
 
-      {/* Klang & Farbe: show dates + mehr Details link */}
-      {offer.id === 3 && offer.dates && offer.dates.length > 0 && (
+      {/* Klang & Farbe and Kennenlernabend: show dates + mehr Details link */}
+      {(offer.id === 3 || offer.id === 5) && offer.dates && offer.dates.length > 0 && (
         <div className="mb-3 text-sm">
-          <p className="font-semibold mb-1">Termine:</p>
+          <p className="font-semibold mb-1">Termin{offer.dates.length > 1 ? 'e' : ''}:</p>
           {offer.dates.map((date) => (
             <p key={date}>{date}</p>
           ))}
@@ -155,8 +160,8 @@ function OfferCard({ offer }: { offer: Offer }) {
       )}
 
       <Dialog open={open} onOpenChange={setOpen}>
-        {offer.id === 3 ? (
-          /* Klang & Farbe: "Anmelden" as main button, "mehr Details" as text link */
+        {offer.id === 3 || offer.id === 5 ? (
+          /* Klang & Farbe / Kennenlernabend: "Anmelden" as main button, "mehr Details" as text link */
           <div className="mt-auto space-y-2">
             <Button
               className="w-full"
@@ -315,8 +320,40 @@ function OfferCard({ offer }: { offer: Offer }) {
               )}
 
               {offer.id === 5 && (
-                <div className="mt-2">
-                  <p className="text-sm italic">Weitere Details folgen.</p>
+                <div className="space-y-3 text-sm sm:text-base">
+                  <p>
+                    An diesem Abend lade ich dich ein, mich und meine Arbeit als Kunsttherapeutin
+                    sowie die Methode des Personenorientierten Malens kennenzulernen. Nach einem
+                    kurzen theoretischen Input und einer Erzählung über mich öffne ich einen etwa
+                    30-minütigen Erfahrungsraum, in dem du selbst Farbe aufs Blatt bringen darfst
+                    und Erfahrung mit der Methode sammeln kannst.
+                  </p>
+                  <div className="flex items-start gap-2">
+                    <Calendar className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Wann</p>
+                      <p>28. April 2026, 17:00–18:30 Uhr</p>
+                      <p className="text-muted-foreground text-xs">Bitte 10 Minuten früher kommen</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Wo</p>
+                      <p>Café des Bürgerbildungszentrum Amadeu Antonio BBZ</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="w-5 h-5 mt-0.5 text-primary flex-shrink-0 text-center font-bold">€</span>
+                    <div>
+                      <p className="font-semibold">Beitrag</p>
+                      <p>Spendenbasis (Spendenempfehlung 5–15 Euro für Raum- und Materialkosten)</p>
+                    </div>
+                  </div>
+                  <p className="italic">
+                    Ich freue mich sehr darauf, meine Arbeit mit euch zu teilen und einen Raum für
+                    Begegnung, Erfahrung und Farbe zu öffnen.
+                  </p>
                 </div>
               )}
 
@@ -357,6 +394,8 @@ export default function Services(): JSX.Element {
         </div>
       </section>
 
+      <About />
+
       <section id="services" className="mb-8 mt-8 sm:mt-12">
         <h2 className="mb-6 text-center">{t('services.title')}</h2>
 
@@ -376,7 +415,7 @@ export default function Services(): JSX.Element {
         {/* Workshops heading */}
         <div className="mb-6">
           <h3 className="text-2xl sm:text-3xl font-semibold text-center">
-            Aktuelle Angebote
+            Aktuelle Workshops
           </h3>
         </div>
 

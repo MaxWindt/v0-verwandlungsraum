@@ -12,6 +12,7 @@ export default function Contact() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // "success" or "error"
   const [hcaptchaToken, setHcaptchaToken] = useState("");
+  const [newsletterOptIn, setNewsletterOptIn] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,6 +61,7 @@ export default function Contact() {
       message: "",
     });
     setHcaptchaToken("");
+    setNewsletterOptIn(false);
     // Reset hCaptcha widget if it exists
     if ((window as any).hcaptcha) {
       (window as any).hcaptcha.reset();
@@ -109,6 +111,18 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.status === 200) {
+        // Optionally subscribe to newsletter via Listmonk
+        if (newsletterOptIn) {
+          try {
+            await fetch("/api/newsletter-subscribe", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name: formData.name, email: formData.email }),
+            });
+          } catch {
+            // Newsletter subscription failure is non-critical; ignore silently
+          }
+        }
         setSubmitMessage(t("contact.successMessage"));
         setMessageType("success");
         resetForm();
@@ -200,6 +214,20 @@ export default function Contact() {
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none font-serif text-sm sm:text-base"
                     placeholder={t("contact.messagePlaceholder")}
                   ></textarea>
+                </div>
+
+                {/* Newsletter opt-in */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="newsletter"
+                    checked={newsletterOptIn}
+                    onChange={(e) => setNewsletterOptIn(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary cursor-pointer"
+                  />
+                  <label htmlFor="newsletter" className="text-sm font-serif cursor-pointer text-foreground leading-relaxed">
+                    {t("contact.newsletterLabel")}
+                  </label>
                 </div>
 
                 {/* hCaptcha */}

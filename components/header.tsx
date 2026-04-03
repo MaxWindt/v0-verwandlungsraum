@@ -41,7 +41,6 @@ export default function Header() {
   const menuItems = [
     { name: t('navigation.start'), to: 'welcome' },
     { name: t('navigation.services'), to: 'services' },
-    { name: t('navigation.artTherapy'), to: 'kunsttherapie' },
     { name: t('navigation.sessionInfo'), to: 'session' },
     { name: t('navigation.about'), to: 'about' },
     { name: t('navigation.contact'), to: 'contact' }
@@ -103,6 +102,15 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
             </ScrollLink>
           ))}
+          <a
+            href="https://newsletter.verwandlungsraum.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium cursor-pointer transition-colors duration-300 transform hover:scale-105 font-serif whitespace-nowrap px-3 py-1 rounded-full border border-current drop-shadow-md hover:opacity-80"
+            style={{ color: '#f46000', fontFamily: 'Montserrat, sans-serif' }}
+          >
+            {t('navigation.newsletter')}
+          </a>
           <LanguageSwitcher />
         </nav>
 
@@ -139,6 +147,15 @@ export default function Header() {
                 {item.name}
               </ScrollLink>
             ))}
+            <a
+              href="https://newsletter.verwandlungsraum.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('navigation.newsletter')}
+            </a>
           </div>
         </div>
       )}
