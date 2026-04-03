@@ -111,14 +111,22 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.status === 200) {
-        // Optionally subscribe to newsletter via Listmonk
+        // Optionally subscribe to newsletter via Listmonk public endpoint
         if (newsletterOptIn) {
           try {
-            await fetch("/api/newsletter-subscribe", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name: formData.name, email: formData.email }),
-            });
+            const listmonkUrl = process.env.NEXT_PUBLIC_LISTMONK_URL ?? "https://newsletter.verwandlungsraum.de";
+            const listmonkListUuid = process.env.NEXT_PUBLIC_LISTMONK_LIST_UUID;
+            if (listmonkListUuid) {
+              await fetch(`${listmonkUrl}/api/public/subscription`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  email: formData.email,
+                  name: formData.name,
+                  list_uuids: [listmonkListUuid],
+                }),
+              });
+            }
           } catch {
             // Newsletter subscription failure is non-critical; ignore silently
           }
