@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
+import { NewsletterDialog } from './newsletter-dialog';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const [newsletterDialogOpen, setNewsletterDialogOpen] = useState(false);
 
   return (
     <footer className="py-12 sm:py-16 md:py-20 bg-muted">
@@ -69,14 +72,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://newsletter.verwandlungsraum.de"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setNewsletterDialogOpen(true)}
                     className="hover:opacity-75 transition-opacity"
                   >
                     {t('footer.newsletter')}
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <a
@@ -114,6 +115,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <NewsletterDialog open={newsletterDialogOpen} onOpenChange={setNewsletterDialogOpen} />
     </footer>
   );
 }
