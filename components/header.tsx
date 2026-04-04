@@ -8,10 +8,12 @@ import type { StaticImageData } from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import LanguageSwitcher from './language-switcher';
+import { NewsletterDialog } from './newsletter-dialog';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [newsletterDialogOpen, setNewsletterDialogOpen] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -102,15 +104,13 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
             </ScrollLink>
           ))}
-          <a
-            href="https://newsletter.verwandlungsraum.de"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setNewsletterDialogOpen(true)}
             className="font-medium cursor-pointer transition-colors duration-300 transform hover:scale-105 font-serif whitespace-nowrap px-3 py-1 rounded-full border border-current drop-shadow-md hover:opacity-80"
             style={{ color: '#f46000', fontFamily: 'Montserrat, sans-serif' }}
           >
             {t('navigation.newsletter')}
-          </a>
+          </button>
           <LanguageSwitcher />
         </nav>
 
@@ -147,18 +147,19 @@ export default function Header() {
                 {item.name}
               </ScrollLink>
             ))}
-            <a
-              href="https://newsletter.verwandlungsraum.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors text-left"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setNewsletterDialogOpen(true);
+              }}
             >
               {t('navigation.newsletter')}
-            </a>
+            </button>
           </div>
         </div>
       )}
+      <NewsletterDialog open={newsletterDialogOpen} onOpenChange={setNewsletterDialogOpen} />
     </header>
   );
 }
