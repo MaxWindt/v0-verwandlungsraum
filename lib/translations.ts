@@ -7,6 +7,7 @@ export const translations = {
       sessionInfo: "Rahmenbedingungen",
       about: "Über mich",
       contact: "Kontakt",
+      newsletter: "Newsletter",
       openMenu: "Menü öffnen",
       closeMenu: "Menü schließen",
     },
@@ -53,7 +54,7 @@ export const translations = {
     about: {
       title: "Über mich",
       intro:
-        "Mein Name ist Rebecca Schwindt. Ich bin Psychologin, zugelassen als Heilpraktikerin für Psychotherapie und Kunsttherapeutin.",
+        "Hallo, schön, dass du auf diese Seite gefunden hast. Ich bin Rebecca Schwindt und habe es zu meiner Aufgabe gemacht, Menschen in schwierigen Phasen kunsttherapeutisch zu unterstützen. Ich begeistere mich für vieles und diese Begeisterungsfähigkeit ist erfüllt von tiefer Ehrfurcht und Freude am Leben. Als Heilpraktikerin für Psychotherapie und Kunsttherapeutin ist es meine Mission, Menschen aus ihren Blockaden zurück zum Lebensfluss und ihrer Lebensfreude zu führen.",
       paragraph1:
         "Schon seit meiner Kindheit fühle ich mich zu allem künstlerischen Ausdruck hingezogen und spüre beim Malen eine ganz besondere Kraft. Ich habe meine ersten Lebensjahre in Argentinien verbracht, doch durch die schwere Krankheit meiner Mutter zogen wir in meinem 7. Lebensjahr zurück nach Deutschland, wo ich bis zu meinem 16. Lebensjahr aufwuchs. Dann begann ein neuer spannender Abschnitt. Wir zogen nach Ecuador und es wurde mein Zuhause für die nächsten 10 Jahre. Dort studierte ich Psychologie mit klinischem Schwerpunkt und arbeitete dann in Deutschland als Psychologin in verschiedenen Bereichen, unter anderem in einem Krankenhaus für Kinder und Jugendliche und im Betreuten Einzelwohnen für Menschen mit Psychischen Erkrankungen.",
       paragraph2:
@@ -158,6 +159,7 @@ export const translations = {
       validationError: "Bitte fülle alle Pflichtfelder aus.",
       captchaRequired: "Bitte bestätige das Captcha.",
       captchaError: "Fehler beim Laden des Captchas. Bitte lade die Seite neu.",
+      newsletterLabel: "Ja, ich möchte den Newsletter abonnieren und über neue Angebote und Neuigkeiten informiert werden.",
       infoTitle: "Kontaktinformationen",
       emailTitle: "E-Mail",
       phoneTitle: "Telefon",
@@ -174,6 +176,7 @@ export const translations = {
       sessionInfo: "Rahmenbedingungen",
       artTherapy: "Kunsttherapie",
       contact: "Kontakt",
+      newsletter: "Newsletter",
       privacy: "Datenschutz",
       imprintTitle: "Impressum",
       name: "Rebecca Schwindt",
@@ -248,6 +251,7 @@ export const translations = {
       sessionInfo: "Condiciones",
       about: "Sobre mí",
       contact: "Contacto",
+      newsletter: "Newsletter",
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
     },
@@ -295,7 +299,7 @@ export const translations = {
     about: {
       title: "Sobre mí",
       intro:
-        "Mi nombre es Rebecca Schwindt. Soy psicóloga, autorizada como practicante de medicina alternativa para psicoterapia y arteterapeuta.",
+        "Hola, me alegra que hayas encontrado esta página. Soy Rebecca Schwindt y me he propuesto apoyar a las personas en fases difíciles a través de la arteterapia. Me entusiasmo por muchas cosas y esa capacidad de entusiasmo está llena de profunda admiración y alegría de vivir. Como practicante de medicina alternativa para psicoterapia y arteterapeuta, mi misión es guiar a las personas desde sus bloqueos de vuelta al flujo de la vida y su alegría de vivir.",
       paragraph1:
         "Desde mi infancia me he sentido atraída por toda expresión artística y siento una fuerza muy especial al pintar. Pasé mis primeros años de vida en Argentina, pero debido a la grave enfermedad de mi madre, regresamos a Alemania cuando tenía 7 años, donde crecí hasta los 16 años. Luego comenzó una nueva etapa emocionante. Nos mudamos a Ecuador y se convirtió en mi hogar durante los próximos 10 años. Allí estudié psicología con especialización clínica y luego trabajé en Alemania como psicóloga en diferentes áreas, entre otras en un hospital para niños y adolescentes y en viviendas asistidas individuales para personas con enfermedades mentales.",
       paragraph2:
@@ -398,6 +402,7 @@ export const translations = {
       validationError: "Por favor, completa todos los campos obligatorios.",
       captchaRequired: "Por favor, completa el captcha.",
       captchaError: "Error al cargar el captcha. Por favor, recarga la página.",
+      newsletterLabel: "Sí, quiero suscribirme al boletín y recibir información sobre nuevas ofertas y novedades.",
       infoTitle: "Información de contacto",
       emailTitle: "Correo electrónico",
       phoneTitle: "Teléfono",
@@ -414,6 +419,7 @@ export const translations = {
       sessionInfo: "Condiciones",
       artTherapy: "Arteterapia",
       contact: "Contacto",
+      newsletter: "Newsletter",
       privacy: "Privacidad",
       imprintTitle: "Aviso legal",
       name: "Rebecca Schwindt",

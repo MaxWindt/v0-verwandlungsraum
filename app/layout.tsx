@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { LanguageProvider } from '@/contexts/language-context';
 import CookieBanner from '@/components/cookie-banner';
 
-import { Forum, Montserrat } from 'next/font/google';
+import { Forum, Montserrat, Charmonman } from 'next/font/google';
 
 const forum = Forum({
   subsets: ['latin'],
@@ -22,6 +22,14 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   weight: ['400', '500', '600', '700'],
   fallback: ['Arial', 'sans-serif']
+});
+
+const charmonman = Charmonman({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-charmonman',
+  weight: ['400', '700'],
+  fallback: ['Georgia', 'serif']
 });
 
 export const metadata: Metadata = {
@@ -47,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${forum.variable} ${montserrat.variable}`}>
+    <html lang="de" className={`${forum.variable} ${montserrat.variable} ${charmonman.variable}`}>
       <body>
         <LanguageProvider>
           {children}

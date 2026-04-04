@@ -26,7 +26,10 @@ export default function Hero() {
               priority
             />
 
-            <h1 className="text-4xl sm:text-6xl leading-tight font-light">
+            <h1
+              className="text-4xl sm:text-6xl leading-tight font-light"
+              style={{ fontFamily: 'var(--font-charmonman), Georgia, serif' }}
+            >
               {t('hero.title')}
             </h1>
 

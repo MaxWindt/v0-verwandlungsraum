@@ -12,7 +12,10 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4 sm:mb-6">
+              <h3
+                className="text-xl sm:text-2xl mb-4 sm:mb-6"
+                style={{ fontFamily: 'var(--font-charmonman), Georgia, serif' }}
+              >
                 {t('footer.title')}
               </h3>
               <p className="leading-relaxed text-sm sm:text-base">
@@ -43,14 +46,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#kunsttherapie"
-                    className="hover:opacity-75 transition-opacity"
-                  >
-                    {t('footer.artTherapy')}
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="#session"
                     className="hover:opacity-75 transition-opacity"
                   >
@@ -71,6 +66,16 @@ export default function Footer() {
                     className="hover:opacity-75 transition-opacity"
                   >
                     {t('footer.contact')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://newsletter.verwandlungsraum.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-75 transition-opacity"
+                  >
+                    {t('footer.newsletter')}
                   </a>
                 </li>
                 <li>
