@@ -4,6 +4,32 @@ import React from "react";
 import { Mail, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/language-context";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+function IframeWithSpinner({ src, title }: { src: string; title: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="relative w-full" style={{ height: "560px" }}>
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+          <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-gray-500 animate-spin" />
+        </div>
+      )}
+      <iframe
+        loading="lazy"
+        className={`w-full h-full border-0 transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+        src={src}
+        title={title}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -13,6 +39,7 @@ export default function Contact() {
   const [messageType, setMessageType] = useState(""); // "success" or "error"
   const [hcaptchaToken, setHcaptchaToken] = useState("");
   const [newsletterOptIn, setNewsletterOptIn] = useState(false);
+  const [newsletterDialogOpen, setNewsletterDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -111,26 +138,6 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.status === 200) {
-        // Optionally subscribe to newsletter via Listmonk public endpoint
-        if (newsletterOptIn) {
-          try {
-            const listmonkUrl = process.env.NEXT_PUBLIC_LISTMONK_URL ?? "https://newsletter.verwandlungsraum.de";
-            const listmonkListUuid = process.env.NEXT_PUBLIC_LISTMONK_LIST_UUID;
-            if (listmonkListUuid) {
-              await fetch(`${listmonkUrl}/api/public/subscription`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  email: formData.email,
-                  name: formData.name,
-                  list_uuids: [listmonkListUuid],
-                }),
-              });
-            }
-          } catch {
-            // Newsletter subscription failure is non-critical; ignore silently
-          }
-        }
         setSubmitMessage(t("contact.successMessage"));
         setMessageType("success");
         resetForm();
@@ -230,13 +237,36 @@ export default function Contact() {
                     type="checkbox"
                     id="newsletter"
                     checked={newsletterOptIn}
-                    onChange={(e) => setNewsletterOptIn(e.target.checked)}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setNewsletterOptIn(true);
+                        setNewsletterDialogOpen(true);
+                      } else {
+                        setNewsletterOptIn(false);
+                      }
+                    }}
                     className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary cursor-pointer"
                   />
-                  <label htmlFor="newsletter" className="text-sm font-serif cursor-pointer text-foreground leading-relaxed">
+                  <label
+                    htmlFor="newsletter"
+                    className="text-sm font-serif cursor-pointer text-foreground leading-relaxed"
+                  >
                     {t("contact.newsletterLabel")}
                   </label>
                 </div>
+
+                {/* Newsletter subscription dialog */}
+                <Dialog open={newsletterDialogOpen} onOpenChange={setNewsletterDialogOpen}>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl mb-4">{t("contact.newsletterDialogTitle")}</DialogTitle>
+                    </DialogHeader>
+                    <IframeWithSpinner
+                      src="https://newsletter.verwandlungsraum.de/subscription/form"
+                      title={t("contact.newsletterDialogTitle")}
+                    />
+                  </DialogContent>
+                </Dialog>
 
                 {/* hCaptcha */}
                 <div className="flex justify-center">
