@@ -85,7 +85,6 @@ const offers: Offer[] = [
     dates: [
       'Fr, 24.04.2026 – Erde',
       'Fr, 22.05.2026 – Feuer',
-      'Fr, 12.06.2026 – Wasser',
       'Fr, 03.07.2026 – Luft'
     ]
   },
@@ -94,7 +93,8 @@ const offers: Offer[] = [
     title: 'Atmen und Malen',
     shortDescription:
       'Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum.',
-    image: '/images/Atmen.png'
+    image: '/images/Atmen.png',
+    hidden: true, // ausgeblendet
   },
   {
     id: 5,
@@ -383,13 +383,13 @@ export default function Services(): JSX.Element {
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="mb-4">Willkommen</h2>
               <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
+                {t('about.intro')}
+              </p>
+              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-6 font-serif text-left">
                 {t('services.description')}
                 <br />
                 <br />
                 {t('services.description2')}
-              </p>
-              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-6 font-serif text-left">
-                {t('about.intro')}
               </p>
             </div>
           </div>
