@@ -12,7 +12,6 @@ import {
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
-import About from './about';
 
 function IframeWithSpinner({ src, title }: { src: string; title: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -82,11 +81,10 @@ const offers: Offer[] = [
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/Klang.png',
+    image: 'https://github.com/user-attachments/assets/cd4c4646-3256-4d25-8fe9-02eba9d57712',
     dates: [
       'Fr, 24.04.2026 – Erde',
       'Fr, 22.05.2026 – Feuer',
-      'Fr, 12.06.2026 – Wasser',
       'Fr, 03.07.2026 – Luft'
     ]
   },
@@ -95,7 +93,8 @@ const offers: Offer[] = [
     title: 'Atmen und Malen',
     shortDescription:
       'Workshop für Klarheit und Vision: Atemarbeit, intuitives Malen, achtsamer Raum.',
-    image: '/images/Atmen.png'
+    image: '/images/Atmen.png',
+    hidden: true, // ausgeblendet
   },
   {
     id: 5,
@@ -384,6 +383,9 @@ export default function Services(): JSX.Element {
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="mb-4">Willkommen</h2>
               <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
+                {t('about.intro')}
+              </p>
+              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-6 font-serif text-left">
                 {t('services.description')}
                 <br />
                 <br />
@@ -393,8 +395,6 @@ export default function Services(): JSX.Element {
           </div>
         </div>
       </section>
-
-      <About />
 
       <section id="services" className="mb-8 mt-8 sm:mt-12">
         <h2 className="mb-6 text-center">{t('services.title')}</h2>

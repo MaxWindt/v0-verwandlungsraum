@@ -42,7 +42,6 @@ export default function Header() {
     { name: t('navigation.start'), to: 'welcome' },
     { name: t('navigation.services'), to: 'services' },
     { name: t('navigation.sessionInfo'), to: 'session' },
-    { name: t('navigation.about'), to: 'about' },
     { name: t('navigation.contact'), to: 'contact' }
   ];
 
