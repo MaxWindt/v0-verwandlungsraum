@@ -12,7 +12,6 @@ import {
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
-import About from './about';
 
 function IframeWithSpinner({ src, title }: { src: string; title: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -389,12 +388,13 @@ export default function Services(): JSX.Element {
                 <br />
                 {t('services.description2')}
               </p>
+              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-6 font-serif text-left">
+                {t('about.intro')}
+              </p>
             </div>
           </div>
         </div>
       </section>
-
-      <About />
 
       <section id="services" className="mb-8 mt-8 sm:mt-12">
         <h2 className="mb-6 text-center">{t('services.title')}</h2>
