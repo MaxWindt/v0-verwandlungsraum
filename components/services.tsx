@@ -82,7 +82,7 @@ const offers: Offer[] = [
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
       'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
-    image: '/images/Klang.png',
+    image: 'https://github.com/user-attachments/assets/cd4c4646-3256-4d25-8fe9-02eba9d57712',
     dates: [
       'Fr, 24.04.2026 – Erde',
       'Fr, 22.05.2026 – Feuer',
