@@ -51,6 +51,9 @@ interface Offer {
   };
 }
 
+const COACHING_ROOM_IMAGE = 'https://github.com/user-attachments/assets/37d743e0-64c4-4316-bf93-2767af4fce2e';
+const COACHING_ART_IMAGE = 'https://github.com/user-attachments/assets/404880e5-c8a2-4823-8fda-e0a1a946a4d3';
+
 const offers: Offer[] = [
   {
     id: 1,
@@ -101,7 +104,7 @@ const offers: Offer[] = [
     title: 'Kennenlernabend – Ein Abend mit Farbe',
     shortDescription:
       'Ein Abend, an dem du mich und meine Arbeit als Kunsttherapeutin sowie die Methode des Personenorientierten Malens kennenlernen kannst.',
-    image: '/images/5348175586192460915.jpg',
+    image: 'https://github.com/user-attachments/assets/33b6be4b-dc9c-41b4-a8a6-b14bd2fc56c1',
     dates: ['Di, 28. April 2026, 17:00–18:30 Uhr'],
     details: {
       location: 'Café des Bürgerbildungszentrum Amadeu Antonio BBZ',
@@ -113,7 +116,7 @@ function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
 
-  const isCenterPreview = offer.id === 1 || offer.id === 3 || offer.id === 4;
+  const isCenterPreview = offer.id === 3 || offer.id === 4;
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -130,17 +133,38 @@ function OfferCard({ offer }: { offer: Offer }) {
 
   return (
     <div className="card flex flex-col h-full">
-      <div
-        className={`mb-4 rounded-lg overflow-hidden h-48 ${isCenterPreview ? 'flex items-center justify-center' : ''}`}
-      >
-        <OptimizedImage
-          src={offer.image || ''}
-          alt={offer.title}
-          width={600}
-          height={360}
-          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg'} ${offer.id === 1 ? 'object-center' : ''}`}
-        />
-      </div>
+      {offer.id === 1 ? (
+        <div className="mb-4 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-2 gap-2 h-64">
+            <OptimizedImage
+              src={offer.image || ''}
+              alt={offer.title}
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <OptimizedImage
+              src={COACHING_ROOM_IMAGE}
+              alt="Coachingraum für Einzelsitzungen"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`mb-4 rounded-lg overflow-hidden h-48 ${isCenterPreview ? 'flex items-center justify-center' : ''}`}
+        >
+          <OptimizedImage
+            src={offer.image || ''}
+            alt={offer.title}
+            width={600}
+            height={360}
+            className={`w-full h-full ${isCenterPreview ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg'}`}
+          />
+        </div>
+      )}
 
       <h4 className="text-lg sm:text-xl mb-3 font-semibold">{offer.title}</h4>
 
@@ -191,32 +215,61 @@ function OfferCard({ offer }: { offer: Offer }) {
             </DialogHeader>
 
             <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                <OptimizedImage
+                  src={offer.image || ''}
+                  alt={offer.title}
+                  width={600}
+                  height={400}
+                  className="w-full rounded-lg object-cover h-48"
+                />
+                <OptimizedImage
+                  src={COACHING_ROOM_IMAGE}
+                  alt="Coachingraum für Einzelsitzungen"
+                  width={600}
+                  height={400}
+                  className="w-full rounded-lg object-cover h-48"
+                />
+              </div>
               <OptimizedImage
-                src={offer.image || ''}
-                alt={offer.title}
+                src={COACHING_ART_IMAGE}
+                alt="Kunstwerk aus einer Sitzung"
                 width={1200}
-                height={720}
+                height={600}
                 className="w-full rounded-lg object-cover"
-                style={{ maxHeight: 360 }}
+                style={{ maxHeight: 260 }}
               />
 
               <div className="prose max-w-none text-sm sm:text-base">
                 <p>{t('session.description1')}</p>
                 <p>{t('session.description2')}</p>
+                <p>
+                  In unseren Sitzungen können wir konkrete Themen und Anliegen anschauen und bearbeiten.
+                </p>
                 <p>{t('session.description3')}</p>
                 <p>{t('session.description4')}</p>
                 <p>{t('session.description5')}</p>
-
-                <p className="text-sm italic mt-4">
-                  {t('session.disclaimerNote')}
-                </p>
               </div>
 
-              <div className="pt-4">
-                <Button className="w-full" onClick={handleContactClick}>
-                  Jetzt Kontakt aufnehmen
+              {/* Calendly Mockup – später durch eingebetteten Calendly-Kalender ersetzen */}
+              <div className="border-2 border-dashed border-gray-300 rounded-xl p-5 bg-gray-50">
+                <p className="text-sm font-semibold mb-1 text-gray-700">📅 Terminanfrage</p>
+                <p className="text-xs text-gray-500 mb-3">Verfügbare Zeiten:</p>
+                <div className="text-xs text-gray-600 space-y-1 mb-4">
+                  <p>Mo, Di, Do: 9–12 Uhr</p>
+                  <p>Mi, Fr: 12–15 Uhr</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-xs text-gray-400 italic text-center min-h-[80px] flex items-center justify-center">
+                  [Calendly-Kalender wird hier eingebettet]
+                </div>
+                <Button className="w-full mt-3" onClick={handleContactClick}>
+                  Jetzt Termin anfragen
                 </Button>
               </div>
+
+              <p className="text-xs text-muted-foreground mt-2">
+                * {t('session.disclaimerTitle')}: {t('session.disclaimerText')}
+              </p>
             </div>
           </DialogContent>
         ) : offer.id === 3 ? (
@@ -401,13 +454,11 @@ export default function Services(): JSX.Element {
 
         {/* Render individual offers first */}
         {individualOffers.length > 0 && (
-          <div className="mb-6 flex justify-center">
-            <div className="w-full sm:w-3/4 md:w-2/3">
-              <div className="grid grid-cols-1 gap-6">
-                {individualOffers.map((offer) => (
-                  <OfferCard key={offer.id} offer={offer} />
-                ))}
-              </div>
+          <div className="mb-6">
+            <div className="grid grid-cols-1 gap-6">
+              {individualOffers.map((offer) => (
+                <OfferCard key={offer.id} offer={offer} />
+              ))}
             </div>
           </div>
         )}
