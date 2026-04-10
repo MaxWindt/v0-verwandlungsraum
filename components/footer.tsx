@@ -38,6 +38,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
+                    href="#about"
+                    className="hover:opacity-75 transition-opacity"
+                  >
+                    {t('footer.about')}
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#services"
                     className="hover:opacity-75 transition-opacity"
                   >

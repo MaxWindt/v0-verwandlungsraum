@@ -10,8 +10,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-20 flex flex-col justify-center items-center relative overflow-hidden bg-white text-black"
+      className="min-h-screen pt-20 flex flex-col justify-center items-center relative overflow-hidden text-black"
     >
+      {/* Background blossom image with light overlay */}
+      <div className="absolute inset-0 z-0">
+        <OptimizedImage
+          src="/images/hero-blossom-bg.jpg"
+          alt={t('hero.backgroundAlt')}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-white/65" />
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 py-16 flex justify-center items-center relative z-20">
         <div className="text-center relative max-w-4xl w-full">
           {/* Centered logo, title and subtitle */}

@@ -16,9 +16,6 @@ export default function About() {
           </div>
 
           <div className="space-y-4 sm:space-y-6 text-base sm:text-lg">
-            {/* First paragraph - full width */}
-            <p className="leading-relaxed font-medium">{t('about.intro')}</p>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start">
               <div className="space-y-4 sm:space-y-6 text-left">
                 <p className="leading-relaxed text-left">
@@ -31,13 +28,23 @@ export default function About() {
                   {t('about.paragraph3')}
                 </p>
               </div>
-              <div className="relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden hover-lift">
-                <OptimizedImage
-                  src="/images/ueber-mich-portrait.jpeg"
-                  alt={t('about.alt')}
-                  fill
-                  className="object-cover object-top"
-                />
+              <div className="flex flex-col gap-4">
+                <div className="relative h-[300px] sm:h-[360px] rounded-3xl overflow-hidden hover-lift">
+                  <OptimizedImage
+                    src="/images/ueber-mich-portrait.jpeg"
+                    alt={t('about.alt')}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="relative h-[300px] sm:h-[360px] rounded-3xl overflow-hidden hover-lift">
+                  <OptimizedImage
+                    src="/images/ueber-mich-foto2.jpg"
+                    alt={t('about.alt')}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </div>

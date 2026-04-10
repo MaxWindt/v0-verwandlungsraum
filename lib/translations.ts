@@ -14,10 +14,14 @@ export const translations = {
     hero: {
       title: "Verwandlungsraum",
       subtitle: "Ein Raum für inneren Wandel",
-      backgroundAlt: "Buntes Aquarell Hintergrundbild für Kunsttherapie",
+      backgroundAlt: "Blüten Hintergrundbild",
       promoTitle: "Eröffnungsangebot",
       promoText: "30% auf alle Einzelsitzungen bis 31.12.2025",
       promoClose: "Schließen",
+    },
+    welcome: {
+      title: "Willkommen",
+      text: "Hallo, schön, dass du auf diese Seite gefunden hast. Ich bin Rebecca Schwindt und habe es zu meiner Aufgabe gemacht, Menschen in schwierigen Phasen kunsttherapeutisch zu unterstützen. Ich begeistere mich für vieles und diese Begeisterungsfähigkeit ist erfüllt von tiefer Ehrfurcht und Freude am Leben. Als Heilpraktikerin für Psychotherapie und Kunsttherapeutin ist es meine Mission, Menschen aus ihren Blockaden zurück zum Lebensfluss und ihrer Lebensfreude zu führen.",
     },
     services: {
       title: "Was biete ich an?",
@@ -259,11 +263,15 @@ export const translations = {
     hero: {
       title: "Espacio de Transformación",
       subtitle: "Un espacio para la transformación interior",
-      backgroundAlt: "Imagen de fondo de acuarela colorida para arteterapia",
+      backgroundAlt: "Imagen de fondo de flores",
       promoTitle: "Oferta de inauguración",
       promoText:
         "30% de descuento en todas las sesiones individuales hasta el 31.12.2025",
       promoClose: "Cerrar",
+    },
+    welcome: {
+      title: "Bienvenida",
+      text: "Hola, me alegra que hayas encontrado esta página. Soy Rebecca Schwindt y me he propuesto apoyar a las personas en fases difíciles a través de la arteterapia. Me entusiasmo por muchas cosas y esa capacidad de entusiasmo está llena de profunda admiración y alegría de vivir. Como practicante de medicina alternativa para psicoterapia y arteterapeuta, mi misión es guiar a las personas desde sus bloqueos de vuelta al flujo de la vida y su alegría de vivir.",
     },
     services: {
       title: "¿Qué ofrezco?",
