@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import OptimizedImage from './ui/optimized-image';
 import { useLanguage } from '@/contexts/language-context';
 
@@ -28,23 +27,13 @@ export default function About() {
                   {t('about.paragraph3')}
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="relative h-[300px] sm:h-[360px] rounded-3xl overflow-hidden hover-lift">
-                  <OptimizedImage
-                    src="/images/ueber-mich-portrait.jpeg"
-                    alt={t('about.alt')}
-                    fill
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div className="relative h-[300px] sm:h-[360px] rounded-3xl overflow-hidden hover-lift">
-                  <OptimizedImage
-                    src="/images/ueber-mich-foto2.jpg"
-                    alt={t('about.alt')}
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
+              <div className="relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden hover-lift">
+                <OptimizedImage
+                  src="/images/ueber-mich-beach.jpg"
+                  alt={t('about.alt')}
+                  fill
+                  className="object-cover object-center"
+                />
               </div>
             </div>
           </div>
