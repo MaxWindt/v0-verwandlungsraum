@@ -40,6 +40,7 @@ interface Offer {
   title: string;
   shortDescription: string;
   image?: string;
+  cardImage?: string;
   hidden?: boolean;
   dates?: string[];
   registrationUrl?: string;
@@ -58,6 +59,7 @@ const offers: Offer[] = [
     shortDescription:
       'Gemeinsam schauen wir, was dein Anliegen ist — individueller kunsttherapeutischer Raum.',
     image: '/images/Einzeltherapie raum.jpg',
+    cardImage: '/images/photo_2026-02-02_11-16-29.webp',
     details: {
       location: 'Thinkfarm Eberswalde, Eisenbahnstr. 92/93, 16225 Eberswalde',
       duration: '60 oder 90 Minuten'
@@ -113,7 +115,7 @@ function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
 
-  const isCenterPreview = offer.id === 1 || offer.id === 3 || offer.id === 4;
+  const isCenterPreview = offer.id === 3 || offer.id === 4;
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -130,15 +132,13 @@ function OfferCard({ offer }: { offer: Offer }) {
 
   return (
     <div className="card flex flex-col h-full">
-      <div
-        className={`mb-4 rounded-lg overflow-hidden h-48 ${isCenterPreview ? 'flex items-center justify-center' : ''}`}
-      >
+      <div className="mb-4 rounded-lg overflow-hidden h-52 lg:h-72 xl:h-80 flex items-center justify-center">
         <OptimizedImage
-          src={offer.image || ''}
+          src={offer.cardImage || offer.image || ''}
           alt={offer.title}
           width={600}
           height={360}
-          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg'} ${offer.id === 1 ? 'object-center' : ''}`}
+          className={`w-full h-full ${isCenterPreview ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg object-top'}`}
         />
       </div>
 
@@ -385,12 +385,32 @@ export default function Services(): JSX.Element {
               <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
                 {t('about.intro')}
               </p>
-              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-6 font-serif text-left">
-                {t('services.description')}
-                <br />
-                <br />
-                {t('services.description2')}
-              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Über mich Section */}
+      <section id="about" className="py-12 sm:py-20">
+        <div className="container mx-auto">
+          <div className="max-w-6xl mx-auto content-box">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="mb-4">{t('about.title')}</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start text-base sm:text-lg">
+              <div className="space-y-4 sm:space-y-6 text-left">
+                <p className="leading-relaxed">{t('about.paragraph1')}</p>
+                <p className="leading-relaxed">{t('about.paragraph2')}</p>
+                <p className="leading-relaxed">{t('about.paragraph3')}</p>
+              </div>
+              <div className="relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden hover-lift">
+                <OptimizedImage
+                  src="/images/ueber-mich-portrait.jpeg"
+                  alt={t('about.alt')}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -398,6 +418,8 @@ export default function Services(): JSX.Element {
 
       <section id="services" className="mb-8 mt-8 sm:mt-12">
         <h2 className="mb-6 text-center">{t('services.title')}</h2>
+
+
 
         {/* Render individual offers first */}
         {individualOffers.length > 0 && (
@@ -420,7 +442,7 @@ export default function Services(): JSX.Element {
         </div>
 
         {/* Render workshops (visible ones) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {workshopOffers.map((offer) => (
             <OfferCard key={offer.id} offer={offer} />
           ))}

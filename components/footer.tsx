@@ -1,10 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   return (
     <footer className="py-12 sm:py-16 md:py-20 bg-muted">
@@ -12,10 +21,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <div>
-              <h3
-                className="text-xl sm:text-2xl mb-4 sm:mb-6"
-                style={{ fontFamily: 'var(--font-charmonman), Georgia, serif' }}
-              >
+              <h3 className="text-xl sm:text-2xl mb-4 sm:mb-6">
                 {t('footer.title')}
               </h3>
               <p className="leading-relaxed text-sm sm:text-base">
@@ -61,14 +67,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://newsletter.verwandlungsraum.de"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-75 transition-opacity"
+                  <button
+                    onClick={() => { setIframeLoaded(false); setNewsletterOpen(true); }}
+                    className="hover:opacity-75 transition-opacity bg-transparent border-0 text-left cursor-pointer p-0"
                   >
                     {t('footer.newsletter')}
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <a
@@ -106,6 +110,27 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <Dialog open={newsletterOpen} onOpenChange={setNewsletterOpen}>
+        <DialogContent className="max-w-xl max-h-[90vh] overflow-hidden p-0">
+          <DialogHeader className="px-6 pt-6 pb-4">
+            <DialogTitle>{t('footer.newsletter')}</DialogTitle>
+          </DialogHeader>
+          <div className="relative px-6 pb-6" style={{ height: 520 }}>
+            {!iframeLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+                <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-gray-500 animate-spin" />
+              </div>
+            )}
+            <iframe
+              src="https://newsletter.verwandlungsraum.de/subscription/form"
+              title="Newsletter Anmeldung"
+              className={`w-full h-full border-0 transition-opacity duration-300 ${iframeLoaded ? 'opacity-100' : 'opacity-0'}`}
+              onLoad={() => setIframeLoaded(true)}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 }

@@ -8,10 +8,18 @@ import type { StaticImageData } from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import LanguageSwitcher from './language-switcher';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -46,6 +54,7 @@ export default function Header() {
   ];
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-cover bg-center bg-no-repeat ${
         scrolled ? 'bg-white/90 border-b border-border' : ''
@@ -101,15 +110,13 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full rounded-full drop-shadow-sm"></span>
             </ScrollLink>
           ))}
-          <a
-            href="https://newsletter.verwandlungsraum.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium cursor-pointer transition-colors duration-300 transform hover:scale-105 font-serif whitespace-nowrap px-3 py-1 rounded-full border border-current drop-shadow-md hover:opacity-80"
+          <button
+            onClick={() => { setIframeLoaded(false); setNewsletterOpen(true); }}
+            className="font-medium cursor-pointer transition-colors duration-300 transform hover:scale-105 font-serif whitespace-nowrap px-3 py-1 rounded-full border border-current drop-shadow-md hover:opacity-80 bg-transparent"
             style={{ color: '#f46000', fontFamily: 'Montserrat, sans-serif' }}
           >
             {t('navigation.newsletter')}
-          </a>
+          </button>
           <LanguageSwitcher />
         </nav>
 
@@ -146,18 +153,37 @@ export default function Header() {
                 {item.name}
               </ScrollLink>
             ))}
-            <a
-              href="https://newsletter.verwandlungsraum.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => { setIsMenuOpen(false); setIframeLoaded(false); setNewsletterOpen(true); }}
+              className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors bg-transparent border-0 text-left"
             >
               {t('navigation.newsletter')}
-            </a>
+            </button>
           </div>
         </div>
       )}
     </header>
+
+    <Dialog open={newsletterOpen} onOpenChange={setNewsletterOpen}>
+      <DialogContent className="max-w-xl max-h-[90vh] overflow-hidden p-0">
+        <DialogHeader className="px-6 pt-6 pb-4">
+          <DialogTitle>{t('navigation.newsletter')}</DialogTitle>
+        </DialogHeader>
+        <div className="relative px-6 pb-6" style={{ height: 520 }}>
+          {!iframeLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+              <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-gray-500 animate-spin" />
+            </div>
+          )}
+          <iframe
+            src="https://newsletter.verwandlungsraum.de/subscription/form"
+            title="Newsletter Anmeldung"
+            className={`w-full h-full border-0 transition-opacity duration-300 ${iframeLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setIframeLoaded(true)}
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }

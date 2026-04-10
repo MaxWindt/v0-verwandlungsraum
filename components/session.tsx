@@ -1,7 +1,6 @@
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
-import Image from 'next/image';
 import OptimizedImage from './ui/optimized-image';
 
 export default function Session() {
@@ -14,20 +13,6 @@ export default function Session() {
           {/* Rahmenbedingungen und Preise Section */}
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">{t('session.title')}</h2>
-            <div className="flex justify-center items-center mb-6 sm:mb-8 min-h-[320px] sm:min-h-[380px]">
-              <div
-                className="rounded-lg shadow-lg max-w-md w-full overflow-hidden"
-                style={{ maxHeight: 420 }}
-              >
-                <OptimizedImage
-                  src="/images/photo_2026-02-02_11-16-29.jpg"
-                  alt={t('session.imageAlt')}
-                  width={800}
-                  height={600}
-                  className="object-cover object-center w-full h-full"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="relative mb-12 sm:mb-16">
@@ -55,12 +40,6 @@ export default function Session() {
                       <p className="text-left">{t('session.billing2')}</p>
                       <p className="text-left">{t('session.billing3')}</p>
                     </div>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t('session.disclaimerTitle')}
-                      </h3>
-                      <p>{t('session.disclaimerText')}</p>
-                    </div>
                   </div>
 
                   {/* Right Column */}
@@ -86,6 +65,12 @@ export default function Session() {
                     </div>
                   </div>
                 </div>
+
+                {/* Disclaimer – full width, small and muted */}
+                <p className="text-xs text-muted-foreground mt-8 leading-relaxed">
+                  <span className="font-semibold">{t('session.disclaimerTitle')}:</span>{' '}
+                  {t('session.disclaimerText')}
+                </p>
               </div>
             </div>
           </div>
