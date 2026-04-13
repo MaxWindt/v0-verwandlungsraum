@@ -100,9 +100,9 @@ const offers: Offer[] = [
   },
   {
     id: 5,
-    title: 'Kennenlernabend – Ein Abend mit Farbe',
+    title: 'Ein Abend mit Farbe',
     shortDescription:
-      'Ein Abend, an dem du mich und meine Arbeit als Kunsttherapeutin sowie die Methode des Personenorientierten Malens kennenlernen kannst.',
+      'Ein geschützter Raum, in dem du zur Ruhe kommen, dich ausdrücken und neue Zugänge zu dir entdecken kannst. Kreatives Arbeiten mit Farbe kann unterstützen, innere Spannungen zu lösen und wieder mehr Leichtigkeit zu spüren.',
     image: '/images/5348175586192460915.jpg',
     dates: ['Di, 28. April 2026, 17:00–18:30 Uhr'],
     details: {
@@ -148,7 +148,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.shortDescription}
       </p>
 
-      {/* Klang & Farbe and Kennenlernabend: show dates + mehr Details link */}
+      {/* Klang & Farbe and Ein Abend mit Farbe: show dates + mehr Details link */}
       {(offer.id === 3 || offer.id === 5) && offer.dates && offer.dates.length > 0 && (
         <div className="mb-3 text-sm">
           <p className="font-semibold mb-1">Termin{offer.dates.length > 1 ? 'e' : ''}:</p>
@@ -160,7 +160,7 @@ function OfferCard({ offer }: { offer: Offer }) {
 
       <Dialog open={open} onOpenChange={setOpen}>
         {offer.id === 3 || offer.id === 5 ? (
-          /* Klang & Farbe / Kennenlernabend: "Anmelden" as main button, "mehr Details" as text link */
+      {/* Klang & Farbe / Ein Abend mit Farbe: "Anmelden" as main button, "mehr Details" as text link */}
           <div className="mt-auto space-y-2">
             <Button
               className="w-full"
@@ -321,37 +321,73 @@ function OfferCard({ offer }: { offer: Offer }) {
               {offer.id === 5 && (
                 <div className="space-y-3 text-sm sm:text-base">
                   <p>
-                    An diesem Abend lade ich dich ein, mich und meine Arbeit als Kunsttherapeutin
-                    sowie die Methode des Personenorientierten Malens kennenzulernen. Nach einem
-                    kurzen theoretischen Input und einer Erzählung über mich öffne ich einen etwa
-                    30-minütigen Erfahrungsraum, in dem du selbst Farbe aufs Blatt bringen darfst
-                    und Erfahrung mit der Methode sammeln kannst.
+                    Kennst du das Gefühl, innerlich festzustecken – und nicht genau zu wissen, wie
+                    du wieder in deinen Fluss kommst? An diesem Abend lade ich dich ein, über Farbe
+                    und kreativen Ausdruck einen sanften Zugang zu dir selbst zu finden.
                   </p>
+                  <p>Ohne Druck, ohne Bewertung – dafür mit Raum für das, was sich zeigen möchte.</p>
+                  <div>
+                    <p className="font-semibold">✨ Was möglich werden kann:</p>
+                    <ul className="list-none mt-1 space-y-0.5 pl-1">
+                      <li>– innere Spannungen wahrnehmen und kreativ ausdrücken</li>
+                      <li>– Abstand zu kreisenden Gedanken gewinnen</li>
+                      <li>– neue Perspektiven entdecken</li>
+                      <li>– wieder mehr Leichtigkeit &amp; Lebensfreude spüren</li>
+                      <li>– dich selbst auf eine intuitive Weise erleben</li>
+                    </ul>
+                  </div>
+                  <p>
+                    Die Methoden des personenzentrierten und lösungsorientierten Malens können dabei
+                    unterstützen, Blockaden zu lockern und eigene Ressourcen bewusster wahrzunehmen.
+                  </p>
+                  <p>
+                    <span className="font-semibold">Wichtig: </span>
+                    Es geht nicht darum, „schön" zu malen – sondern darum, in Kontakt zu kommen:
+                    mit dir, deiner Kreativität und deinem inneren Erleben.
+                  </p>
+                  <div>
+                    <p className="font-semibold">Rahmen:</p>
+                    <ul className="list-none mt-1 space-y-0.5 pl-1">
+                      <li>– freies Malen &amp; achtsame Begleitung</li>
+                      <li>– kurzer Einblick in meine Arbeitsweise</li>
+                      <li>– Tee, Snacks &amp; eine warme, gemütliche Atmosphäre</li>
+                    </ul>
+                  </div>
                   <div className="flex items-start gap-2">
                     <Calendar className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
                     <div>
                       <p className="font-semibold">Wann</p>
-                      <p>28. April 2026, 17:00–18:30 Uhr</p>
-                      <p className="text-muted-foreground text-xs">Bitte 10 Minuten früher kommen</p>
+                      <p>Dienstag, 28. April 2026, 17:00–18:30 Uhr</p>
+                      <p className="text-muted-foreground text-xs">Dauer: ca. 90 Minuten</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <MapPin className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
                     <div>
-                      <p className="font-semibold">Wo</p>
-                      <p>Café des Bürgerbildungszentrum Amadeu Antonio BBZ</p>
+                      <p className="font-semibold">Ort</p>
+                      <p>Café im BBZ – 1. OG</p>
+                      <p>Puschkinstraße 13, Eberswalde</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="w-5 h-5 mt-0.5 text-primary flex-shrink-0 text-center font-bold">€</span>
                     <div>
-                      <p className="font-semibold">Beitrag</p>
-                      <p>Spendenbasis (Spendenempfehlung 5–15 Euro für Raum- und Materialkosten)</p>
+                      <p className="font-semibold">Kosten</p>
+                      <p>
+                        Auf Spendenbasis, um Raumkosten und Materialien zu decken
+                        (Spendenempfehlung 5–15 €)
+                      </p>
                     </div>
                   </div>
-                  <p className="italic">
-                    Ich freue mich sehr darauf, meine Arbeit mit euch zu teilen und einen Raum für
-                    Begegnung, Erfahrung und Farbe zu öffnen.
+                  <p>🎨 Keine Vorkenntnisse nötig</p>
+                  <p className="italic text-xs text-muted-foreground">
+                    Dieser Abend kann dir Impulse für dein Wohlbefinden geben und wird von vielen
+                    Menschen als entspannend, klärend und stärkend erlebt. Er ersetzt jedoch keine
+                    Therapie oder medizinische Behandlung.
+                  </p>
+                  <p>
+                    Wenn du spürst, dass dich das ruft, freue ich mich sehr auf dich 💛 Schreib mir
+                    gerne für Infos oder Anmeldung.
                   </p>
                 </div>
               )}
