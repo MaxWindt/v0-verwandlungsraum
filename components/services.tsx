@@ -160,7 +160,7 @@ function OfferCard({ offer }: { offer: Offer }) {
 
       <Dialog open={open} onOpenChange={setOpen}>
         {offer.id === 3 || offer.id === 5 ? (
-      {/* Klang & Farbe / Ein Abend mit Farbe: "Anmelden" as main button, "mehr Details" as text link */}
+          /* Klang & Farbe / Ein Abend mit Farbe: "Anmelden" as main button, "mehr Details" as text link */
           <div className="mt-auto space-y-2">
             <Button
               className="w-full"
