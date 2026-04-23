@@ -385,6 +385,14 @@ export default function Services(): JSX.Element {
               <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
                 {t('about.intro')}
               </p>
+                          <OptimizedImage
+              src="/images/photo_5427296683445393000_y.webp"
+              alt="Hands with yellow element"
+              width={800}
+              height={600}
+              className="h-auto max-h-[28rem] sm:max-h-[32rem] md:max-h-[36rem] w-auto mt-8 rounded-3xl overflow-hidden"
+              style={{ objectFit: 'contain' }}
+            />
             </div>
           </div>
         </div>

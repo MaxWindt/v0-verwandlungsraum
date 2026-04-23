@@ -30,6 +30,8 @@ export default function Hero() {
               {t('hero.title')}
             </h1>
 
+
+
             <h2 className="max-w-xl mx-auto text-lg sm:text-2xl">
               {t('hero.subtitle')}
             </h2>
