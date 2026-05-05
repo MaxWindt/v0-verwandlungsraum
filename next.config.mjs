@@ -11,6 +11,23 @@ const nextConfig = {
   assetPrefix: isGithubPages ? `/${repoName}/` : undefined,
   images: {
     unoptimized: true,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn.sanity.io' },
+    ],
+  },
+  // Allow Sanity Studio Presentation Tool to iframe the site during dev
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+        ],
+      },
+    ]
   },
   // Explicitly provide an empty turbopack config so Next.js doesn't error
   // when a custom webpack configuration is present.
