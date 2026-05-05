@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { presentationTool } from 'sanity/presentation'
 import { schema } from './sanity/schemaTypes'
@@ -15,7 +16,22 @@ export default defineConfig({
   basePath: '/studio',
   schema,
   plugins: [
-    structureTool(),
+    structureTool({
+      structure: (S: StructureBuilder) =>
+        S.list()
+          .title('Inhalte')
+          .items([
+            S.listItem()
+              .title('Angebote')
+              .schemaType('offer')
+              .child(
+                S.documentList()
+                  .title('Angebote')
+                  .schemaType('offer')
+                  .filter('_type == "offer"')
+              ),
+          ]),
+    }),
     visionTool({ defaultApiVersion: '2025-01-01' }),
     presentationTool({
       previewUrl: {
