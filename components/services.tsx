@@ -80,6 +80,15 @@ export interface SanityOffer {
 
 const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'y7ytd6po';
 
+/** Temporary fallback: local images for seeded documents until uploaded via Studio */
+const LOCAL_IMAGE_FALLBACK: Record<string, string> = {
+  '201d1be2-36ee-4a00-b896-fe414388876b': '/images/photo_2026-02-02_11-16-29.webp',
+  'b4c1683c-ad2d-4117-bc92-0f42fe053172': 'https://github.com/user-attachments/assets/cd4c4646-3256-4d25-8fe9-02eba9d57712',
+  'cefd20c0-7a7d-4433-b510-c7b0704b3292': '/images/5348175586192460915.jpg',
+  'b86d376e-b211-4307-9734-c91193daf1ea': '/images/5348175586192460911.jpg',
+  'f0039819-f95a-45fc-bb79-31418cba52dd': '/images/Atmen.png',
+};
+
 function refToUrl(ref: string): string {
   const parts = ref.split('-');
   const ext = parts[parts.length - 1];
@@ -91,6 +100,8 @@ function refToUrl(ref: string): string {
 function resolveImageUrl(offer: SanityOffer): string {
   if (offer.cardImage?.asset?._ref) return refToUrl(offer.cardImage.asset._ref);
   if (offer.externalImageUrl) return offer.externalImageUrl;
+  // Temporary fallback to local images for seeded documents without uploaded images
+  if (LOCAL_IMAGE_FALLBACK[offer._id]) return LOCAL_IMAGE_FALLBACK[offer._id];
   return '';
 }
 

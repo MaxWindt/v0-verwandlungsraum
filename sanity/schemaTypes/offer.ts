@@ -57,9 +57,9 @@ export const offerType = defineType({
     }),
     defineField({
       name: 'externalImageUrl',
-      title: 'Externes Bild-URL (GitHub etc.)',
-      type: 'url',
-      description: 'Nur wenn kein Sanity-Bild verwendet wird',
+      title: 'Externes Bild-URL oder Pfad',
+      type: 'string',
+      description: 'Nur wenn kein Sanity-Bild verwendet wird. Kann ein relativer Pfad (/images/...) oder eine externe URL sein.',
     }),
     defineField({
       name: 'dates',
