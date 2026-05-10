@@ -82,12 +82,10 @@ const offers: Offer[] = [
     id: 3,
     title: 'Klang & Farbe – Klangreise mit intuitivem Malen',
     shortDescription:
-      'Klangschalen führen dich in tiefe Entspannung; aus dieser inneren Ruhe entsteht dein intuitives Bild.',
+      'An diesem Nachmittag laden geführte Klangreisen und achtsames Malen dazu ein, zur Ruhe zu kommen und innere Impulse wahrzunehmen.',
     image: 'https://github.com/user-attachments/assets/cd4c4646-3256-4d25-8fe9-02eba9d57712',
     dates: [
-      'Fr, 24.04.2026 – Erde',
-      'Fr, 22.05.2026 – Feuer',
-      'Fr, 03.07.2026 – Luft'
+      'Fr, 22.05.2026 – Wasser'
     ]
   },
   {
@@ -225,23 +223,47 @@ function OfferCard({ offer }: { offer: Offer }) {
               <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
             </DialogHeader>
 
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                height: 0,
-                paddingTop: '141.4286%',
-                boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
-                marginTop: '1.6em',
-                marginBottom: '0.9em',
-                overflow: 'hidden',
-                borderRadius: '8px'
-              }}
-            >
-              <IframeWithSpinner
-                src="https://www.canva.com/design/DAHC4blyFwk/qVyzuQCbOgBq-lduaEGEdw/view?embed"
-                title="Klang & Farbe Embed"
-              />
+            <div className="space-y-4 text-sm sm:text-base">
+              <p className="font-semibold text-base">
+                Tauche mit uns ein in die klärende und erfrischende Kraft des Wassers
+              </p>
+
+              <p>
+                An diesem Nachmittag darf dein Nervensystem zur Ruhe kommen,
+                sich bei einer geführten Klangreise von Schwingungen und Frequenzen
+                in tiefe Entspannung tragen lassen.
+              </p>
+
+              <p>
+                Im Anschluss tauchen wir mit Wasserfarben in die Welt der Farben und
+                in den Fluss des Lebens ein. Wir spüren nach und lassen unsere Hände
+                intuitiv wirken: Was möchte sich zeigen? Was darf an die Oberfläche
+                kommen?
+              </p>
+
+              <div className="border-t pt-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <Calendar className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Freitag, 22. Mai 2026</p>
+                    <p>16–18 Uhr</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Ort</p>
+                    <p>Café im Bürgerbildungszentrum – 1. OG</p>
+                    <p>Puschkinstraße 13, Eberswalde</p>
+                  </div>
+                </div>
+
+                <div className="pt-1">
+                  <p><span className="font-semibold">Kursgebühr:</span> 30–40 Euro</p>
+                  <p><span className="font-semibold">Early Bird bis 11.05.:</span> 25 €</p>
+                </div>
+              </div>
             </div>
 
             <div className="pt-4">
