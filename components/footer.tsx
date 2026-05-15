@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
+import LanguageSwitcher from '@/components/language-switcher';
 import {
   Dialog,
   DialogContent,
@@ -99,6 +100,9 @@ export default function Footer() {
           </div>
 
           <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-primary/50 text-center">
+            <div className="flex justify-center mb-4">
+              <LanguageSwitcher />
+            </div>
             <p className="flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg flex-wrap">
               {t('footer.copyright')}{' '}
               <Heart size={18} className="text-primary flex-shrink-0" />{' '}

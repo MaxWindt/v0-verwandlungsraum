@@ -7,7 +7,7 @@ import OptimizedImage from './ui/optimized-image';
 import type { StaticImageData } from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
-import LanguageSwitcher from './language-switcher';
+
 import {
   Dialog,
   DialogContent,
@@ -117,12 +117,10 @@ export default function Header() {
           >
             {t('navigation.newsletter')}
           </button>
-          <LanguageSwitcher />
         </nav>
 
-        {/* Mobile Menu Button and Language Switcher */}
+        {/* Mobile Menu Button */}
         <div className="xl:hidden flex items-center gap-3 flex-shrink-0 ml-4">
-          <LanguageSwitcher />
           <button
             className="text-foreground hover:text-primary transition-colors drop-shadow-md"
             onClick={toggleMenu}

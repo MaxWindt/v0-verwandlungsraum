@@ -490,9 +490,248 @@ export const translations = {
       },
     },
   },
+  en: {
+    navigation: {
+      start: "Home",
+      services: "Offerings",
+      artTherapy: "Art Therapy",
+      sessionInfo: "Session Info",
+      about: "About Me",
+      contact: "Contact",
+      newsletter: "Newsletter",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+    },
+    hero: {
+      title: "Verwandlungsraum",
+      subtitle: "A space for inner transformation",
+      backgroundAlt: "Colourful watercolour background image for art therapy",
+      promoTitle: "Opening offer",
+      promoText: "30% off all individual sessions until 31.12.2025",
+      promoClose: "Close",
+    },
+    services: {
+      title: "What do I offer?",
+      description:
+        "I offer a space where things can show and reveal themselves – things that otherwise have no room. I accompany you through your inner process and support you in allowing more love and appreciation for your being. Art therapy (painting therapy) offers a wonderful way to make the unconscious visible, to give voice to things that cannot be expressed in words, and to enable change in a protected space.",
+      description2:
+        'One method I enjoy using in my work is "Person-Centred Painting" (POM). This painting process invites – similar to a meditative practice – to mindfully perceive inner feelings and impulses without immediately evaluating or interpreting them. The experienced is expressed at the level of the image. The painting companion or art therapist takes on the role of a "midwife of the image", fostering the unfolding of new perspectives and the emergence of inner calm and self-connection.',
+      groupTitle: "Group offerings & workshops",
+      groupDescription:
+        "In my group offerings and workshops I create space for creative, generative experience, strengthening of resources and mindful encounter. Painting together in a small group means: being seen, feeling yourself and being present.",
+      currentOffers: "Current offerings:",
+      workshop1: {
+        title: "Connect with your inner light in the darkness",
+        subtitle: "Sound bath & painting",
+        description:
+          "A workshop that accompanies you on an inner, creative journey. No prior experience needed – Simply allow yourself to be present with what is, and first let yourself be carried by gentle sounds from singing bowls. In this mindful setting we then invite you to intuitively express your inner light.",
+        location:
+          "Café of the Citizens' Education Centre, Puschkinstraße 13, Eberswalde",
+        pricing: "",
+        contact: "Contact me for more information",
+        nextDate: "Next date being planned",
+        alt: "Workshop - Connect with your inner light",
+      },
+      workshop2: {
+        title: "Workshop: 'Inner Images – New Paths'",
+        description:
+          "A creative morning for self-reflection and strengthening inner resources. With guided painting time, sharing and a closing relaxation exercise.",
+        nextDate: "Next date being planned",
+        contact: "Contact me for more information",
+        alt: "Workshop Inner Images – New Paths",
+      },
+    },
+    about: {
+      title: "About Me",
+      intro:
+        "Hello, I'm glad you found this page. I am Rebecca Schwindt and I have made it my mission to support people in difficult phases through art therapy. I am enthusiastic about many things and this capacity for enthusiasm is filled with deep reverence and joy for life. As a non-medical practitioner for psychotherapy and art therapist, my mission is to guide people from their blockages back to the flow of life and their joy of living.",
+      paragraph1:
+        "Since childhood I have felt drawn to all artistic expression and feel a very special power when painting. I spent my early years in Argentina, but due to my mother's serious illness we moved back to Germany when I was 7, where I grew up until I was 16. Then a new exciting chapter began. We moved to Ecuador and it became my home for the next 10 years. There I studied psychology with a clinical focus and then worked in Germany as a psychologist in various areas, including a hospital for children and young people and in supported individual housing for people with mental illness.",
+      paragraph2:
+        "Some years later I made a journey to India. I carried the question in my heart: How do I want to act in the world? On this journey I was moved by the wonderful, vibrant colours, artistic crafts and the people's way of life. There I experienced in a formative way a key moment that led me to art therapy.",
+      paragraph3:
+        "In Berlin I began to follow my calling and completed my training as an art and creativity therapist shortly before my daughter was born. In 2025 I also completed training as a death doula. The dying process is also a space of transformation. Since then I have had a deep desire to create a space where people are supported to experience themselves as alive, self-determined and powerful, and to experience personal change.",
+      alt: "Rebecca Schwindt",
+    },
+    kunsttherapie: {
+      title: "Art Therapy",
+      subtitle:
+        "Imagine a place where you can experience inner peace and joy. Even imagination can have a supportive effect on relaxation and wellbeing. When the body and hands are also involved in the creative process, different levels – mind and body – are addressed simultaneously, which can promote personal development.",
+      howItWorks: "What is art therapy?",
+      howItWorksIntro:
+        "Art therapy is a creative approach that allows emotions to be expressed and reflected upon non-verbally. It can help: make feelings visible that are difficult to put into words, promote relaxation and mindfulness, support self-reflection and discover new perspectives. Studies suggest that creative processes can promote engagement with personal themes. This approach can, for example, support people in stressful life situations such as stress, anxiety or grief. Please note that effects are individual and cannot be guaranteed.",
+      benefit1: "Make feelings visible that are difficult to put into words",
+      benefit2: "Promote relaxation and mindfulness",
+      benefit3: "Support self-reflection and discover new perspectives",
+      scientificNote:
+        "Note: Effects are individual and cannot be guaranteed.",
+      forWhomIntro:
+        "This approach can, for example, support people in stressful life situations such as stress, anxiety or grief.",
+      pomTitle: "Person-Centred Painting (POM)",
+      whyMethodIntro:
+        "Person-centred painting was developed by Bettina Egger and differs somewhat from other art therapeutic approaches.",
+      methodDescription:
+        "In person-centred painting therapy there are generally no set tasks or themes. Your image arises from a first inner impulse and develops from there. The open painting process is at the centre.\n\nEverything that shows itself – colours, shapes, movements – is part of your personal expression. Goals, themes and insights arise from this process.\n\nMy most important task is accompaniment:\nI am present, attentive and supportive by your side – and walk with you wherever the image leads.",
+    },
+    session: {
+      title: "Session Conditions & Prices",
+      sectionTitle: "Individual Sessions",
+      description1:
+        "In the centre of Waldstadt Eberswalde I offer – until I rent my own studio – individual sessions in the quiet coaching room of the Thinkfarm co-working space.",
+      description2:
+        "The room offers a protected setting in which work can be done with various artistic materials such as pastel chalk, gouache or drawing chalk. The creative process serves self-exploration and the expression of inner themes.",
+      description3:
+        "The duration of an accompanying process varies greatly from person to person. In some cases a single session can be experienced as helpful, but topics are often worked through over several weeks until a coherent conclusion emerges. Scope and course are always agreed together.",
+      description4:
+        "The first introductory session usually lasts 90 minutes. The first half hour is devoted to getting to know each other, clarifying questions and discussing your concerns. The practical work takes place afterwards.",
+      description5:
+        "After the first session you can individually decide whether you would like to book 60 or 90 minutes in future.",
+      imageAlt:
+        "Individual art therapy session with therapist and client painting together",
+      therapyRoomAlt: "Coaching room for individual sessions at Thinkfarm",
+      starterPackageTitle: "Starter package:",
+      starterPackageDetails: "3 sessions (90 / 60 / 60 minutes)",
+      starterPackagePrice: "→ 180 € (instead of 210 €)",
+      disclaimerNote:
+        "Note: This offering does not constitute psychotherapy within the meaning of the Psychotherapists Act and does not replace medical or psychotherapeutic treatment.",
+      pricesTitle: "Prices",
+      price1: "Individual session (60 minutes): 60 €",
+      price2: "Individual session (90 minutes): 90 €",
+      starterPackage: "Starter package: 3 sessions (90 / 60 / 60 minutes) for 180 € instead of 210 €",
+      priceNote:
+        "In cases of financial hardship an individual reduction can be agreed.",
+      billingTitle: "Billing & cost coverage",
+      billing1:
+        "I work as a non-medical practitioner for psychotherapy on a private basis.",
+      billing2:
+        "Costs are generally not covered by statutory health insurance.",
+      billing3:
+        "Some private health insurances or supplementary insurances may cover part of the costs in certain circumstances.",
+      advantagesTitle: "What are the advantages of self-paid therapy?",
+      advantage1: "No long waiting times",
+      advantage2: "Free choice of a therapist who suits you",
+      advantage3:
+        "Content, duration and rhythm of therapy are not fixed but adapted to your needs",
+      advantage4:
+        "No mental illness according to the ICD-10 and DSM-V diagnostic criteria is required",
+      advantage5:
+        "Therapy is not recorded in any medical file or health insurance and therefore does not affect any potential civil service appointment or future insurance",
+      cancellationTitle: "Cancellation",
+      cancellation1:
+        "Appointments can be cancelled free of charge up to 24 hours in advance.",
+      cancellation2:
+        "For later cancellations or no-shows the full fee will be charged, as the appointment cannot be passed on.",
+      disclaimerTitle: "Notice on therapy / Disclaimer",
+      disclaimerText:
+        "These services do not replace medical diagnosis or medical treatment. I make no guarantees of healing or success and give no legal or insurance commitments. Each person experiences the process individually.",
+    },
+    contact: {
+      title: "Contact",
+      formTitle:
+        "Feel free to send me an email with your questions or appointment requests!",
+      nameLabel: "Name *",
+      namePlaceholder: "Your name",
+      emailLabel: "Email *",
+      emailPlaceholder: "your@email.com",
+      messageLabel: "Message *",
+      messagePlaceholder: "Your message...",
+      sendButton: "Send message",
+      sendingButton: "Sending...",
+      successMessage:
+        "Message sent successfully! I will get back to you soon.",
+      errorMessage: "There was an error sending the message.",
+      errorRetry:
+        "There was an error sending the message. Please try again later.",
+      validationError: "Please fill in all required fields.",
+      captchaRequired: "Please confirm the captcha.",
+      captchaError: "Error loading captcha. Please reload the page.",
+      newsletterLabel: "Yes, I would like to subscribe to the newsletter and be informed about new offerings and news.",
+      newsletterDialogTitle: "Subscribe to newsletter",
+      infoTitle: "Contact information",
+      emailTitle: "Email",
+      phoneTitle: "Phone",
+      languageNote:
+        "También ofrezco sesiones en español!\nI also offer sessions in English!",
+    },
+    footer: {
+      title: "Verwandlungsraum",
+      subtitle: "A space for inner transformation",
+      quickLinks: "Quick links",
+      start: "Home",
+      about: "About me",
+      services: "Offerings",
+      sessionInfo: "Session Info",
+      artTherapy: "Art Therapy",
+      contact: "Contact",
+      newsletter: "Newsletter",
+      privacy: "Privacy",
+      imprintTitle: "Imprint",
+      name: "Rebecca Schwindt",
+      profession: "Art Therapist & Non-Medical Practitioner for Psychotherapy",
+      address1: "Gerichtsstr 4",
+      address2: "16225 Eberswalde",
+      copyright: "Made with",
+      copyrightEnd:
+        "| © {year} Verwandlungsraum | All rights reserved",
+    },
+    cookies: {
+      title: "Cookie settings",
+      description:
+        "This website uses only technically necessary cookies to ensure functionality. No tracking or marketing cookies are used.",
+      privacyLink: "Privacy policy",
+      accept: "Accept",
+      reject: "Reject",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      intro: {
+        title: "1. Data protection at a glance",
+        text: "The protection of your personal data is a special concern to me. I treat your personal data confidentially and in accordance with the legal data protection regulations and this privacy policy.",
+      },
+      responsible: {
+        title: "2. Responsible party",
+        name: "Rebecca Schwindt",
+        address: "Gerichtsstr 4, 16225 Eberswalde",
+        email: "Email: rebecca.schwindt@verwandlungsraum-eberswalde.de",
+      },
+      contactForm: {
+        title: "3. Contact form",
+        text1:
+          "If you send me enquiries via the contact form, your details from the enquiry form including the contact data you provide there will be stored with me for the purpose of processing the enquiry and in case of follow-up questions.",
+        text2:
+          "Data processing is based on your consent (Art. 6 para. 1 lit. a GDPR). You can revoke this consent at any time. An informal email to me is sufficient. The legality of data processing operations carried out until revocation is not affected by the revocation.",
+        text3:
+          "The data you enter in the contact form will remain with me until you request deletion, revoke your consent to storage or the purpose for data storage no longer applies. Mandatory legal provisions – in particular retention periods – remain unaffected.",
+      },
+      cookies: {
+        title: "4. Cookies",
+        text1:
+          "This website uses only technically necessary cookies. These are required to ensure the functionality of the website and cannot be deactivated.",
+        text2:
+          "Technically necessary cookies are used to store your cookie settings. No tracking or marketing cookies are used.",
+      },
+      rights: {
+        title: "5. Your rights",
+        right1: "Right to information about your personal data stored with me",
+        right2: "Right to correction of incorrect data",
+        right3: "Right to deletion of your data stored with me",
+        right4: "Right to restriction of data processing",
+        right5: "Right to data portability",
+        right6: "Right to object to the processing of your data",
+      },
+      security: {
+        title: "6. Data security",
+        text: "I use the widely used SSL (Secure Socket Layer) procedure in conjunction with the highest level of encryption supported by your browser during your website visit. You can tell whether an individual page of my website is transmitted encrypted by the closed representation of the key or padlock symbol in the lower status bar of your browser.",
+      },
+      changes: {
+        title: "7. Changes to the privacy policy",
+        text: "I reserve the right to adapt this privacy policy so that it always complies with current legal requirements or to implement changes to my services in the privacy policy. Your next visit will be subject to the new privacy policy.",
+      },
+    },
+  },
 };
 
-export type Locale = "de" | "es";
+export type Locale = "de" | "es" | "en";
 
 export function getTranslation(locale: Locale, key: string): string {
   const keys = key.split(".");
