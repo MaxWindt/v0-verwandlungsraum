@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // Read .env.local
 const envContent = fs.readFileSync('.env.local', 'utf8');
-const tokenMatch = envContent.match(/SANITY_WRITE_TOKEN=([^\s#]+)/);
+const tokenMatch = envContent.match(/SANITY_WRITE_TOKEN=["']?([^"'\s#]+)["']?/);
 const token = tokenMatch ? tokenMatch[1].trim() : '';
 if (!token) {
   console.error('Missing SANITY_WRITE_TOKEN in .env.local. Add a write-enabled Sanity token before running this script.');

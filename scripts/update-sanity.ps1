@@ -3,8 +3,9 @@ if (-not (Test-Path .env.local)) {
   exit 1
 }
 
-$tokenLine = Get-Content .env.local | Select-String "^SANITY_WRITE_TOKEN="
-$token = if ($tokenLine) { $tokenLine.ToString().Replace("SANITY_WRITE_TOKEN=","").Trim() } else { "" }
+$tokenLine = Get-Content .env.local | Select-String "^SANITY_WRITE_TOKEN=" | Select-Object -First 1
+$tokenMatch = if ($tokenLine) { [regex]::Match($tokenLine.ToString(), '^SANITY_WRITE_TOKEN=["'']?([^"''\s#]+)["'']?') } else { $null }
+$token = if ($tokenMatch -and $tokenMatch.Success) { $tokenMatch.Groups[1].Value.Trim() } else { "" }
 if ([string]::IsNullOrWhiteSpace($token)) {
   Write-Error "SANITY_WRITE_TOKEN is missing in .env.local"
   exit 1
