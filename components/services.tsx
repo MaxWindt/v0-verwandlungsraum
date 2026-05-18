@@ -145,7 +145,15 @@ function resolveDetailImageUrl(offer: SanityOffer): string {
 
 // ── card ───────────────────────────────────────────────────────────────────────
 
-function OfferCard({ offer }: { offer: SanityOffer }) {
+type SessionDescriptions = {
+  d1?: unknown[] | null;
+  d2?: unknown[] | null;
+  d3?: unknown[] | null;
+  d4?: unknown[] | null;
+  d5?: unknown[] | null;
+};
+
+function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; sessionDescriptions?: SessionDescriptions }) {
   const { t, locale } = useLanguage();
   const [open, setOpen] = useState(false);
 
@@ -241,11 +249,21 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
                 <OptimizedImage src={detailImageUrl} alt={displayTitle} width={1200} height={720} className="w-full rounded-lg object-cover" style={{ maxHeight: 360 }} />
               )}
               <div className="prose max-w-none text-sm sm:text-base">
-                <p>{t('session.description1')}</p>
-                <p>{t('session.description2')}</p>
-                <p>{t('session.description3')}</p>
-                <p>{t('session.description4')}</p>
-                <p>{t('session.description5')}</p>
+                {sessionDescriptions?.d1 && (sessionDescriptions.d1 as unknown[]).length > 0 ? (
+                  <PortableText value={sessionDescriptions.d1 as Parameters<typeof PortableText>[0]['value']} />
+                ) : <p>{t('session.description1')}</p>}
+                {sessionDescriptions?.d2 && (sessionDescriptions.d2 as unknown[]).length > 0 ? (
+                  <PortableText value={sessionDescriptions.d2 as Parameters<typeof PortableText>[0]['value']} />
+                ) : <p>{t('session.description2')}</p>}
+                {sessionDescriptions?.d3 && (sessionDescriptions.d3 as unknown[]).length > 0 ? (
+                  <PortableText value={sessionDescriptions.d3 as Parameters<typeof PortableText>[0]['value']} />
+                ) : <p>{t('session.description3')}</p>}
+                {sessionDescriptions?.d4 && (sessionDescriptions.d4 as unknown[]).length > 0 ? (
+                  <PortableText value={sessionDescriptions.d4 as Parameters<typeof PortableText>[0]['value']} />
+                ) : <p>{t('session.description4')}</p>}
+                {sessionDescriptions?.d5 && (sessionDescriptions.d5 as unknown[]).length > 0 ? (
+                  <PortableText value={sessionDescriptions.d5 as Parameters<typeof PortableText>[0]['value']} />
+                ) : <p>{t('session.description5')}</p>}
                 <p className="text-sm italic mt-4">{t('session.disclaimerNote')}</p>
               </div>
             </div>
@@ -327,6 +345,14 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
   const individualOffers = offers.filter((o) => o.category === 'individual');
   const workshopOffers = offers.filter((o) => o.category !== 'individual');
 
+  const sessionDescriptions: SessionDescriptions = {
+    d1: siteSettings?.sessionDescription1,
+    d2: siteSettings?.sessionDescription2,
+    d3: siteSettings?.sessionDescription3,
+    d4: siteSettings?.sessionDescription4,
+    d5: siteSettings?.sessionDescription5,
+  };
+
   const welcomeImageSrc = siteSettings?.welcomeImage
     ? urlFor(siteSettings.welcomeImage).width(800).url()
     : '/images/photo_5427296683445393000_y.webp';
@@ -404,7 +430,7 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
             <div className="w-full sm:w-3/4 md:w-2/3">
               <div className="grid grid-cols-1 gap-6">
                 {individualOffers.map((offer) => (
-                  <OfferCard key={offer._id} offer={offer} />
+                  <OfferCard key={offer._id} offer={offer} sessionDescriptions={sessionDescriptions} />
                 ))}
               </div>
             </div>
@@ -418,7 +444,7 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {workshopOffers.map((offer) => (
-                <OfferCard key={offer._id} offer={offer} />
+                <OfferCard key={offer._id} offer={offer} sessionDescriptions={sessionDescriptions} />
               ))}
             </div>
           </>
