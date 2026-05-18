@@ -54,7 +54,7 @@ function toCanvaEmbedUrl(url: string): string {
   }
 }
 
-// ── types ──────────────────────────────────────────────────────────────────────
+// ── types ────────────────────────────────────────────────────────────────────
 
 export interface SanityOffer {
   _id: string;
