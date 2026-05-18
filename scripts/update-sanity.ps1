@@ -1,4 +1,8 @@
-$token = (Get-Content .env.local | Select-String "^SANITY_API_READ_TOKEN=").ToString().Replace("SANITY_API_READ_TOKEN=","")
+$token = (Get-Content .env.local | Select-String "^SANITY_WRITE_TOKEN=").ToString().Replace("SANITY_WRITE_TOKEN=","").Trim()
+if ([string]::IsNullOrWhiteSpace($token)) {
+  Write-Error "SANITY_WRITE_TOKEN is missing in .env.local"
+  exit 1
+}
 $headers = @{ "Authorization" = "Bearer $token"; "Content-Type" = "application/json" }
 $baseUrl = "https://y7ytd6po.api.sanity.io/v2025-01-01/data/mutate/production"
 

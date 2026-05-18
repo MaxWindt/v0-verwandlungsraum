@@ -2,6 +2,11 @@ import { createClient } from '@sanity/client'
 import { config } from 'dotenv'
 config({ path: '.env.local' })
 
+if (!process.env.SANITY_WRITE_TOKEN) {
+  console.error('❌ Missing SANITY_WRITE_TOKEN in .env.local')
+  process.exit(1)
+}
+
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'y7ytd6po',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',

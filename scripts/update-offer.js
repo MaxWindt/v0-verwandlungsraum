@@ -1,12 +1,16 @@
 // Script to update Atmen und Malen document in Sanity
-// Uses SANITY_API_READ_TOKEN from .env.local (needs write permissions)
+// Uses SANITY_WRITE_TOKEN from .env.local
 
 const fs = require('fs');
 
 // Read .env.local
 const envContent = fs.readFileSync('.env.local', 'utf8');
-const tokenMatch = envContent.match(/SANITY_API_READ_TOKEN=(.+)/);
+const tokenMatch = envContent.match(/SANITY_WRITE_TOKEN=(.+)/);
 const token = tokenMatch ? tokenMatch[1].trim() : '';
+if (!token) {
+  console.error('Missing SANITY_WRITE_TOKEN in .env.local');
+  process.exit(1);
+}
 
 const projectId = 'y7ytd6po';
 const dataset = 'production';

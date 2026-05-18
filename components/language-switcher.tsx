@@ -4,10 +4,10 @@ import { Fragment } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import type { Locale } from "@/lib/translations";
 
-const languages: { code: Locale; label: string }[] = [
-  { code: "de", label: "DE" },
-  { code: "en", label: "EN" },
-  { code: "es", label: "ES" },
+const languages: { code: Locale; label: string; name: string }[] = [
+  { code: "de", label: "DE", name: "German" },
+  { code: "en", label: "EN", name: "English" },
+  { code: "es", label: "ES", name: "Spanish" },
 ];
 
 export default function LanguageSwitcher() {
@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
                 ? "text-primary font-bold"
                 : "text-muted-foreground hover:text-foreground"
             }`}
-            aria-label={lang.label}
+            aria-label={`Switch language to ${lang.name}`}
             aria-pressed={locale === lang.code}
           >
             {lang.label}

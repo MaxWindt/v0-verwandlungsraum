@@ -106,6 +106,7 @@ export interface SiteSettings {
 // ── image helpers ──────────────────────────────────────────────────────────────
 
 const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'y7ytd6po';
+const DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
 
 /** Local image fallbacks — takes priority over Sanity refs (covers docs without uploaded images) */
 const LOCAL_IMAGE_FALLBACK: Record<string, { card: string; detail?: string }> = {
@@ -125,7 +126,7 @@ function refToUrl(ref: string): string {
   const ext = parts[parts.length - 1];
   const dims = parts[parts.length - 2];
   const id = parts.slice(1, parts.length - 2).join('-');
-  return `https://cdn.sanity.io/images/${PROJECT_ID}/production/${id}-${dims}.${ext}`;
+  return `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dims}.${ext}`;
 }
 
 function resolveImageUrl(offer: SanityOffer): string {
