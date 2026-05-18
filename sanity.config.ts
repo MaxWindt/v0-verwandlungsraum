@@ -21,7 +21,7 @@ export default defineConfig({
           .title('Inhalte')
           .items([
             S.listItem()
-              .title('Seiteneinstellungen')
+              .title('Inhalte')
               .id('siteSettings')
               .child(
                 S.document()

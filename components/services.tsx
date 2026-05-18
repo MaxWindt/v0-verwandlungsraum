@@ -59,7 +59,11 @@ function toCanvaEmbedUrl(url: string): string {
 export interface SanityOffer {
   _id: string;
   title: string;
+  titleEn?: string | null;
+  titleEs?: string | null;
   shortDescription: string;
+  shortDescriptionEn?: string | null;
+  shortDescriptionEs?: string | null;
   category?: string;
   hidden?: boolean;
   order?: number;
@@ -78,24 +82,24 @@ export interface SanityOffer {
 }
 
 export interface SiteSettings {
-  welcomeIntro?: string | null;
+  welcomeIntro?: unknown[] | null;
   welcomeImage?: { asset?: { _ref?: string } } | null;
-  aboutParagraph1?: string | null;
-  aboutParagraph2?: string | null;
-  aboutParagraph3?: string | null;
+  aboutParagraph1?: unknown[] | null;
+  aboutParagraph2?: unknown[] | null;
+  aboutParagraph3?: unknown[] | null;
   aboutPortrait?: { asset?: { _ref?: string } } | null;
-  ktSubtitle?: string | null;
+  ktSubtitle?: unknown[] | null;
   ktHowItWorksTitle?: string | null;
-  ktHowItWorksIntro?: string | null;
+  ktHowItWorksIntro?: unknown[] | null;
   ktPomImage?: { asset?: { _ref?: string } } | null;
   ktPomTitle?: string | null;
-  ktPomIntro?: string | null;
-  ktPomDescription?: string | null;
-  sessionDescription1?: string | null;
-  sessionDescription2?: string | null;
-  sessionDescription3?: string | null;
-  sessionDescription4?: string | null;
-  sessionDescription5?: string | null;
+  ktPomIntro?: unknown[] | null;
+  ktPomDescription?: unknown[] | null;
+  sessionDescription1?: unknown[] | null;
+  sessionDescription2?: unknown[] | null;
+  sessionDescription3?: unknown[] | null;
+  sessionDescription4?: unknown[] | null;
+  sessionDescription5?: unknown[] | null;
   sessionRoomImage?: { asset?: { _ref?: string } } | null;
 }
 
@@ -142,8 +146,18 @@ function resolveDetailImageUrl(offer: SanityOffer): string {
 // ── card ───────────────────────────────────────────────────────────────────────
 
 function OfferCard({ offer }: { offer: SanityOffer }) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [open, setOpen] = useState(false);
+
+  const displayTitle =
+    locale === 'en' ? offer.titleEn || offer.title :
+    locale === 'es' ? offer.titleEs || offer.title :
+    offer.title;
+
+  const displayDescription =
+    locale === 'en' ? offer.shortDescriptionEn || offer.shortDescription :
+    locale === 'es' ? offer.shortDescriptionEs || offer.shortDescription :
+    offer.shortDescription;
 
   const isEventWithDates = (offer.dates ?? []).length > 0;
   const isCanva = offer.dialogType === 'canva';
@@ -170,7 +184,7 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
         <div className="mb-4 rounded-lg overflow-hidden h-52 lg:h-72 xl:h-80 flex items-center justify-center">
           <OptimizedImage
             src={cardImageUrl}
-            alt={offer.title}
+            alt={displayTitle}
             width={600}
             height={360}
             className={`w-full h-full ${isCanva ? 'object-contain p-2 rounded-lg' : 'object-cover rounded-lg object-top'}`}
@@ -178,8 +192,8 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
         </div>
       )}
 
-      <h4 className="text-lg sm:text-xl mb-3 font-semibold">{offer.title}</h4>
-      <p className="text-sm sm:text-base mb-3 flex-grow">{offer.shortDescription}</p>
+      <h4 className="text-lg sm:text-xl mb-3 font-semibold">{displayTitle}</h4>
+      <p className="text-sm sm:text-base mb-3 flex-grow">{displayDescription}</p>
 
       {isEventCard && (offer.dates ?? []).length > 0 && (
         <div className="mb-3 text-sm">
@@ -210,13 +224,13 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
 
         <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl mb-4">{offer.title}</DialogTitle>
+            <DialogTitle className="text-2xl mb-4">{displayTitle}</DialogTitle>
           </DialogHeader>
 
           {/* Canva embed */}
           {isCanva && offer.canvaUrl && (
             <div style={{ position: 'relative', width: '100%', height: 0, paddingTop: '141.4286%', boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)', marginTop: '1.6em', marginBottom: '0.9em', overflow: 'hidden', borderRadius: '8px' }}>
-              <IframeWithSpinner src={toCanvaEmbedUrl(offer.canvaUrl)} title={offer.title} />
+              <IframeWithSpinner src={toCanvaEmbedUrl(offer.canvaUrl)} title={displayTitle} />
             </div>
           )}
 
@@ -224,7 +238,7 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
           {isSession && (
             <div className="space-y-4">
               {detailImageUrl && (
-                <OptimizedImage src={detailImageUrl} alt={offer.title} width={1200} height={720} className="w-full rounded-lg object-cover" style={{ maxHeight: 360 }} />
+                <OptimizedImage src={detailImageUrl} alt={displayTitle} width={1200} height={720} className="w-full rounded-lg object-cover" style={{ maxHeight: 360 }} />
               )}
               <div className="prose max-w-none text-sm sm:text-base">
                 <p>{t('session.description1')}</p>
@@ -313,7 +327,6 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
   const individualOffers = offers.filter((o) => o.category === 'individual');
   const workshopOffers = offers.filter((o) => o.category !== 'individual');
 
-  const welcomeIntro = siteSettings?.welcomeIntro || t('about.intro');
   const welcomeImageSrc = siteSettings?.welcomeImage
     ? urlFor(siteSettings.welcomeImage).width(800).url()
     : '/images/photo_5427296683445393000_y.webp';
@@ -321,9 +334,6 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
   const aboutPortraitSrc = siteSettings?.aboutPortrait
     ? urlFor(siteSettings.aboutPortrait).width(600).url()
     : '/images/ueber-mich-portrait.jpeg';
-  const paragraph1 = siteSettings?.aboutParagraph1 || t('about.paragraph1');
-  const paragraph2 = siteSettings?.aboutParagraph2 || t('about.paragraph2');
-  const paragraph3 = siteSettings?.aboutParagraph3 || t('about.paragraph3');
 
   return (
     <>
@@ -332,9 +342,15 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
           <div className="max-w-6xl content-box my-0 mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="mb-4">Willkommen</h2>
-              <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
-                {welcomeIntro}
-              </p>
+              {siteSettings?.welcomeIntro && (siteSettings.welcomeIntro as unknown[]).length > 0 ? (
+                <div className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left prose prose-lg max-w-none">
+                  <PortableText value={siteSettings.welcomeIntro as Parameters<typeof PortableText>[0]['value']} />
+                </div>
+              ) : (
+                <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
+                  {t('about.intro')}
+                </p>
+              )}
               <OptimizedImage
                 src={welcomeImageSrc}
                 alt="Hands with yellow element"
@@ -358,10 +374,22 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
               <div className="relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden hover-lift">
                 <OptimizedImage src={aboutPortraitSrc} alt={t('about.alt')} fill className="object-cover object-center" />
               </div>
-              <div className="space-y-4 sm:space-y-6 text-left">
-                <p className="leading-relaxed">{paragraph1}</p>
-                <p className="leading-relaxed">{paragraph2}</p>
-                <p className="leading-relaxed">{paragraph3}</p>
+              <div className="space-y-4 sm:space-y-6 text-left prose prose-lg max-w-none">
+                {siteSettings?.aboutParagraph1 && (siteSettings.aboutParagraph1 as unknown[]).length > 0 ? (
+                  <PortableText value={siteSettings.aboutParagraph1 as Parameters<typeof PortableText>[0]['value']} />
+                ) : (
+                  <p className="leading-relaxed">{t('about.paragraph1')}</p>
+                )}
+                {siteSettings?.aboutParagraph2 && (siteSettings.aboutParagraph2 as unknown[]).length > 0 ? (
+                  <PortableText value={siteSettings.aboutParagraph2 as Parameters<typeof PortableText>[0]['value']} />
+                ) : (
+                  <p className="leading-relaxed">{t('about.paragraph2')}</p>
+                )}
+                {siteSettings?.aboutParagraph3 && (siteSettings.aboutParagraph3 as unknown[]).length > 0 ? (
+                  <PortableText value={siteSettings.aboutParagraph3 as Parameters<typeof PortableText>[0]['value']} />
+                ) : (
+                  <p className="leading-relaxed">{t('about.paragraph3')}</p>
+                )}
               </div>
             </div>
           </div>

@@ -4,7 +4,11 @@ export const OFFERS_QUERY = defineQuery(`
   *[_type == "offer" && hidden != true] | order(order asc, _createdAt asc) {
     _id,
     title,
+    titleEn,
+    titleEs,
     shortDescription,
+    shortDescriptionEn,
+    shortDescriptionEs,
     category,
     hidden,
     order,
@@ -27,7 +31,11 @@ export const ALL_OFFERS_QUERY = defineQuery(`
   *[_type == "offer"] | order(order asc, _createdAt asc) {
     _id,
     title,
+    titleEn,
+    titleEs,
     shortDescription,
+    shortDescriptionEn,
+    shortDescriptionEs,
     category,
     hidden,
     order,

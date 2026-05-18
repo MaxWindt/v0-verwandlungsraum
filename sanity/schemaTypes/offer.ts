@@ -7,16 +7,42 @@ export const offerType = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Titel',
+      title: 'Titel (Deutsch)',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'titleEn',
+      title: 'Titel (Englisch)',
+      type: 'string',
+      description: 'Wird angezeigt, wenn die Sprache auf Englisch gestellt ist.',
+    }),
+    defineField({
+      name: 'titleEs',
+      title: 'Titel (Spanisch)',
+      type: 'string',
+      description: 'Wird angezeigt, wenn die Sprache auf Spanisch gestellt ist.',
+    }),
+    defineField({
       name: 'shortDescription',
-      title: 'Kurzbeschreibung',
+      title: 'Kurzbeschreibung (Deutsch)',
       type: 'text',
       rows: 3,
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'shortDescriptionEn',
+      title: 'Kurzbeschreibung (Englisch)',
+      type: 'text',
+      rows: 3,
+      description: 'Wird angezeigt, wenn die Sprache auf Englisch gestellt ist.',
+    }),
+    defineField({
+      name: 'shortDescriptionEs',
+      title: 'Kurzbeschreibung (Spanisch)',
+      type: 'text',
+      rows: 3,
+      description: 'Wird angezeigt, wenn die Sprache auf Spanisch gestellt ist.',
     }),
     defineField({
       name: 'category',
