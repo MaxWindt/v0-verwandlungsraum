@@ -120,18 +120,26 @@ async function main() {
 
   // ── Upload siteSettings images ────────────────────────────────────────────
   console.log('\n═══ Uploading siteSettings images ═══')
-  const sitePatch = {}
-  for (const [field, filename] of Object.entries(SITE_SETTINGS_IMAGES)) {
-    console.log(`\nsiteSettings.${field}:`)
-    const asset = await uploadImage(filename)
-    if (asset) {
-      sitePatch[field] = { _type: 'image', asset: { _type: 'reference', _ref: asset._id } }
+  
+  // Find the siteSettings document
+  const siteSettingsDocs = await client.fetch('*[_type == "siteSettings"] { _id }[0]')
+  if (!siteSettingsDocs) {
+    console.warn('  ⚠️  No siteSettings document found — skipping')
+  } else {
+    const siteSettingsId = siteSettingsDocs._id
+    const sitePatch = {}
+    for (const [field, filename] of Object.entries(SITE_SETTINGS_IMAGES)) {
+      console.log(`\nsiteSettings.${field}:`)
+      const asset = await uploadImage(filename)
+      if (asset) {
+        sitePatch[field] = { _type: 'image', asset: { _type: 'reference', _ref: asset._id } }
+      }
     }
-  }
 
-  if (Object.keys(sitePatch).length > 0) {
-    await client.patch('siteSettings').set(sitePatch).commit()
-    console.log('\n  💾 Patched siteSettings document')
+    if (Object.keys(sitePatch).length > 0) {
+      await client.patch(siteSettingsId).set(sitePatch).commit()
+      console.log('\n  💾 Patched siteSettings document')
+    }
   }
 
   console.log('\n✨ All done! Images are now live in Sanity Studio.\n')
