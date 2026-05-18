@@ -1,8 +1,7 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import type { StructureBuilder } from 'sanity/structure'
-import { visionTool } from '@sanity/vision'
-import { presentationTool } from 'sanity/presentation'
+import { presentationTool, defineDocuments, defineLocations } from 'sanity/presentation'
 import { schema } from './sanity/schemaTypes'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
@@ -22,6 +21,15 @@ export default defineConfig({
           .title('Inhalte')
           .items([
             S.listItem()
+              .title('Seiteneinstellungen')
+              .id('siteSettings')
+              .child(
+                S.document()
+                  .schemaType('siteSettings')
+                  .documentId('be017460-24c5-4a73-90f1-e6ba5f94c94f')
+              ),
+            S.divider(),
+            S.listItem()
               .title('Angebote')
               .schemaType('offer')
               .child(
@@ -32,8 +40,29 @@ export default defineConfig({
               ),
           ]),
     }),
-    visionTool({ defaultApiVersion: '2025-01-01' }),
     presentationTool({
+      resolve: {
+        mainDocuments: defineDocuments([
+          {
+            route: '/',
+            filter: `_type == "siteSettings"`,
+          },
+        ]),
+        locations: {
+          siteSettings: defineLocations({
+            select: {},
+            resolve: () => ({
+              locations: [{ title: 'Startseite', href: '/' }],
+            }),
+          }),
+          offer: defineLocations({
+            select: { title: 'title' },
+            resolve: (doc) => ({
+              locations: [{ title: doc?.title ?? 'Angebot', href: '/' }],
+            }),
+          }),
+        },
+      },
       previewUrl: {
         origin:
           typeof location !== 'undefined'

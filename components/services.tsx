@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
 import { PortableText } from '@portabletext/react';
+import { urlFor } from '@/sanity/lib/imageUrl';
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -76,17 +77,43 @@ export interface SanityOffer {
   dialogContent?: unknown[] | null;
 }
 
+export interface SiteSettings {
+  welcomeIntro?: string | null;
+  welcomeImage?: { asset?: { _ref?: string } } | null;
+  aboutParagraph1?: string | null;
+  aboutParagraph2?: string | null;
+  aboutParagraph3?: string | null;
+  aboutPortrait?: { asset?: { _ref?: string } } | null;
+  ktSubtitle?: string | null;
+  ktHowItWorksTitle?: string | null;
+  ktHowItWorksIntro?: string | null;
+  ktPomImage?: { asset?: { _ref?: string } } | null;
+  ktPomTitle?: string | null;
+  ktPomIntro?: string | null;
+  ktPomDescription?: string | null;
+  sessionDescription1?: string | null;
+  sessionDescription2?: string | null;
+  sessionDescription3?: string | null;
+  sessionDescription4?: string | null;
+  sessionDescription5?: string | null;
+  sessionRoomImage?: { asset?: { _ref?: string } } | null;
+}
+
 // ── image helpers ──────────────────────────────────────────────────────────────
 
 const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'y7ytd6po';
 
-/** Temporary fallback: local images for seeded documents until uploaded via Studio */
+/** Local image fallbacks — takes priority over Sanity refs (covers docs without uploaded images) */
 const LOCAL_IMAGE_FALLBACK: Record<string, { card: string; detail?: string }> = {
   '201d1be2-36ee-4a00-b896-fe414388876b': { card: '/images/photo_2026-02-02_11-16-29.webp', detail: '/images/Einzeltherapie raum.jpg' },
-  'b4c1683c-ad2d-4117-bc92-0f42fe053172': { card: 'https://github.com/user-attachments/assets/cd4c4646-3256-4d25-8fe9-02eba9d57712' },
+  'b4c1683c-ad2d-4117-bc92-0f42fe053172': { card: '/images/Klang.webp' },
   'cefd20c0-7a7d-4433-b510-c7b0704b3292': { card: '/images/5348175586192460915.jpg' },
   'b86d376e-b211-4307-9734-c91193daf1ea': { card: '/images/5348175586192460911.jpg' },
   'f0039819-f95a-45fc-bb79-31418cba52dd': { card: '/images/Atmen.png' },
+  // new offers — locally sourced until images are uploaded to Sanity Studio
+  'daa669cd-588b-435e-ab79-eef9247624bb': { card: '/images/Atmen.webp' },
+  '811ddcd8-e138-4207-89da-f4b38b4d00c3': { card: '/images/POM_header.webp' },
+  '79272a4a-25ff-4e1c-b6b7-87910e467847': { card: '/images/photo_5427296683445393000_y.webp' },
 };
 
 function refToUrl(ref: string): string {
@@ -98,10 +125,13 @@ function refToUrl(ref: string): string {
 }
 
 function resolveImageUrl(offer: SanityOffer): string {
+  // Always prefer explicit local fallback (handles broken/missing Sanity refs)
+  const fallback = LOCAL_IMAGE_FALLBACK[offer._id];
+  if (fallback?.card) return fallback.card;
+  // Use Sanity CDN if an image has been uploaded
   if (offer.cardImage?.asset?._ref) return refToUrl(offer.cardImage.asset._ref);
   if (offer.externalImageUrl) return offer.externalImageUrl;
-  // Temporary fallback to local images for seeded documents without uploaded images
-  return LOCAL_IMAGE_FALLBACK[offer._id]?.card ?? '';
+  return '';
 }
 
 function resolveDetailImageUrl(offer: SanityOffer): string {
@@ -280,10 +310,22 @@ function OfferCard({ offer }: { offer: SanityOffer }) {
 
 // ── main export ─────────────────────────────────────────────────────────────────
 
-export default function Services({ offers }: { offers: SanityOffer[] }) {
+export default function Services({ offers, siteSettings }: { offers: SanityOffer[]; siteSettings?: SiteSettings | null }) {
   const { t } = useLanguage();
   const individualOffers = offers.filter((o) => o.category === 'individual');
   const workshopOffers = offers.filter((o) => o.category !== 'individual');
+
+  const welcomeIntro = siteSettings?.welcomeIntro || t('about.intro');
+  const welcomeImageSrc = siteSettings?.welcomeImage
+    ? urlFor(siteSettings.welcomeImage).width(800).url()
+    : '/images/photo_5427296683445393000_y.webp';
+
+  const aboutPortraitSrc = siteSettings?.aboutPortrait
+    ? urlFor(siteSettings.aboutPortrait).width(600).url()
+    : '/images/ueber-mich-portrait.jpeg';
+  const paragraph1 = siteSettings?.aboutParagraph1 || t('about.paragraph1');
+  const paragraph2 = siteSettings?.aboutParagraph2 || t('about.paragraph2');
+  const paragraph3 = siteSettings?.aboutParagraph3 || t('about.paragraph3');
 
   return (
     <>
@@ -293,10 +335,10 @@ export default function Services({ offers }: { offers: SanityOffer[] }) {
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="mb-4">Willkommen</h2>
               <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
-                {t('about.intro')}
+                {welcomeIntro}
               </p>
               <OptimizedImage
-                src="/images/photo_5427296683445393000_y.webp"
+                src={welcomeImageSrc}
                 alt="Hands with yellow element"
                 width={800}
                 height={600}
@@ -316,12 +358,12 @@ export default function Services({ offers }: { offers: SanityOffer[] }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start text-base sm:text-lg">
               <div className="relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden hover-lift">
-                <OptimizedImage src="/images/ueber-mich-portrait.jpeg" alt={t('about.alt')} fill className="object-cover object-center" />
+                <OptimizedImage src={aboutPortraitSrc} alt={t('about.alt')} fill className="object-cover object-center" />
               </div>
               <div className="space-y-4 sm:space-y-6 text-left">
-                <p className="leading-relaxed">{t('about.paragraph1')}</p>
-                <p className="leading-relaxed">{t('about.paragraph2')}</p>
-                <p className="leading-relaxed">{t('about.paragraph3')}</p>
+                <p className="leading-relaxed">{paragraph1}</p>
+                <p className="leading-relaxed">{paragraph2}</p>
+                <p className="leading-relaxed">{paragraph3}</p>
               </div>
             </div>
           </div>
