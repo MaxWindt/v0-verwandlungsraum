@@ -4,6 +4,9 @@ export const offerType = defineType({
   name: 'offer',
   title: 'Angebot',
   type: 'document',
+  components: {
+    preview: () => null,
+  },
   fields: [
     defineField({
       name: 'title',
