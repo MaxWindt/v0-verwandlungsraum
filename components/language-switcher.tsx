@@ -10,6 +10,12 @@ const languages: { code: Locale; label: string; name: string }[] = [
   { code: "es", label: "ES", name: "Español" },
 ];
 
+const switchLabelPrefix: Record<Locale, string> = {
+  de: "Sprache wechseln zu",
+  en: "Switch language to",
+  es: "Cambiar idioma a",
+};
+
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
@@ -24,7 +30,7 @@ export default function LanguageSwitcher() {
                 ? "text-primary font-bold"
                 : "text-muted-foreground hover:text-foreground"
             }`}
-            aria-label={`Switch language to ${lang.name}`}
+            aria-label={`${switchLabelPrefix[locale]} ${lang.name}`}
             aria-pressed={locale === lang.code}
           >
             {lang.label}

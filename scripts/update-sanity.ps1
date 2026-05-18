@@ -1,5 +1,5 @@
 if (-not (Test-Path .env.local)) {
-  Write-Error ".env.local was not found."
+  Write-Error "File .env.local was not found. Please create it with required Sanity credentials."
   exit 1
 }
 
