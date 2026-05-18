@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import Hero from '@/components/hero';
 import ServicesServer from '@/components/services-server';
-import Session from '@/components/session';
+import SessionServer from '@/components/session-server';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 
@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ServicesServer />
-      <Session />
+      <SessionServer />
       <Contact />
       <Footer />
     </main>

@@ -1,10 +1,41 @@
 'use client';
 
+import { PortableText } from '@portabletext/react';
 import { useLanguage } from '@/contexts/language-context';
-import OptimizedImage from './ui/optimized-image';
 
-export default function Session() {
+export interface SessionSiteSettings {
+  sessionPricesTitle?: string | null;
+  sessionPricesContent?: unknown[] | null;
+  sessionBillingTitle?: string | null;
+  sessionBillingContent?: unknown[] | null;
+  sessionAdvantagesTitle?: string | null;
+  sessionAdvantagesContent?: unknown[] | null;
+  sessionCancellationTitle?: string | null;
+  sessionCancellationContent?: unknown[] | null;
+  sessionDisclaimerTitle?: string | null;
+  sessionDisclaimerContent?: unknown[] | null;
+}
+
+type PtValue = Parameters<typeof PortableText>[0]['value'];
+
+const ptComponents = {
+  list: {
+    bullet: ({ children }: { children?: React.ReactNode }) => (
+      <ul className="list-disc list-inside space-y-2 bg-transparent p-0">{children}</ul>
+    ),
+  },
+};
+
+function PtBlock({ value, fallback }: { value: unknown[] | null | undefined; fallback: React.ReactNode }) {
+  if (value && value.length > 0) {
+    return <PortableText value={value as PtValue} components={ptComponents} />;
+  }
+  return <>{fallback}</>;
+}
+
+export default function Session({ siteSettings }: { siteSettings?: SessionSiteSettings | null }) {
   const { t } = useLanguage();
+  const ss = siteSettings;
 
   return (
     <section id="session" className="py-[0]">
@@ -24,21 +55,35 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t('session.pricesTitle')}
+                        {ss?.sessionPricesTitle || t('session.pricesTitle')}
                       </h3>
-                      <p>{t('session.price1')}</p>
-                      <p>{t('session.price2')}</p>
-                      <p>{t('session.starterPackage')}</p>
-                      <p>{t('session.priceNote')}</p>
+                      <PtBlock
+                        value={ss?.sessionPricesContent}
+                        fallback={
+                          <>
+                            <p>{t('session.price1')}</p>
+                            <p>{t('session.price2')}</p>
+                            <p>{t('session.starterPackage')}</p>
+                            <p>{t('session.priceNote')}</p>
+                          </>
+                        }
+                      />
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t('session.billingTitle')}
+                        {ss?.sessionBillingTitle || t('session.billingTitle')}
                       </h3>
-                      <p>{t('session.billing1')}</p>
-                      <p className="text-left">{t('session.billing2')}</p>
-                      <p className="text-left">{t('session.billing3')}</p>
+                      <PtBlock
+                        value={ss?.sessionBillingContent}
+                        fallback={
+                          <>
+                            <p>{t('session.billing1')}</p>
+                            <p className="text-left">{t('session.billing2')}</p>
+                            <p className="text-left">{t('session.billing3')}</p>
+                          </>
+                        }
+                      />
                     </div>
                   </div>
 
@@ -46,31 +91,48 @@ export default function Session() {
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t('session.advantagesTitle')}
+                        {ss?.sessionAdvantagesTitle || t('session.advantagesTitle')}
                       </h3>
-                      <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
-                        <li>{t('session.advantage1')}</li>
-                        <li>{t('session.advantage2')}</li>
-                        <li>{t('session.advantage3')}</li>
-                        <li>{t('session.advantage4')}</li>
-                      </ul>
+                      <PtBlock
+                        value={ss?.sessionAdvantagesContent}
+                        fallback={
+                          <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
+                            <li>{t('session.advantage1')}</li>
+                            <li>{t('session.advantage2')}</li>
+                            <li>{t('session.advantage3')}</li>
+                            <li>{t('session.advantage4')}</li>
+                          </ul>
+                        }
+                      />
                     </div>
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {t('session.cancellationTitle')}
+                        {ss?.sessionCancellationTitle || t('session.cancellationTitle')}
                       </h3>
-                      <p>{t('session.cancellation1')}</p>
-                      <p className="text-left">{t('session.cancellation2')}</p>
+                      <PtBlock
+                        value={ss?.sessionCancellationContent}
+                        fallback={
+                          <>
+                            <p>{t('session.cancellation1')}</p>
+                            <p className="text-left">{t('session.cancellation2')}</p>
+                          </>
+                        }
+                      />
                     </div>
                   </div>
                 </div>
 
                 {/* Disclaimer – full width, small and muted */}
-                <p className="text-xs text-muted-foreground mt-8 leading-relaxed">
-                  <span className="font-semibold">{t('session.disclaimerTitle')}:</span>{' '}
-                  {t('session.disclaimerText')}
-                </p>
+                <div className="text-xs text-muted-foreground mt-8 leading-relaxed">
+                  <span className="font-semibold">
+                    {ss?.sessionDisclaimerTitle || t('session.disclaimerTitle')}:
+                  </span>{' '}
+                  <PtBlock
+                    value={ss?.sessionDisclaimerContent}
+                    fallback={<span>{t('session.disclaimerText')}</span>}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -79,3 +141,4 @@ export default function Session() {
     </section>
   );
 }
+

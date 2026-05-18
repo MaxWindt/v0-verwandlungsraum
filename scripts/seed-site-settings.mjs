@@ -80,6 +80,47 @@ const patch = {
   sessionDescription5: [
     block('sd5', 'Nach der ersten Sitzung kannst du individuell entscheiden, ob du künftig 60 oder 90 Minuten buchen möchtest.'),
   ],
+
+  // ── Preise & Abrechnung ─────────────────────────────────────────────────
+  sessionPricesTitle: 'Preise',
+
+  sessionPricesContent: [
+    block('sp1', 'Einzelsitzung (60 Minuten): 60 €'),
+    block('sp2', 'Einzelsitzung (90 Minuten): 90 €'),
+    block('sp3', 'Starterpaket: 3 Sitzungen (90 / 60 / 60 Minuten) für 180 € anstatt 210 €'),
+    block('sp4', 'Bei finanziellen Schwierigkeiten kann eine individuelle Ermäßigung vereinbart werden.'),
+  ],
+
+  sessionBillingTitle: 'Abrechnung und Kostenübernahme',
+
+  sessionBillingContent: [
+    block('sb1', 'Ich arbeite als Heilpraktikerin für Psychotherapie auf privater Basis.'),
+    block('sb2', 'Die Kosten werden von den gesetzlichen Krankenkassen grundsätzlich nicht übernommen.'),
+    block('sb3', 'Einige private Krankenversicherungen oder Zusatzversicherungen übernehmen unter Umständen einen Teil der Kosten.'),
+  ],
+
+  sessionAdvantagesTitle: 'Was sind die Vorteile einer selbst bezahlten Therapie?',
+
+  sessionAdvantagesContent: [
+    { _key: 'sa1', _type: 'block', style: 'normal', listItem: 'bullet', level: 1, markDefs: [], children: [{ _key: 'sa1s1', _type: 'span', marks: [], text: 'Keine langen Wartezeiten' }] },
+    { _key: 'sa2', _type: 'block', style: 'normal', listItem: 'bullet', level: 1, markDefs: [], children: [{ _key: 'sa2s1', _type: 'span', marks: [], text: 'Freie Wahl einer Therapeut:in, die zu dir passt' }] },
+    { _key: 'sa3', _type: 'block', style: 'normal', listItem: 'bullet', level: 1, markDefs: [], children: [{ _key: 'sa3s1', _type: 'span', marks: [], text: 'Inhalt, Dauer und Rhythmus der Therapie sind nicht festgelegt, sondern an deine Bedürfnisse angepasst' }] },
+    { _key: 'sa4', _type: 'block', style: 'normal', listItem: 'bullet', level: 1, markDefs: [], children: [{ _key: 'sa4s1', _type: 'span', marks: [], text: 'Es muss keine seelische Krankheit gemäß den Diagnosekriterien ICD-10 und DSM-V vorliegen' }] },
+    { _key: 'sa5', _type: 'block', style: 'normal', listItem: 'bullet', level: 1, markDefs: [], children: [{ _key: 'sa5s1', _type: 'span', marks: [], text: 'Therapie wird in keiner Krankenakte und bei keiner Krankenversicherung vermerkt und beeinträchtigt damit nicht eine mögliche Verbeamtung oder den Abschluss künftiger Versicherungen' }] },
+  ],
+
+  sessionCancellationTitle: 'Absage',
+
+  sessionCancellationContent: [
+    block('sc1', 'Termine können bis 24 Stunden vorher kostenfrei abgesagt werden.'),
+    block('sc2', 'Bei späteren Absagen oder Nichterscheinen wird das volle Honorar berechnet, da der Termin nicht weitergegeben werden kann.'),
+  ],
+
+  sessionDisclaimerTitle: 'Hinweis zur Therapie / Haftungsausschluss',
+
+  sessionDisclaimerContent: [
+    block('sdis1', 'Diese Leistungen ersetzen keine medizinische Diagnosestellung oder ärztliche Behandlung. Ich stelle keine Heilungs- oder Erfolgsgarantien und gebe keine rechtlichen oder versicherungstechnischen Zusagen. Jede Person erlebt den Prozess individuell.'),
+  ],
 }
 
 console.log('Seeding siteSettings document…')

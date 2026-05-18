@@ -75,5 +75,15 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     sessionDescription4,
     sessionDescription5,
     sessionRoomImage,
+    sessionPricesTitle,
+    sessionPricesContent,
+    sessionBillingTitle,
+    sessionBillingContent,
+    sessionAdvantagesTitle,
+    sessionAdvantagesContent,
+    sessionCancellationTitle,
+    sessionCancellationContent,
+    sessionDisclaimerTitle,
+    sessionDisclaimerContent,
   }
 `)
