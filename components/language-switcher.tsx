@@ -5,9 +5,9 @@ import { useLanguage } from "@/contexts/language-context";
 import type { Locale } from "@/lib/translations";
 
 const languages: { code: Locale; label: string; name: string }[] = [
-  { code: "de", label: "DE", name: "German" },
+  { code: "de", label: "DE", name: "Deutsch" },
   { code: "en", label: "EN", name: "English" },
-  { code: "es", label: "ES", name: "Spanish" },
+  { code: "es", label: "ES", name: "Español" },
 ];
 
 export default function LanguageSwitcher() {

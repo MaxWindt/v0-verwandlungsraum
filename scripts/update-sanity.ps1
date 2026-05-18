@@ -1,4 +1,10 @@
-$token = (Get-Content .env.local | Select-String "^SANITY_WRITE_TOKEN=").ToString().Replace("SANITY_WRITE_TOKEN=","").Trim()
+if (-not (Test-Path .env.local)) {
+  Write-Error ".env.local was not found."
+  exit 1
+}
+
+$tokenLine = Get-Content .env.local | Select-String "^SANITY_WRITE_TOKEN="
+$token = if ($tokenLine) { $tokenLine.ToString().Replace("SANITY_WRITE_TOKEN=","").Trim() } else { "" }
 if ([string]::IsNullOrWhiteSpace($token)) {
   Write-Error "SANITY_WRITE_TOKEN is missing in .env.local"
   exit 1
