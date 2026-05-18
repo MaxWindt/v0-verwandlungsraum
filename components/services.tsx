@@ -125,13 +125,11 @@ function refToUrl(ref: string): string {
 }
 
 function resolveImageUrl(offer: SanityOffer): string {
-  // Always prefer explicit local fallback (handles broken/missing Sanity refs)
-  const fallback = LOCAL_IMAGE_FALLBACK[offer._id];
-  if (fallback?.card) return fallback.card;
-  // Use Sanity CDN if an image has been uploaded
+  // Prefer Sanity CDN (uploaded via Studio)
   if (offer.cardImage?.asset?._ref) return refToUrl(offer.cardImage.asset._ref);
   if (offer.externalImageUrl) return offer.externalImageUrl;
-  return '';
+  // Fall back to local images if nothing is uploaded yet
+  return LOCAL_IMAGE_FALLBACK[offer._id]?.card ?? '';
 }
 
 function resolveDetailImageUrl(offer: SanityOffer): string {
