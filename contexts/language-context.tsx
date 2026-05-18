@@ -26,7 +26,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Check localStorage first
     const savedLocale = localStorage.getItem("locale") as Locale | null;
-    if (savedLocale && (savedLocale === "de" || savedLocale === "es")) {
+    if (savedLocale && (savedLocale === "de" || savedLocale === "es" || savedLocale === "en")) {
       setLocaleState(savedLocale);
       return;
     }
@@ -35,6 +35,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const browserLang = navigator.language.toLowerCase();
     if (browserLang.startsWith("es")) {
       setLocaleState("es");
+    } else if (browserLang.startsWith("en")) {
+      setLocaleState("en");
     } else {
       setLocaleState("de");
     }

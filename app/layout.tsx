@@ -2,9 +2,12 @@ import type React from 'react';
 import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { draftMode } from 'next/headers';
+import { VisualEditing } from 'next-sanity/visual-editing';
 
 import { LanguageProvider } from '@/contexts/language-context';
 import CookieBanner from '@/components/cookie-banner';
+import { SanityLive } from '@/sanity/lib/live';
 
 import { Forum, Montserrat } from 'next/font/google';
 
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     ]
   }};
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode;
@@ -53,6 +56,8 @@ export default function RootLayout({
           {children}
           <CookieBanner />
         </LanguageProvider>
+        <SanityLive />
+        {(await draftMode()).isEnabled && <VisualEditing />}
         <Script src="https://js.hcaptcha.com/1/api.js" strategy="lazyOnload" />
       </body>
     </html>
