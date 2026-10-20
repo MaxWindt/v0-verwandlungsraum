@@ -7,3 +7,10 @@ tsconfig.tsbuildinfo
 # local env files
 .env.local
 .env*.local
+
+# static export, generated CMS content and images (scripts/fetch-content.mjs)
+/out
+/content
+/public/media
+.wrangler
+.env

@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "verwandlungsraum-scheduler",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-11",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    // Address of the CMS (no trailing slash). Change this to your Vercel URL before deploying.
+    "CMS_URL": "https://verwandlungsraum-cms.vercel.app"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "SCHEDULER", "class_name": "Scheduler" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Scheduler"] }]
+  // Secrets, set once with `npx wrangler secret put <NAME>`: DEPLOY_HOOK_URL, SCHEDULER_SECRET
+}

@@ -12,8 +12,9 @@ import {
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './ui/optimized-image';
 import { Calendar, Users, Clock, MapPin } from 'lucide-react';
-import { PortableText } from '@portabletext/react';
-import { urlFor } from '@/sanity/lib/imageUrl';
+import { RichText, hasRichText } from '@/lib/richtext';
+import { useLiveOffers } from '@/hooks/use-live-offers';
+import type { Offer, SiteContent } from '@/lib/content-types';
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -54,107 +55,27 @@ function toCanvaEmbedUrl(url: string): string {
   }
 }
 
-// ── types ────────────────────────────────────────────────────────────────────
-
-export interface SanityOffer {
-  _id: string;
-  title: string;
-  titleEn?: string | null;
-  titleEs?: string | null;
-  shortDescription: string;
-  shortDescriptionEn?: string | null;
-  shortDescriptionEs?: string | null;
-  category?: string;
-  hidden?: boolean;
-  order?: number;
-  cardImage?: { asset?: { _ref?: string } } | null;
-  image?: { asset?: { _ref?: string } } | null;
-  externalImageUrl?: string | null;
-  dates?: string[] | null;
-  registrationUrl?: string | null;
-  location?: string | null;
-  participants?: string | null;
-  duration?: string | null;
-  price?: string | null;
-  dialogType?: 'details' | 'session' | 'canva' | 'kennenlernabend' | null;
-  canvaUrl?: string | null;
-  dialogContent?: unknown[] | null;
-}
-
-export interface SiteSettings {
-  welcomeIntro?: unknown[] | null;
-  welcomeImage?: { asset?: { _ref?: string } } | null;
-  aboutParagraph1?: unknown[] | null;
-  aboutParagraph2?: unknown[] | null;
-  aboutParagraph3?: unknown[] | null;
-  aboutPortrait?: { asset?: { _ref?: string } } | null;
-  ktSubtitle?: unknown[] | null;
-  ktHowItWorksTitle?: string | null;
-  ktHowItWorksIntro?: unknown[] | null;
-  ktPomImage?: { asset?: { _ref?: string } } | null;
-  ktPomTitle?: string | null;
-  ktPomIntro?: unknown[] | null;
-  ktPomDescription?: unknown[] | null;
-  sessionDescription1?: unknown[] | null;
-  sessionDescription2?: unknown[] | null;
-  sessionDescription3?: unknown[] | null;
-  sessionDescription4?: unknown[] | null;
-  sessionDescription5?: unknown[] | null;
-  sessionRoomImage?: { asset?: { _ref?: string } } | null;
-}
-
 // ── image helpers ──────────────────────────────────────────────────────────────
 
-const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'y7ytd6po';
-const DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
-
-/** Local image fallbacks — takes priority over Sanity refs (covers docs without uploaded images) */
-const LOCAL_IMAGE_FALLBACK: Record<string, { card: string; detail?: string }> = {
-  '201d1be2-36ee-4a00-b896-fe414388876b': { card: '/images/photo_2026-02-02_11-16-29.webp', detail: '/images/Einzeltherapie raum.jpg' },
-  'b4c1683c-ad2d-4117-bc92-0f42fe053172': { card: '/images/Klang.webp' },
-  'cefd20c0-7a7d-4433-b510-c7b0704b3292': { card: '/images/5348175586192460915.jpg' },
-  'b86d376e-b211-4307-9734-c91193daf1ea': { card: '/images/5348175586192460911.jpg' },
-  'f0039819-f95a-45fc-bb79-31418cba52dd': { card: '/images/Atmen.png' },
-  // new offers — locally sourced until images are uploaded to Sanity Studio
-  'daa669cd-588b-435e-ab79-eef9247624bb': { card: '/images/Atmen.webp' },
-  '811ddcd8-e138-4207-89da-f4b38b4d00c3': { card: '/images/POM_header.webp' },
-  '79272a4a-25ff-4e1c-b6b7-87910e467847': { card: '/images/photo_5427296683445393000_y.webp' },
-};
-
-function refToUrl(ref: string): string {
-  const parts = ref.split('-');
-  const ext = parts[parts.length - 1];
-  const dims = parts[parts.length - 2];
-  const id = parts.slice(1, parts.length - 2).join('-');
-  return `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dims}.${ext}`;
+function resolveImageUrl(offer: Offer): string {
+  return offer.cardImage ?? offer.externalImageUrl ?? '';
 }
 
-function resolveImageUrl(offer: SanityOffer): string {
-  // Prefer Sanity CDN (uploaded via Studio)
-  if (offer.cardImage?.asset?._ref) return refToUrl(offer.cardImage.asset._ref);
-  if (offer.externalImageUrl) return offer.externalImageUrl;
-  // Fall back to local images if nothing is uploaded yet
-  return LOCAL_IMAGE_FALLBACK[offer._id]?.card ?? '';
-}
-
-function resolveDetailImageUrl(offer: SanityOffer): string {
-  if (offer.image?.asset?._ref) return refToUrl(offer.image.asset._ref);
-  // Use dedicated detail fallback if available, otherwise card image
-  const fallback = LOCAL_IMAGE_FALLBACK[offer._id];
-  return fallback?.detail ?? fallback?.card ?? resolveImageUrl(offer);
+function resolveDetailImageUrl(offer: Offer): string {
+  return offer.image ?? resolveImageUrl(offer);
 }
 
 // ── card ───────────────────────────────────────────────────────────────────────
 
 type SessionDescriptions = {
-  d1?: unknown[] | null;
-  d2?: unknown[] | null;
-  d3?: unknown[] | null;
-  d4?: unknown[] | null;
-  d5?: unknown[] | null;
+  d1?: SiteContent['sessionDescription1'];
+  d2?: SiteContent['sessionDescription2'];
+  d3?: SiteContent['sessionDescription3'];
+  d4?: SiteContent['sessionDescription4'];
+  d5?: SiteContent['sessionDescription5'];
 };
 
-function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; sessionDescriptions?: SessionDescriptions }) {
+function OfferCard({ offer, sessionDescriptions }: { offer: Offer; sessionDescriptions?: SessionDescriptions }) {
   const { t, locale } = useLanguage();
   const [open, setOpen] = useState(false);
 
@@ -168,7 +89,7 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
     locale === 'es' ? offer.shortDescriptionEs || offer.shortDescription :
     offer.shortDescription;
 
-  const isEventWithDates = (offer.dates ?? []).length > 0;
+  const isEventWithDates = offer.dates.length > 0;
   const isCanva = offer.dialogType === 'canva';
   const isSession = offer.dialogType === 'session';
   const isKennenlernabend = offer.dialogType === 'kennenlernabend';
@@ -188,7 +109,7 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
   };
 
   return (
-    <div className="card flex flex-col h-full">
+    <div id={`offer-${offer.id}`} className="card flex flex-col h-full">
       {cardImageUrl && (
         <div className="mb-4 rounded-lg overflow-hidden h-52 lg:h-72 xl:h-80 flex items-center justify-center">
           <OptimizedImage
@@ -204,10 +125,10 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
       <h4 className="text-lg sm:text-xl mb-3 font-semibold">{displayTitle}</h4>
       <p className="text-sm sm:text-base mb-3 flex-grow">{displayDescription}</p>
 
-      {isEventCard && (offer.dates ?? []).length > 0 && (
+      {isEventCard && (
         <div className="mb-3 text-sm">
-          <p className="font-semibold mb-1">Termin{(offer.dates?.length ?? 0) > 1 ? 'e' : ''}:</p>
-          {offer.dates!.map((date) => (
+          <p className="font-semibold mb-1">Termin{offer.dates.length > 1 ? 'e' : ''}:</p>
+          {offer.dates.map((date) => (
             <p key={date}>{date}</p>
           ))}
         </div>
@@ -250,20 +171,20 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
                 <OptimizedImage src={detailImageUrl} alt={displayTitle} width={1200} height={720} className="w-full rounded-lg object-cover" style={{ maxHeight: 360 }} />
               )}
               <div className="prose max-w-none text-sm sm:text-base">
-                {sessionDescriptions?.d1 && (sessionDescriptions.d1 as unknown[]).length > 0 ? (
-                  <PortableText value={sessionDescriptions.d1 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(sessionDescriptions?.d1) ? (
+                  <RichText data={sessionDescriptions?.d1} />
                 ) : <p>{t('session.description1')}</p>}
-                {sessionDescriptions?.d2 && (sessionDescriptions.d2 as unknown[]).length > 0 ? (
-                  <PortableText value={sessionDescriptions.d2 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(sessionDescriptions?.d2) ? (
+                  <RichText data={sessionDescriptions?.d2} />
                 ) : <p>{t('session.description2')}</p>}
-                {sessionDescriptions?.d3 && (sessionDescriptions.d3 as unknown[]).length > 0 ? (
-                  <PortableText value={sessionDescriptions.d3 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(sessionDescriptions?.d3) ? (
+                  <RichText data={sessionDescriptions?.d3} />
                 ) : <p>{t('session.description3')}</p>}
-                {sessionDescriptions?.d4 && (sessionDescriptions.d4 as unknown[]).length > 0 ? (
-                  <PortableText value={sessionDescriptions.d4 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(sessionDescriptions?.d4) ? (
+                  <RichText data={sessionDescriptions?.d4} />
                 ) : <p>{t('session.description4')}</p>}
-                {sessionDescriptions?.d5 && (sessionDescriptions.d5 as unknown[]).length > 0 ? (
-                  <PortableText value={sessionDescriptions.d5 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(sessionDescriptions?.d5) ? (
+                  <RichText data={sessionDescriptions?.d5} />
                 ) : <p>{t('session.description5')}</p>}
                 <p className="text-sm italic mt-4">{t('session.disclaimerNote')}</p>
               </div>
@@ -273,12 +194,12 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
           {/* Kennenlernabend */}
           {isKennenlernabend && (
             <div className="space-y-3 text-sm sm:text-base">
-              {offer.dialogContent && (offer.dialogContent as unknown[]).length > 0 ? (
+              {hasRichText(offer.dialogContent) ? (
                 <div className="prose max-w-none">
-                  <PortableText value={offer.dialogContent as Parameters<typeof PortableText>[0]['value']} />
+                  <RichText data={offer.dialogContent} />
                 </div>
               ) : <p>{offer.shortDescription}</p>}
-              {offer.dates?.map((d) => (
+              {offer.dates.map((d) => (
                 <div key={d} className="flex items-start gap-2">
                   <Calendar className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
                   <div><p className="font-semibold">Wann</p><p>{d}</p></div>
@@ -320,9 +241,9 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
                   <div><p className="font-semibold text-sm">Dauer</p><p className="text-sm">{offer.duration}</p></div>
                 </div>
               )}
-              {offer.dialogContent && (offer.dialogContent as unknown[]).length > 0 && (
+              {hasRichText(offer.dialogContent) && (
                 <div className="prose max-w-none text-sm sm:text-base">
-                  <PortableText value={offer.dialogContent as Parameters<typeof PortableText>[0]['value']} />
+                  <RichText data={offer.dialogContent} />
                 </div>
               )}
             </div>
@@ -341,26 +262,34 @@ function OfferCard({ offer, sessionDescriptions }: { offer: SanityOffer; session
 
 // ── main export ─────────────────────────────────────────────────────────────────
 
-export default function Services({ offers, siteSettings }: { offers: SanityOffer[]; siteSettings?: SiteSettings | null }) {
+export default function Services({
+  offers,
+  siteContent,
+  builtAt,
+  preview = false,
+}: {
+  offers: Offer[];
+  siteContent: SiteContent;
+  /** ISO timestamp of the build that produced `offers` (see hooks/use-live-offers). */
+  builtAt: string;
+  /** Editor preview: show every offer as it is, without hiding expired ones. */
+  preview?: boolean;
+}) {
   const { t } = useLanguage();
-  const individualOffers = offers.filter((o) => o.category === 'individual');
-  const workshopOffers = offers.filter((o) => o.category !== 'individual');
+  const liveOffers = useLiveOffers(offers, builtAt, !preview);
+  const individualOffers = liveOffers.filter((o) => o.category === 'individual');
+  const workshopOffers = liveOffers.filter((o) => o.category !== 'individual');
 
   const sessionDescriptions: SessionDescriptions = {
-    d1: siteSettings?.sessionDescription1,
-    d2: siteSettings?.sessionDescription2,
-    d3: siteSettings?.sessionDescription3,
-    d4: siteSettings?.sessionDescription4,
-    d5: siteSettings?.sessionDescription5,
+    d1: siteContent.sessionDescription1,
+    d2: siteContent.sessionDescription2,
+    d3: siteContent.sessionDescription3,
+    d4: siteContent.sessionDescription4,
+    d5: siteContent.sessionDescription5,
   };
 
-  const welcomeImageSrc = siteSettings?.welcomeImage
-    ? urlFor(siteSettings.welcomeImage).width(800).url()
-    : '/images/photo_5427296683445393000_y.webp';
-
-  const aboutPortraitSrc = siteSettings?.aboutPortrait
-    ? urlFor(siteSettings.aboutPortrait).width(600).url()
-    : '/images/ueber-mich-portrait.jpeg';
+  const welcomeImageSrc = siteContent.welcomeImage ?? '/images/photo_5427296683445393000_y.webp';
+  const aboutPortraitSrc = siteContent.aboutPortrait ?? '/images/ueber-mich-portrait.jpeg';
 
   return (
     <>
@@ -369,9 +298,9 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
           <div className="max-w-6xl content-box my-0 mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="mb-4">Willkommen</h2>
-              {siteSettings?.welcomeIntro && (siteSettings.welcomeIntro as unknown[]).length > 0 ? (
+              {hasRichText(siteContent.welcomeIntro) ? (
                 <div className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left prose prose-lg max-w-none">
-                  <PortableText value={siteSettings.welcomeIntro as Parameters<typeof PortableText>[0]['value']} />
+                  <RichText data={siteContent.welcomeIntro} />
                 </div>
               ) : (
                 <p className="text-base sm:text-lg max-w-4xl mx-auto mt-4 font-serif text-left">
@@ -402,18 +331,18 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
                 <OptimizedImage src={aboutPortraitSrc} alt={t('about.alt')} fill className="object-cover object-center" />
               </div>
               <div className="space-y-4 sm:space-y-6 text-left prose prose-lg max-w-none">
-                {siteSettings?.aboutParagraph1 && (siteSettings.aboutParagraph1 as unknown[]).length > 0 ? (
-                  <PortableText value={siteSettings.aboutParagraph1 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(siteContent.aboutParagraph1) ? (
+                  <RichText data={siteContent.aboutParagraph1} />
                 ) : (
                   <p className="leading-relaxed">{t('about.paragraph1')}</p>
                 )}
-                {siteSettings?.aboutParagraph2 && (siteSettings.aboutParagraph2 as unknown[]).length > 0 ? (
-                  <PortableText value={siteSettings.aboutParagraph2 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(siteContent.aboutParagraph2) ? (
+                  <RichText data={siteContent.aboutParagraph2} />
                 ) : (
                   <p className="leading-relaxed">{t('about.paragraph2')}</p>
                 )}
-                {siteSettings?.aboutParagraph3 && (siteSettings.aboutParagraph3 as unknown[]).length > 0 ? (
-                  <PortableText value={siteSettings.aboutParagraph3 as Parameters<typeof PortableText>[0]['value']} />
+                {hasRichText(siteContent.aboutParagraph3) ? (
+                  <RichText data={siteContent.aboutParagraph3} />
                 ) : (
                   <p className="leading-relaxed">{t('about.paragraph3')}</p>
                 )}
@@ -431,7 +360,7 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
             <div className="w-full sm:w-3/4 md:w-2/3">
               <div className="grid grid-cols-1 gap-6">
                 {individualOffers.map((offer) => (
-                  <OfferCard key={offer._id} offer={offer} sessionDescriptions={sessionDescriptions} />
+                  <OfferCard key={offer.id} offer={offer} sessionDescriptions={sessionDescriptions} />
                 ))}
               </div>
             </div>
@@ -445,13 +374,13 @@ export default function Services({ offers, siteSettings }: { offers: SanityOffer
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {workshopOffers.map((offer) => (
-                <OfferCard key={offer._id} offer={offer} sessionDescriptions={sessionDescriptions} />
+                <OfferCard key={offer.id} offer={offer} sessionDescriptions={sessionDescriptions} />
               ))}
             </div>
           </>
         )}
 
-        {offers.length === 0 && (
+        {liveOffers.length === 0 && (
           <p className="text-center text-muted-foreground py-12">Aktuell keine Angebote verfügbar.</p>
         )}
       </section>

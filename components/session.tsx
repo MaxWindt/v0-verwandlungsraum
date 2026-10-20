@@ -1,41 +1,20 @@
 'use client';
 
-import { PortableText } from '@portabletext/react';
 import { useLanguage } from '@/contexts/language-context';
+import { RichText, hasRichText } from '@/lib/richtext';
+import type { RichTextData, SiteContent } from '@/lib/content-types';
 
-export interface SessionSiteSettings {
-  sessionPricesTitle?: string | null;
-  sessionPricesContent?: unknown[] | null;
-  sessionBillingTitle?: string | null;
-  sessionBillingContent?: unknown[] | null;
-  sessionAdvantagesTitle?: string | null;
-  sessionAdvantagesContent?: unknown[] | null;
-  sessionCancellationTitle?: string | null;
-  sessionCancellationContent?: unknown[] | null;
-  sessionDisclaimerTitle?: string | null;
-  sessionDisclaimerContent?: unknown[] | null;
-}
+const BULLET_LIST = 'list-disc list-inside space-y-2 bg-transparent p-0';
 
-type PtValue = Parameters<typeof PortableText>[0]['value'];
-
-const ptComponents = {
-  list: {
-    bullet: ({ children }: { children?: React.ReactNode }) => (
-      <ul className="list-disc list-inside space-y-2 bg-transparent p-0">{children}</ul>
-    ),
-  },
-};
-
-function PtBlock({ value, fallback }: { value: unknown[] | null | undefined; fallback: React.ReactNode }) {
-  if (value && value.length > 0) {
-    return <PortableText value={value as PtValue} components={ptComponents} />;
+function Block({ value, fallback }: { value: RichTextData | null | undefined; fallback: React.ReactNode }) {
+  if (hasRichText(value)) {
+    return <RichText data={value} lists={{ bullet: BULLET_LIST }} />;
   }
   return <>{fallback}</>;
 }
 
-export default function Session({ siteSettings }: { siteSettings?: SessionSiteSettings | null }) {
+export default function Session({ siteContent: ss }: { siteContent: SiteContent }) {
   const { t } = useLanguage();
-  const ss = siteSettings;
 
   return (
     <section id="session" className="py-[0]">
@@ -55,10 +34,10 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {ss?.sessionPricesTitle || t('session.pricesTitle')}
+                        {ss.sessionPricesTitle || t('session.pricesTitle')}
                       </h3>
-                      <PtBlock
-                        value={ss?.sessionPricesContent}
+                      <Block
+                        value={ss.sessionPricesContent}
                         fallback={
                           <>
                             <p>{t('session.price1')}</p>
@@ -72,10 +51,10 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {ss?.sessionBillingTitle || t('session.billingTitle')}
+                        {ss.sessionBillingTitle || t('session.billingTitle')}
                       </h3>
-                      <PtBlock
-                        value={ss?.sessionBillingContent}
+                      <Block
+                        value={ss.sessionBillingContent}
                         fallback={
                           <>
                             <p>{t('session.billing1')}</p>
@@ -91,12 +70,12 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {ss?.sessionAdvantagesTitle || t('session.advantagesTitle')}
+                        {ss.sessionAdvantagesTitle || t('session.advantagesTitle')}
                       </h3>
-                      <PtBlock
-                        value={ss?.sessionAdvantagesContent}
+                      <Block
+                        value={ss.sessionAdvantagesContent}
                         fallback={
-                          <ul className="list-disc list-inside space-y-2 bg-transparent p-0">
+                          <ul className={BULLET_LIST}>
                             <li>{t('session.advantage1')}</li>
                             <li>{t('session.advantage2')}</li>
                             <li>{t('session.advantage3')}</li>
@@ -108,10 +87,10 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
 
                     <div>
                       <h3 className="text-xl sm:text-2xl mb-3 sm:mb-4">
-                        {ss?.sessionCancellationTitle || t('session.cancellationTitle')}
+                        {ss.sessionCancellationTitle || t('session.cancellationTitle')}
                       </h3>
-                      <PtBlock
-                        value={ss?.sessionCancellationContent}
+                      <Block
+                        value={ss.sessionCancellationContent}
                         fallback={
                           <>
                             <p>{t('session.cancellation1')}</p>
@@ -126,10 +105,10 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
                 {/* Disclaimer – full width, small and muted */}
                 <div className="text-xs text-muted-foreground mt-8 leading-relaxed">
                   <span className="font-semibold">
-                    {ss?.sessionDisclaimerTitle || t('session.disclaimerTitle')}:
+                    {ss.sessionDisclaimerTitle || t('session.disclaimerTitle')}:
                   </span>{' '}
-                  <PtBlock
-                    value={ss?.sessionDisclaimerContent}
+                  <Block
+                    value={ss.sessionDisclaimerContent}
                     fallback={<span>{t('session.disclaimerText')}</span>}
                   />
                 </div>
@@ -141,4 +120,3 @@ export default function Session({ siteSettings }: { siteSettings?: SessionSiteSe
     </section>
   );
 }
-

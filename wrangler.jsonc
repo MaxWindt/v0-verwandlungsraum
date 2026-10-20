@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "verwandlungsraum",
+  "compatibility_date": "2026-04-11",
+  "observability": {
+    "enabled": true
+  },
+  // `wrangler deploy` builds the site first, so a deploy always ships fresh CMS content.
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "out",
+    "not_found_handling": "404-page"
+  }
+}
