@@ -27,7 +27,7 @@ export default function OptimizedImage({
   ...rest
 }: Props) {
   // Derive webp path — only for local images (starts with /).
-  // For external URLs (Sanity CDN, etc.) do NOT replace extension, since the file may not exist.
+  // For external URLs (CMS or CDN hosts) do NOT replace extension, since the file may not exist.
   const isExternal = /^https?:\/\//i.test(src);
   const webp = isExternal ? null : src.replace(/\.(jpe?g|png)$/i, '.webp');
   const webpHref = webp ? encodeURI(webp) : null;

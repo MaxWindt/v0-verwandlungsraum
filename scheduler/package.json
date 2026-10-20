@@ -1,0 +1,17 @@
+{
+  "name": "verwandlungsraum-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rebuilds the website when an event expires (Cloudflare Worker + Durable Object alarm)",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.151.1"
+  }
+}

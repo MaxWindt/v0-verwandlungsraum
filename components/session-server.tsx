@@ -1,8 +1,6 @@
-import { sanityFetch } from '@/sanity/lib/live'
-import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
+import { siteData } from '@/lib/content'
 import Session from './session'
 
-export default async function SessionServer() {
-  const { data: siteSettings } = await sanityFetch({ query: SITE_SETTINGS_QUERY })
-  return <Session siteSettings={siteSettings ?? null} />
+export default function SessionServer() {
+  return <Session siteContent={siteData.siteContent} />
 }
